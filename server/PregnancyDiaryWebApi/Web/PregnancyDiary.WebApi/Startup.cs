@@ -19,6 +19,15 @@
     using PregnancyDiary.Data.Models;
     using PregnancyDiary.Data.Repositories;
     using PregnancyDiary.Data.Seeding;
+    using PregnancyDiary.Services.Data.Articles;
+    using PregnancyDiary.Services.Data.Babies;
+    using PregnancyDiary.Services.Data.Categories;
+    using PregnancyDiary.Services.Data.Comments;
+    using PregnancyDiary.Services.Data.Diaries;
+    using PregnancyDiary.Services.Data.Memories;
+    using PregnancyDiary.Services.Data.UserArticleLikes;
+    using PregnancyDiary.Services.Data.Users;
+    using PregnancyDiary.Services.Data.Weeks;
     using PregnancyDiary.Services.Mapping;
     using PregnancyDiary.Web.Models.Common.ViewModels;
     using PregnancyDiary.WebApi.Helpers;
@@ -90,15 +99,15 @@
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 
-            //services.AddTransient<IArticlesService, ArticlesService>();
-            //services.AddTransient<ICategoriesService, CategoriesService>();
-            //services.AddTransient<IUserArticleLikesService, UserArticleLikesService>();
-            //services.AddTransient<ICommentsService, CommentsService>();
-            //services.AddTransient<IUsersService, UsersService>();
-            //services.AddTransient<IDiariesService, DiariesService>();
-            //services.AddTransient<IWeeksService, WeeksService>();
-            //services.AddTransient<IMemoriesService, MemoriesService>();
-            //services.AddTransient<IBabiesService, BabiesService>();
+            services.AddTransient<IArticlesService, ArticlesService>();
+            services.AddTransient<ICategoriesService, CategoriesService>();
+            services.AddTransient<IUserArticleLikesService, UserArticleLikesService>();
+            services.AddTransient<ICommentsService, CommentsService>();
+            services.AddTransient<IUsersService, UsersService>();
+            services.AddTransient<IDiariesService, DiariesService>();
+            services.AddTransient<IWeeksService, WeeksService>();
+            services.AddTransient<IMemoriesService, MemoriesService>();
+            services.AddTransient<IBabiesService, BabiesService>();
 
             services.AddControllers();
 
