@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{5D25AA5B-FB56-4EC5-82BD-4C1012383C52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PregnancyDiary.Data", "Data\PregnancyDiary.Data\PregnancyDiary.Data.csproj", "{CA55F10F-197C-4C04-AA78-F5CAEFF17203}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PregnancyDiary.Data.Common", "Data\PregnancyDiary.Data.Common\PregnancyDiary.Data.Common.csproj", "{6CF2AF33-84C7-4FFC-B4D4-1642F3C025E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PregnancyDiary.Data.Models", "Data\PregnancyDiary.Data.Models\PregnancyDiary.Data.Models.csproj", "{5F1369B3-9573-49D4-99F0-7D68C1F8E1CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{4A8A1A15-E45E-4FA6-A54F-828A1931C438}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PregnancyDiary.Services.Data", "Services\PregnancyDiary.Services.Data\PregnancyDiary.Services.Data.csproj", "{E918FFE2-4C78-43F6-BBBB-DB0A4DD27380}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PregnancyDiary.Services.Mapping", "Services\PregnancyDiary.Services.Mapping\PregnancyDiary.Services.Mapping.csproj", "{6765BBA6-2B70-49CB-B80C-86038F1A0829}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{40B75E6A-4DDA-46FF-A0DA-156A632E4E2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PregnancyDiary.Web.Infrastructure", "Web\PregnancyDiary.Web.Infrastructure\PregnancyDiary.Web.Infrastructure.csproj", "{2EA1DA2F-E658-415E-855A-B01913A942B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PregnancyDiary.Web.Models", "Web\PregnancyDiary.Web.Models\PregnancyDiary.Web.Models.csproj", "{B0A70764-9950-4D12-932A-076A55F3DC9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PregnancyDiary.WebApi", "Web\PregnancyDiary.WebApi\PregnancyDiary.WebApi.csproj", "{AD9B6A0F-E910-4E64-AE02-576E75F4C3D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PregnancyDiary.Common", "PregnancyDiary.Common\PregnancyDiary.Common.csproj", "{85F7E4D2-F22B-4A23-B0B1-A99987B5C189}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA55F10F-197C-4C04-AA78-F5CAEFF17203}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA55F10F-197C-4C04-AA78-F5CAEFF17203}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA55F10F-197C-4C04-AA78-F5CAEFF17203}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA55F10F-197C-4C04-AA78-F5CAEFF17203}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CF2AF33-84C7-4FFC-B4D4-1642F3C025E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CF2AF33-84C7-4FFC-B4D4-1642F3C025E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CF2AF33-84C7-4FFC-B4D4-1642F3C025E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CF2AF33-84C7-4FFC-B4D4-1642F3C025E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1369B3-9573-49D4-99F0-7D68C1F8E1CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1369B3-9573-49D4-99F0-7D68C1F8E1CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1369B3-9573-49D4-99F0-7D68C1F8E1CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1369B3-9573-49D4-99F0-7D68C1F8E1CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E918FFE2-4C78-43F6-BBBB-DB0A4DD27380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E918FFE2-4C78-43F6-BBBB-DB0A4DD27380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E918FFE2-4C78-43F6-BBBB-DB0A4DD27380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E918FFE2-4C78-43F6-BBBB-DB0A4DD27380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6765BBA6-2B70-49CB-B80C-86038F1A0829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6765BBA6-2B70-49CB-B80C-86038F1A0829}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6765BBA6-2B70-49CB-B80C-86038F1A0829}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6765BBA6-2B70-49CB-B80C-86038F1A0829}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA1DA2F-E658-415E-855A-B01913A942B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA1DA2F-E658-415E-855A-B01913A942B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA1DA2F-E658-415E-855A-B01913A942B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA1DA2F-E658-415E-855A-B01913A942B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0A70764-9950-4D12-932A-076A55F3DC9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0A70764-9950-4D12-932A-076A55F3DC9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0A70764-9950-4D12-932A-076A55F3DC9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0A70764-9950-4D12-932A-076A55F3DC9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD9B6A0F-E910-4E64-AE02-576E75F4C3D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD9B6A0F-E910-4E64-AE02-576E75F4C3D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD9B6A0F-E910-4E64-AE02-576E75F4C3D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD9B6A0F-E910-4E64-AE02-576E75F4C3D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85F7E4D2-F22B-4A23-B0B1-A99987B5C189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85F7E4D2-F22B-4A23-B0B1-A99987B5C189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85F7E4D2-F22B-4A23-B0B1-A99987B5C189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85F7E4D2-F22B-4A23-B0B1-A99987B5C189}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CA55F10F-197C-4C04-AA78-F5CAEFF17203} = {5D25AA5B-FB56-4EC5-82BD-4C1012383C52}
+		{6CF2AF33-84C7-4FFC-B4D4-1642F3C025E8} = {5D25AA5B-FB56-4EC5-82BD-4C1012383C52}
+		{5F1369B3-9573-49D4-99F0-7D68C1F8E1CC} = {5D25AA5B-FB56-4EC5-82BD-4C1012383C52}
+		{E918FFE2-4C78-43F6-BBBB-DB0A4DD27380} = {4A8A1A15-E45E-4FA6-A54F-828A1931C438}
+		{6765BBA6-2B70-49CB-B80C-86038F1A0829} = {4A8A1A15-E45E-4FA6-A54F-828A1931C438}
+		{2EA1DA2F-E658-415E-855A-B01913A942B2} = {40B75E6A-4DDA-46FF-A0DA-156A632E4E2F}
+		{B0A70764-9950-4D12-932A-076A55F3DC9A} = {40B75E6A-4DDA-46FF-A0DA-156A632E4E2F}
+		{AD9B6A0F-E910-4E64-AE02-576E75F4C3D3} = {40B75E6A-4DDA-46FF-A0DA-156A632E4E2F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B67AC5E-1647-4241-8287-4EECEB648C98}
+	EndGlobalSection
+EndGlobal
