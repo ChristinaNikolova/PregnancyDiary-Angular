@@ -24,4 +24,9 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Services\PregnancyDiary.Services.Mapping\PregnancyDiary.Services.Mapping.csproj" />
+    <ProjectReference Include="..\PregnancyDiary.Web.Models\PregnancyDiary.Web.Models.csproj" />
+  </ItemGroup>
+
 </Project>
