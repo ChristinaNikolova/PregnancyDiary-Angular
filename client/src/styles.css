@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+ul {
+  list-style-type: none;
+}
+
+.custom-font {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.fill {
+  background-color: #FFE2E0;
+}
+
+.table-background {
+  background-color: #E8E0CD;
+}
