@@ -1,0 +1,26 @@
+<div class="login-wrapper">
+  <h1 class="custom-font text-center">Sign In</h1>
+  <hr />
+  <div class="row login-form">
+    <div class="col-lg-8">
+      <form [formGroup]="loginForm" (submit)="signIn()" class="mt-2">
+        <div class="form-group">
+          <label class="control-label" for="email">Email</label>
+          <input type="text" class="form-control" id="email" formControlName="email">
+        </div>
+        <!-- <div class="alert alert-danger" *ngIf="f.email?.errors?.required && f.email?.touched">This field is required
+        </div>
+        <div class="alert alert-danger" *ngIf="f.email?.errors?.email">The email should be in format example@example.com
+        </div> -->
+        <div class="form-group">
+          <label class="control-label" for="password">Password</label>
+          <input type="password" class="form-control" id="password" formControlName="password">
+        </div>
+        <!-- <div class="alert alert-danger" *ngIf="f.password?.errors?.required && f.password?.touched">This field is
+          required</div> -->
+        <button type="submit" class="btn btn-dark" [disabled]="loginForm.invalid">Sign In</button>
+      </form>
+    </div>
+  </div>
+  picture
+</div>

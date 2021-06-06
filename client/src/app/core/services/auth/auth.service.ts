@@ -11,7 +11,7 @@ const registerUrl = environment.apiBaseUrl + 'account/register';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthServiceService {
+export class AuthService {
   private readonly isUserAdmin: boolean;
 
   constructor(private http: HttpClient) {
