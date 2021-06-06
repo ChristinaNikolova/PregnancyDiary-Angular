@@ -8,7 +8,7 @@
     </p>
     <hr />
   </div>
-  <p class="custom-font text-center">
+  <p class="custom-font custom-font-weight text-center">
     A Baby Fills a Place in Your Heart That You Never Knew Was Empty!
   </p>
   <div class="text-center">
@@ -16,9 +16,9 @@
   </div>
   <div *ngIf="isLoggedIn">
     <p class="lead-home text-center">
-      <a [routerLink]="['/user/diaries']"><button class="btn btn-lg mt-4 mr-2" role="button">See your
+      <a [routerLink]="['/user/diaries']"><button class="btn btn-lg" role="button">See your
           diaries</button></a>
-      <a [routerLink]="['/diary/create']"><button class="btn btn-lg mt-4" role="button">Create new diary</button></a>
+      <a [routerLink]="['/diary/create']"><button class="btn btn-lg btn-margin-left" role="button">Create new diary</button></a>
     </p>
     <div class="fill pt-1 pb-1"></div>
   </div>

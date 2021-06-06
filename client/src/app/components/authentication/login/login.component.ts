@@ -26,15 +26,21 @@ export class LoginComponent implements OnInit {
   }
 
   public signIn(): void {
-console.log(this.loginForm.value);
+    if (this.loginForm.invalid) {
+      return;
+    }
 
     this.authService
-      .login(this.loginForm.value)
-      .subscribe((data: any) => {
-        localStorage.setItem('token', data['token']);
-        localStorage.setItem('username', data['username']);
-        localStorage.setItem('isAdmin', data['isAdmin']);
-        this.router.navigate(['/home'])
-      });
+    .login(this.loginForm.value)
+    .subscribe((data: any) => {
+      localStorage.setItem('token', data['token']);
+      localStorage.setItem('username', data['username']);
+      localStorage.setItem('isAdmin', data['isAdmin']);
+      this.router.navigate(['/home']);
+    });
+  }
+
+  public get f() {
+    return this.loginForm.controls;
   }
 }

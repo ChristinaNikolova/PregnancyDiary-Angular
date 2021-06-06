@@ -1,20 +1,40 @@
 .login-wrapper {
   background-color: #FFE2E0;
-  height: 650px;
+  height: 750px;
 }
 
-.login-wrapper button {
+.btn-dark {
   background-color: #EF93AE;
   border-color: #EF93AE;
   color: white;
+  margin-top: 15px;
 }
 
-.login-wrapper button:hover {
+.btn-dark:hover {
   background-color: #7BA5F7;
   border-color: #7BA5F7;
   color: white;
+  cursor: pointer;
+}
+
+.btn-dark:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
 }
 
 .login-form {
   justify-content: center;
+  text-align: center;
+}
+
+.login-wrapper .custom-font {
+  font-weight: 100;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+.control-label {
+  margin-bottom: 5px;
 }
