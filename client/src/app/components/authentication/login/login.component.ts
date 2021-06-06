@@ -25,7 +25,11 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public signIn(): void {
+  public get f() {
+    return this.loginForm.controls;
+  }
+
+  public logIn(): void {
     if (this.loginForm.invalid) {
       return;
     }
@@ -38,9 +42,5 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('isAdmin', data['isAdmin']);
       this.router.navigate(['/home']);
     });
-  }
-
-  public get f() {
-    return this.loginForm.controls;
   }
 }
