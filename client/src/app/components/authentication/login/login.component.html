@@ -8,19 +8,19 @@
           <label class="control-label" for="email">Email</label>
           <input type="text" class="form-control" id="email" formControlName="email">
         </div>
-        <div class="alert alert-warning alert-custom-margin" *ngIf="f.email?.errors?.required && f.email?.touched">This
-          field is required
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.email?.errors?.required && f.email?.touched">
+          This field is required
         </div>
-        <div class="alert alert-warning alert-custom-margin" *ngIf="f.email?.errors?.email">The email should be in
-          format example@example.com
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.email?.errors?.email">
+          The email should be in format example@example.com
         </div>
         <div class="form-group">
           <label class="control-label" for="password">Password</label>
           <input type="password" class="form-control" id="password" formControlName="password">
         </div>
-        <div class="alert alert-warning alert-custom-margin"
-          *ngIf="f.password?.errors?.required && f.password?.touched">This field is
-          required</div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.password?.errors?.required && f.password?.touched">
+          This field is required
+        </div>
         <div class="text-center">
           <button type="submit" class="btn btn-dark" [disabled]="loginForm.invalid">Log In</button>
         </div>
