@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 const articlesBaseUrl = environment.apiBaseUrl + 'articles/';
 const allUrl = 'all';
 const orderUrl = 'order';
+const searchUrl = 'search';
 
 @Injectable({
   providedIn: 'root',
@@ -20,5 +21,9 @@ export class ArticlesService {
 
   order(criteria: string): Observable<IArticle[]> {
     return this.http.get<IArticle[]>(articlesBaseUrl + orderUrl + `/${criteria}`);
+  }
+
+  search(query: string): Observable<IArticle[]> {
+    return this.http.get<IArticle[]>(articlesBaseUrl + searchUrl + `/${query}`);
   }
 }

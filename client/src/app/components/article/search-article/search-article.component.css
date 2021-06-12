@@ -8,6 +8,21 @@
   border-color: red;
 }
 
-.search-form{
+.search-wrapper .custom-font {
+  font-weight: 100;
+}
+
+.search-form {
   margin-bottom: 30px;
+}
+
+.btn {
+  border: none;
+  background-color: #EF93AE;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #7BA5F7;
+  color: white;
 }

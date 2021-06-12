@@ -8,6 +8,7 @@ import { ArticlesCategoriesListComponent } from './articles-categories-list/arti
 import { SingleArticleCategoryComponent } from './single-article-category/single-article-category.component';
 import { SearchArticleComponent } from './search-article/search-article.component';
 import { OrderArticlesComponent } from './order-articles/order-articles.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { OrderArticlesComponent } from './order-articles/order-articles.componen
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forChild([
       { path: '', pathMatch: 'full', redirectTo: 'all' },
       { path: 'all', component: ArticlesListComponent },

@@ -12,7 +12,7 @@
         clickHandler={search}
         isSearched={isSearched} /> -->
 
-  <app-search-article></app-search-article>
+  <app-search-article (searchEventEmitter)="search($event)"></app-search-article>
 
   <div *ngIf="!isSearched">
     <app-order-articles (orderEventEmitter)="order($event)"></app-order-articles>

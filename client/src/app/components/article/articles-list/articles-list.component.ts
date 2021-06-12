@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { ArticlesService } from 'src/app/core/services/articles/articles.service';
@@ -10,8 +10,8 @@ import IArticle from '../../shared/models/article/IArticle';
   styleUrls: ['./articles-list.component.css'],
 })
 export class ArticlesListComponent implements OnInit {
-  public articles$: Observable<IArticle[]>;
-  public isSearched: boolean;
+  articles$: Observable<IArticle[]>;
+  isSearched: boolean;
 
   constructor(private articlesService: ArticlesService) {
     this.isSearched = false;
@@ -23,5 +23,9 @@ export class ArticlesListComponent implements OnInit {
 
   order(criteria: string): void {
     this.articles$ = this.articlesService.order(criteria);
+  }
+
+  search(query: string): void {
+    this.articles$ = this.articlesService.search(query);
   }
 }

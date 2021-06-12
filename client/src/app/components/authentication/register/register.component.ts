@@ -13,9 +13,13 @@ const PASS_MIN_LEN = 5;
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  public registerForm: FormGroup;
+  registerForm: FormGroup;
 
-  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -26,18 +30,16 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  public get f() {
+  get f() {
     return this.registerForm.controls;
   }
 
-  public register(): void {
-    if(this.registerForm.invalid){
+  register(): void {
+    if (this.registerForm.invalid) {
       return;
     }
 
-    this.authService
-    .register(this.registerForm.value)
-    .subscribe(() => {
+    this.authService.register(this.registerForm.value).subscribe(() => {
       this.router.navigate(['/login']);
     });
   }

@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  public loginForm: FormGroup;
+  loginForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -25,18 +25,16 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public get f() {
+  get f() {
     return this.loginForm.controls;
   }
 
-  public logIn(): void {
+  logIn(): void {
     if (this.loginForm.invalid) {
       return;
     }
 
-    this.authService
-    .login(this.loginForm.value)
-    .subscribe((data: any) => {
+    this.authService.login(this.loginForm.value).subscribe((data: any) => {
       localStorage.setItem('token', data['token']);
       localStorage.setItem('username', data['username']);
       localStorage.setItem('isAdmin', data['isAdmin']);

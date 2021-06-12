@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class OrderArticlesComponent implements OnInit {
   @Output() orderEventEmitter = new EventEmitter<string>();
-  public isShown: boolean;
+  isShown: boolean;
 
   constructor() {
     this.isShown = false;
