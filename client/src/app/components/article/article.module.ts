@@ -4,11 +4,15 @@ import { RouterModule } from '@angular/router';
 
 import { ArticlesListComponent } from './articles-list/articles-list.component';
 import { SingleArticleComponent } from './single-article/single-article.component';
+import { ArticlesCategoriesListComponent } from './articles-categories-list/articles-categories-list.component';
+import { SingleArticleCategoryComponent } from './single-article-category/single-article-category.component';
 
 @NgModule({
   declarations: [
     ArticlesListComponent,
-    SingleArticleComponent
+    SingleArticleComponent,
+    ArticlesCategoriesListComponent,
+    SingleArticleCategoryComponent
   ],
   imports: [
     CommonModule,

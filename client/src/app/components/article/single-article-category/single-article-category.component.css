@@ -1,0 +1,12 @@
+.articles-count {
+  color: #EF93AE;
+}
+
+.custom-color-link {
+  color: #EF93AE;
+  margin-left: 5px;
+}
+
+.custom-color-link:hover {
+  color: #7BA5F7;
+}

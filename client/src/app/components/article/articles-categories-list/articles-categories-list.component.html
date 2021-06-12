@@ -1,0 +1,9 @@
+<div class="artilces-categories-wrapper">
+  <h4 class="text-center custom-font">Articles by Categories</h4>
+  <div class="text-center">
+    <!--clickHandler={clickHandler} />)} -->
+    <span *ngFor="let category of categories$ | async">
+      <app-single-article-category [category]=category></app-single-article-category>
+    </span>
+  </div>
+</div>
