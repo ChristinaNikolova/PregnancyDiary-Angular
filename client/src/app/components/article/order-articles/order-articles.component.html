@@ -1,0 +1,18 @@
+<div class="order-wrapper">
+  <button class="btn" (click)="toogle('no search')">
+    <i class="fas fa-hand-point-down p-2" *ngIf="isShown"></i>
+    <i class="fas fa-hand-point-right p-2" *ngIf="!isShown"></i>
+    Order by
+  </button>
+  <ul class="article-order-ul" *ngIf="isShown">
+    <li class="article-order" (click)="toogle('old')">
+      <i class="fas fa-check-circle"></i>Oldest to newest</li>
+    <li class="article-order" (click)="toogle('new')">
+      <i class="fas fa-check-circle"></i>Newest to oldest</li>
+    <li class="article-order" (click)="toogle('likes')">
+      <i class="fas fa-check-circle"></i>Likes Count</li>
+    <li class="article-order" (click)="toogle('comments')">
+      <i class="fas fa-check-circle"></i>Comments Count</li>
+  </ul>
+  <div></div>
+</div>

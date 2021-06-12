@@ -7,16 +7,16 @@
       src="../../../../assets/images/pregnant-woman-feeling-bakick-vector-19759205.jpg" alt="preg-article-woman" />
   </div>
 
+
   <!-- <SearchArticle
         clickHandler={search}
         isSearched={isSearched} /> -->
 
-  <!-- {!isSearched
-        ? <div>
-            <ArticlesOrder clickHandler={order} />
-            <hr />
-        </div>
-        : null} -->
+  <app-search-article></app-search-article>
+
+  <div *ngIf="!isSearched">
+    <app-order-articles (orderEventEmitter)="order($event)"></app-order-articles>
+  </div>
 
   <div *ngFor="let article of articles$ | async">
     <app-single-article class="media mb-4 single-article" [article]=article></app-single-article>
