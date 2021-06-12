@@ -23,10 +23,7 @@ export class ResponseHandlerInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       tap((success) => {
         if (success instanceof HttpResponse) {
-          if (
-            success.url !== null && success.url.includes('login') ||
-            success.url !== null && success.url.includes('register')
-          ) {
+          if (success.status === 200) {
             this.toastr.success(success.body.message, 'Success');
           }
         }
