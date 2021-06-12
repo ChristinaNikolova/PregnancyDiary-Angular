@@ -1,0 +1,47 @@
+.btn-secondary {
+  background-color: #EF93AE;
+  border-color: #EF93AE;
+  color: white;
+  margin: 10px;
+}
+
+.btn-secondary:hover {
+  background-color: #7BA5F7;
+  border-color: #7BA5F7;
+  color: white;
+}
+
+.article-pic {
+  max-width: 15%;
+  height: 5%;
+  border: 2px;
+  border-color: white;
+  border-radius: 20%;
+  border-width: thick;
+  border-style: solid;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.span-icon{
+  margin-left: 20px;
+}
+
+.fa-folder-open,
+.fa-heart,
+.fa-comments,
+.fa-calendar-alt {
+  color: #7BA5F7;
+  margin-right: 5px;
+}
+
+.unlike-article,
+.like-article {
+  font-weight: bolder;
+}
+
+.unlike-article:hover,
+.like-article:hover,
+.fa-heart:hover {
+  cursor: pointer;
+}

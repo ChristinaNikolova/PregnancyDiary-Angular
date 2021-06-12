@@ -1,0 +1,18 @@
+.articles-wrapper {
+  background-color: #FFE2E0;
+}
+
+.articles-wrapper .custom-font {
+  font-weight: 100;
+}
+
+.main-pic-artilces {
+  border-radius: 20%;
+  border-width: thick;
+  border-style: solid;
+  border-color: white;
+}
+
+.single-article {
+  display: flex;
+}

@@ -15,6 +15,7 @@ import { LoginComponent } from './components/authentication/login/login.componen
 import { RegisterComponent } from './components/authentication/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './components/shared/shared.module';
+import { ArticleModule } from './components/article/article.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SharedModule } from './components/shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    ArticleModule,
     HttpClientModule,
     ReactiveFormsModule,
     ToastrModule.forRoot({

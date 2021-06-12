@@ -1,0 +1,24 @@
+<div class="articles-wrapper">
+  <h1 class="text-center pt-2 custom-font">All Articles</h1>
+  <hr />
+  <!-- <ArticlesCategoriesList /> -->
+  <div class="text-center">
+    <img class="main-pic-artilces mt-4 mb-4"
+      src="../../../../assets/images/pregnant-woman-feeling-bakick-vector-19759205.jpg" alt="preg-article-woman" />
+  </div>
+
+  <!-- <SearchArticle
+        clickHandler={search}
+        isSearched={isSearched} /> -->
+
+  <!-- {!isSearched
+        ? <div>
+            <ArticlesOrder clickHandler={order} />
+            <hr />
+        </div>
+        : null} -->
+
+  <div *ngFor="let article of articles$ | async">
+    <app-single-article class="media mb-4 single-article" [article]=article></app-single-article>
+  </div>
+  <div class="fill pt-1 pb-1"></div>
