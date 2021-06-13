@@ -9,10 +9,13 @@ const QUERY_MIN_LEN = 3;
   styleUrls: ['./search-article.component.css'],
 })
 export class SearchArticleComponent implements OnInit {
-  searchForm: FormGroup;
   @Output() searchEventEmitter = new EventEmitter<string>();
+  searchForm: FormGroup;
+  isSearched: boolean;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {
+    this.isSearched = false;
+  }
 
   ngOnInit(): void {
     this.searchForm = this.fb.group({
@@ -29,6 +32,13 @@ export class SearchArticleComponent implements OnInit {
       return;
     }
 
+    this.isSearched = true;
     this.searchEventEmitter.emit(this.searchForm.value.query);
+  }
+
+  clear(): void {
+    this.searchForm.reset();
+    this.isSearched = false;
+    this.searchEventEmitter.emit('');
   }
 }

@@ -18,7 +18,7 @@ export class ArticlesListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.articles$ = this.articlesService.all();
+    this.all();
   }
 
   order(criteria: string): void {
@@ -26,6 +26,17 @@ export class ArticlesListComponent implements OnInit {
   }
 
   search(query: string): void {
+    if (query === '') {
+      this.isSearched = false;
+      this.all();
+      return;
+    }
+
+    this.isSearched = true;
     this.articles$ = this.articlesService.search(query);
+  }
+
+  private all(): void {
+    this.articles$ = this.articlesService.all();
   }
 }

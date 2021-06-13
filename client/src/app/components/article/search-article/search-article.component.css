@@ -26,3 +26,8 @@
   background-color: #7BA5F7;
   color: white;
 }
+
+.btn:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}

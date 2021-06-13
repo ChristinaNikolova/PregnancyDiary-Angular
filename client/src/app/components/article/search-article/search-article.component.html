@@ -13,7 +13,13 @@
               <div class="form-group">
                 <input type="text" class="form-control" id="query" placeholder="Search" formControlName="query">
               </div>
-              <!-- error={errorMessage} /> -->
+              <div class="alert alert-warning alert-custom-margin"
+                *ngIf="f.query?.errors?.required && f.query?.touched">
+                This field is required
+              </div>
+              <div class="alert alert-warning alert-custom-margin" *ngIf="f.query?.errors?.minlength">
+                The search text should be at least {{f.query.errors?.minlength.requiredLength}} symbols
+              </div>
             </div>
             <div class="col-lg-2">
               <button class="btn" type="submit" [disabled]="searchForm.invalid">Search</button>
@@ -22,10 +28,8 @@
         </form>
       </div>
       <div class="col-lg-2"></div>
-      <div class="text-center mb-1">
-        <!-- {isSearched
-        ? <button class="btn btn-danger custom-danger" onClick={clear}>Clear Result</button>
-        : null} -->
+      <div class="text-center mb-1" *ngIf="isSearched">
+        <button class="btn btn-danger custom-danger" (click)="clear()">Clear Result</button>
       </div>
     </div>
   </div>

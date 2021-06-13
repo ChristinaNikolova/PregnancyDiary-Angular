@@ -1,16 +1,13 @@
 <div class="articles-wrapper">
   <h1 class="text-center pt-2 custom-font">All Articles</h1>
   <hr />
+
   <app-articles-categories-list></app-articles-categories-list>
+
   <div class="text-center">
     <img class="main-pic-artilces mt-4 mb-4"
       src="../../../../assets/images/pregnant-woman-feeling-bakick-vector-19759205.jpg" alt="preg-article-woman" />
   </div>
-
-
-  <!-- <SearchArticle
-        clickHandler={search}
-        isSearched={isSearched} /> -->
 
   <app-search-article (searchEventEmitter)="search($event)"></app-search-article>
 
@@ -18,7 +15,15 @@
     <app-order-articles (orderEventEmitter)="order($event)"></app-order-articles>
   </div>
 
-  <div *ngFor="let article of articles$ | async">
+  <div *ngFor="let article of articles$  | async">
     <app-single-article class="media mb-4 single-article" [article]=article></app-single-article>
   </div>
+
+  <div class="text-center" *ngIf="(articles$ | async)?.length==0">
+    <h3 class="col-lg-12 text-center nothing-found custom-font">Nothing found!</h3>
+    <img class="nothing-found-pic m-3"
+      src="../../../../assets/images/pregnant-woman-concept-in-cute-cartoon-style-free-vector.jpg"
+      alt="nothing-found-pic" />
+  </div>
+
   <div class="fill pt-1 pb-1"></div>

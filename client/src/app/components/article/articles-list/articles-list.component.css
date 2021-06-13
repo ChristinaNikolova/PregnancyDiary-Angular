@@ -16,3 +16,15 @@
 .single-article {
   display: flex;
 }
+
+.nothing-found {
+  color: red;
+}
+
+.nothing-found-pic {
+  max-width: 20%;
+  border-radius: 20%;
+  border-width: thick;
+  border-style: solid;
+  border-color: white;
+}

@@ -9,6 +9,7 @@ import { SingleArticleCategoryComponent } from './single-article-category/single
 import { SearchArticleComponent } from './search-article/search-article.component';
 import { OrderArticlesComponent } from './order-articles/order-articles.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ByCategoryComponent } from './by-category/by-category.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SingleArticleCategoryComponent,
     SearchArticleComponent,
     OrderArticlesComponent,
+    ByCategoryComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule.forChild([
       { path: '', pathMatch: 'full', redirectTo: 'all' },
       { path: 'all', component: ArticlesListComponent },
+      { path: 'by-category/:id', component: ByCategoryComponent },
     ]),
   ],
 })

@@ -18,3 +18,8 @@ a {
   background-color: #E8E0CD;
 }
 
+.alert-custom-margin {
+  margin-top: 2px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}

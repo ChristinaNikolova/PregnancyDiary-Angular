@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import ICategory from '../../shared/models/category/ICategory';
 
@@ -7,10 +7,8 @@ import ICategory from '../../shared/models/category/ICategory';
   templateUrl: './single-article-category.component.html',
   styleUrls: ['./single-article-category.component.css'],
 })
-export class SingleArticleCategoryComponent implements OnInit {
+export class SingleArticleCategoryComponent {
   @Input() category: ICategory;
 
   constructor() {}
-
-  ngOnInit(): void {}
 }
