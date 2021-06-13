@@ -1,1 +1,18 @@
-<p>by-category works!</p>
+<div class="by-category-wrapper">
+  <h1 class="text-center pt-2 custom-font">Articles by <span class="pink-color mr-1">{{categoryName$ | async}}</span>Category</h1>
+  <div class="text-center">
+    <a [routerLink]="['/articles']">
+      <button class="btn btn-clear-article-by-category">Get All Articles</button>
+    </a>
+  </div>
+  <hr />
+  <!-- <ArticlesCategoriesList clickHandler={reload} /> -->
+  <app-articles-categories-list></app-articles-categories-list>
+  <div class="m-3"></div>
+  <hr />
+  <!-- {articles?.map(a =>
+  <SingleArticle key={a.id} id={a.id} title={a.title} shortContent={a.shortContent} picture={a.picture}
+    categoryName={a.categoryName} likesCount={a.likesCount} commentsCount={a.commentsCount}
+    createdOnAsString={a.createdOnAsString} />)} -->
+  <div class="fill pt-1 pb-1"></div>
+</div>

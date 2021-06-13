@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 
 const categoriesBaseUrl = environment.apiBaseUrl + 'categories/';
 const articlesCountByCategoriesUrl = 'getArticlesCountByCategories';
+const categoryNameByIdUrl = 'getNameById';
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +16,13 @@ export class CategoriesService {
   constructor(private http: HttpClient) {}
 
   getArticlesCountByCategories(): Observable<ICategory[]> {
-    return this.http.get<ICategory[]>(categoriesBaseUrl + articlesCountByCategoriesUrl);
+    return this.http.get<ICategory[]>(
+      categoriesBaseUrl + articlesCountByCategoriesUrl
+    );
+  }
+
+  // resolver
+  getCategoryNameById(categoryId: string): Observable<string> {
+    return this.http.get<string>(categoriesBaseUrl + categoryNameByIdUrl + `/${categoryId}`);
   }
 }
