@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import ICategory from 'src/app/components/shared/models/category/ICategory';
 import { environment } from 'src/environments/environment';
@@ -16,13 +17,14 @@ export class CategoriesService {
   constructor(private http: HttpClient) {}
 
   getArticlesCountByCategories(): Observable<ICategory[]> {
-    return this.http.get<ICategory[]>(
-      categoriesBaseUrl + articlesCountByCategoriesUrl
-    );
+    return this.http.get<ICategory[]>(categoriesBaseUrl + articlesCountByCategoriesUrl);
   }
 
-  // resolver
   getCategoryNameById(categoryId: string): Observable<string> {
-    return this.http.get<string>(categoriesBaseUrl + categoryNameByIdUrl + `/${categoryId}`);
+    return this.http.get(categoriesBaseUrl + categoryNameByIdUrl + `/${categoryId}`,
+      {
+        responseType: 'text',
+      }
+    );
   }
 }

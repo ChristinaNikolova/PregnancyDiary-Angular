@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import IArticle from 'src/app/components/shared/models/article/IArticle';
+
 import { environment } from 'src/environments/environment';
+import IArticle from 'src/app/components/shared/models/article/IArticle';
 
 const articlesBaseUrl = environment.apiBaseUrl + 'articles/';
 const allUrl = 'all';

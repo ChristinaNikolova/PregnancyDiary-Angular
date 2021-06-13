@@ -13,7 +13,7 @@ import IArticle from '../../shared/models/article/IArticle';
 })
 export class ByCategoryComponent implements OnInit {
   articles$: Observable<IArticle[]>;
-  categoryName$: Observable<string>;
+  categoryName: Observable<string>;
 
   constructor(
     private articlesService: ArticlesService,
@@ -27,8 +27,7 @@ export class ByCategoryComponent implements OnInit {
     this.route.params.subscribe((res) => {
       categoryId = res['id'];
       this.articles$ = this.articlesService.allCurrentCategory(categoryId);
+      this.categoryName = this.categoriesService.getCategoryNameById(categoryId);
     });
-
-    this.categoryName$ = this.categoriesService.getCategoryNameById(categoryId);
   }
 }
