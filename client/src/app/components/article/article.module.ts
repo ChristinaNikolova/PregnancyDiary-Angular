@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ByCategoryComponent } from './by-category/by-category.component';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import { SingleArticleResolver } from 'src/app/core/resolvers/single-article.resolver';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,13 @@ import { SingleArticleResolver } from 'src/app/core/resolvers/single-article.res
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    SharedModule,
     RouterModule.forChild([
       { path: '', pathMatch: 'full', redirectTo: 'all' },
       { path: 'all', component: ArticlesListComponent },
       { path: 'by-category/:id', component: ByCategoryComponent },
       { path: 'current-article/:id', component: ArticleDetailsComponent, resolve: { singleArticle: SingleArticleResolver }  },
-    ]),
+    ])
   ],
 })
 export class ArticleModule {}

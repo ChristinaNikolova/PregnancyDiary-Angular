@@ -4,18 +4,24 @@ import { RouterModule } from '@angular/router';
 
 import { LoginRegisterPictureComponent } from './login-register-picture/login-register-picture.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CommentsCurrentArticleComponent } from '../comment/comments-current-article/comments-current-article.component';
+import { SingleCommentComponent } from '../comment/single-comment/single-comment.component';
 
 @NgModule({
   declarations: [
   LoginRegisterPictureComponent,
-  NotFoundComponent
+  NotFoundComponent,
+  CommentsCurrentArticleComponent,
+  SingleCommentComponent
 ],
   imports: [
     CommonModule,
-    RouterModule,
+    RouterModule
   ],
   exports:[
-    LoginRegisterPictureComponent
+    LoginRegisterPictureComponent,
+    CommentsCurrentArticleComponent,
+    SingleCommentComponent
   ]
 })
 export class SharedModule { }

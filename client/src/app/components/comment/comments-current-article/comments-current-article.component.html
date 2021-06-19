@@ -1,0 +1,6 @@
+<div class="comments-list-wrapper">
+  <!-- <CreateComment clickHandler={reload} articleId={articleId} /> -->
+  <div *ngFor="let comment of comments$ | async">
+    <app-single-comment [comment]=comment></app-single-comment>
+  </div>
+</div>
