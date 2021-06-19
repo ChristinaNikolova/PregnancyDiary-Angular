@@ -14,6 +14,7 @@ const byCategoryUrl = 'byCategory';
 const detailsArticleUrl = 'details';
 const likeUrl = 'like';
 const dislikeUrl = 'dislike';
+const articlesCountUrl = 'count';
 
 @Injectable({
   providedIn: 'root',
@@ -47,5 +48,9 @@ export class ArticlesService {
 
   dislike(id: string) {
     return this.http.post(articlesBaseUrl + dislikeUrl + `/${id}`, {});
+  }
+
+  getArticlesCount(): Observable<number> {
+    return this.http.get<number>(articlesBaseUrl + articlesCountUrl);
   }
 }

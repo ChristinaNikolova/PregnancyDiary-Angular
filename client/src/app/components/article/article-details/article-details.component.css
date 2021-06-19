@@ -10,16 +10,30 @@
   border-color: white;
 }
 
+.btn {
+  margin-right: 10px;
+  color: white;
+}
+
 .article-details-wrapper button {
   background-color: #EF93AE;
   border-color: #EF93AE;
-  color: white;
 }
 
 .article-details-wrapper button:hover {
   background-color: #7BA5F7;
   border-color: #7BA5F7;
-  color: white;
+}
+
+
+.article-details-wrapper .blue {
+  background-color: #7BA5F7;
+  border-color: #7BA5F7;
+}
+
+.article-details-wrapper .blue:hover {
+  background-color: #EF93AE;
+  border-color: #EF93AE;
 }
 
 .fa-folder-open,

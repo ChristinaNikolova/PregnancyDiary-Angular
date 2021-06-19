@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { ArticlesService } from 'src/app/core/services/articles/articles.service';
 import IArticleDetails from '../../shared/models/article/IArticleDetails';
 
@@ -10,6 +11,7 @@ import IArticleDetails from '../../shared/models/article/IArticleDetails';
 })
 export class ArticleDetailsComponent implements OnInit {
   article: IArticleDetails;
+  articlesCount$: Observable<number>;
 
   constructor(
     private articleService: ArticlesService,
@@ -18,6 +20,7 @@ export class ArticleDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.article = this.route.snapshot.data['singleArticle'];
+    this.articlesCount$ = this.articleService.getArticlesCount();
   }
 
   addToFav(): void {
