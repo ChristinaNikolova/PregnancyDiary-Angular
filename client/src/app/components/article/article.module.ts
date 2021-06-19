@@ -10,6 +10,8 @@ import { SearchArticleComponent } from './search-article/search-article.componen
 import { OrderArticlesComponent } from './order-articles/order-articles.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ByCategoryComponent } from './by-category/by-category.component';
+import { ArticleDetailsComponent } from './article-details/article-details.component';
+import { SingleArticleResolver } from 'src/app/core/resolvers/single-article.resolver';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { ByCategoryComponent } from './by-category/by-category.component';
     SearchArticleComponent,
     OrderArticlesComponent,
     ByCategoryComponent,
+    ArticleDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -28,6 +31,7 @@ import { ByCategoryComponent } from './by-category/by-category.component';
       { path: '', pathMatch: 'full', redirectTo: 'all' },
       { path: 'all', component: ArticlesListComponent },
       { path: 'by-category/:id', component: ByCategoryComponent },
+      { path: 'current-article/:id', component: ArticleDetailsComponent, resolve: { singleArticle: SingleArticleResolver }  },
     ]),
   ],
 })

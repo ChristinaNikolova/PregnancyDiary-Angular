@@ -1,7 +1,7 @@
 <div class="by-category-wrapper">
   <h1 class="text-center pt-2 custom-font">
     Articles by
-    <span class="pink-color mr-1">{{categoryName | async}}</span> Category
+    <span class="pink-color mr-1">{{categoryName$ | async}}</span> Category
   </h1>
   <div class="text-center">
     <a [routerLink]="['/articles']">

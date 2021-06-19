@@ -16,6 +16,7 @@ import { RegisterComponent } from './components/authentication/register/register
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './components/shared/shared.module';
 import { ArticleModule } from './components/article/article.module';
+import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ArticleModule } from './components/article/article.module';
     BrowserAnimationsModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ResponseHandlerInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ResponseHandlerInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
