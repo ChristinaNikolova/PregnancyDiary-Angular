@@ -12,44 +12,43 @@
         <div class="col-lg-12 meta mb-2 mt-2 text-center">
           <span class="single-meta m-2">
             <i class="far fa-calendar-alt"></i>
-            <span class="mr-1 ml-1">Created on:</span>
+            <span>Created on:</span>
             {{article.createdOnAsString}}
           </span>
           <span class="single-meta m-2">
             <i class="far fa-folder-open"></i>
-            <span class="mr-1 ml-1">Category:</span>
+            <span class="category-name">Category:</span>
             <a [routerLink]="['/articles/by-category', article.categoryId]">{{article.categoryName}}</a>
           </span>
           <span class="single-meta m-2">
             <i class="fas fa-user"></i>
-            <span class="mr-1 ml-1">by</span>{{article.author}}
+            <span class="author">by</span>
+            <span class="author-name">{{article.author}}</span>
           </span>
           <span class="single-meta m-2" *ngIf="article.isFavourite">
             <i class="fas fa-heart unlike" (click)="removeFromFav()">
-              <span class="mr-1 ml-1 unlike-article">Remove from favourites</span>
+              <span class="unlike-article">Remove from favourites</span>
             </i>
           </span>
-          <span class="single-meta m-2" *ngIf="!article.isFavourite">
+          <span class="single-meta" *ngIf="!article.isFavourite">
             <i class="far fa-heart" (click)="addToFav()">
-              <span class="mr-1 ml-1 like-article">Add to favourites</span>
+              <span class="like-article">Add to favourites</span>
             </i>
           </span>
         </div>
       </div>
       <div class="col-lg-12">
         <hr />
-        <p class="item-description m-2">
+        <p class="item-description">
           {{article.content}}
         </p>
       </div>
       <div class="col-lg-12 text-center">
         <hr />
-        <a [routerLink]="['/articles']"><button class="btn">Previous article</button></a>
-        <a [routerLink]="['/articles']"><button class="btn">Next article</button></a>
-        <a [routerLink]="['/articles']"><button class="btn blue">Back to all articles</button></a>
+        <a [routerLink]="['/articles']"><button class="btn">Back to all articles</button></a>
       </div>
     </div>
   </div>
-  <hr class="custom-margin-left" />
+  <hr />
   <div class="fill pt-1 pb-1"></div>
 </div>

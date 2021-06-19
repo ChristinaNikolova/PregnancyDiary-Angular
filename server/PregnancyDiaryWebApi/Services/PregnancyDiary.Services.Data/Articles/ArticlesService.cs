@@ -167,15 +167,6 @@
             return isTitleExisting;
         }
 
-        public async Task<int> GetTotalCount()
-        {
-            var count = await this.articlesRepository
-                .All()
-                .CountAsync();
-
-            return count;
-        }
-
         private async Task<Article> GetByIdAsync(string id)
         {
             return await this.articlesRepository

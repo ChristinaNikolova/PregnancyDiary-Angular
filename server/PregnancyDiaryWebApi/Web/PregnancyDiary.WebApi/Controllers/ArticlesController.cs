@@ -146,28 +146,6 @@
             }
         }
 
-        [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesDefaultResponseType]
-        public async Task<ActionResult<int>> Count()
-        {
-            try
-            {
-                var count = await this.articlesService.GetTotalCount();
-
-                return this.Ok(count);
-            }
-            catch (Exception)
-            {
-                return this.BadRequest(new BadRequestViewModel
-                {
-                    Message = Messages.Error.Unknown,
-                });
-            }
-        }
-
         [HttpPost("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

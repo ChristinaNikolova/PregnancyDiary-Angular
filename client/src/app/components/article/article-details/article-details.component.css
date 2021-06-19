@@ -2,6 +2,10 @@
   background-color: #FFE2E0;
 }
 
+.article-details-wrapper .custom-font {
+  font-weight: 100;
+}
+
 .pic-article-details {
   max-width: 80%;
   border-radius: 20%;
@@ -10,39 +14,51 @@
   border-color: white;
 }
 
-.btn {
-  margin-right: 10px;
-  color: white;
-}
-
 .article-details-wrapper button {
   background-color: #EF93AE;
   border-color: #EF93AE;
+  color: white;
 }
 
 .article-details-wrapper button:hover {
   background-color: #7BA5F7;
   border-color: #7BA5F7;
-}
-
-
-.article-details-wrapper .blue {
-  background-color: #7BA5F7;
-  border-color: #7BA5F7;
-}
-
-.article-details-wrapper .blue:hover {
-  background-color: #EF93AE;
-  border-color: #EF93AE;
+  color: white;
 }
 
 .fa-folder-open,
 .article-details-wrapper .fa-heart,
 .fa-comments,
-.fa-calendar-alt {
+.fa-calendar-alt,
+.fa-user {
   color: #7BA5F7;
 }
 
 .article-details-wrapper .unlike {
   color: #EF93AE;
+}
+
+.article-details-wrapper i {
+  margin-right: 5px;
+}
+
+.unlike-article,
+.like-article {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.category-name,
+.author {
+  margin-right: 5px;
+}
+
+.author-name {
+  font-weight: bold;
+  color: #7BA5F7;
+}
+
+.item-description {
+  margin: 7px 50px;
+  text-align: justify;
 }

@@ -24,7 +24,5 @@
         Task UpdateAsync(string id, string title, string content, string categoryName, string picture);
 
         Task<string> GetIdByTitleAsync(string title);
-
-        Task<int> GetTotalCount();
     }
 }

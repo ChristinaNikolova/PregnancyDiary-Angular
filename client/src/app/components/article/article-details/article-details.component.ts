@@ -11,7 +11,6 @@ import IArticleDetails from '../../shared/models/article/IArticleDetails';
 })
 export class ArticleDetailsComponent implements OnInit {
   article: IArticleDetails;
-  articlesCount$: Observable<number>;
 
   constructor(
     private articleService: ArticlesService,
@@ -20,7 +19,6 @@ export class ArticleDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.article = this.route.snapshot.data['singleArticle'];
-    this.articlesCount$ = this.articleService.getArticlesCount();
   }
 
   addToFav(): void {
