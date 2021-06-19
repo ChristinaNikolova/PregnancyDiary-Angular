@@ -6,19 +6,19 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import IArticle from 'src/app/components/shared/models/article/IArticle';
+import IArticleDetails from 'src/app/components/shared/models/article/IArticleDetails';
 import { ArticlesService } from '../services/articles/articles.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class SingleArticleResolver implements Resolve<IArticle> {
+export class SingleArticleResolver implements Resolve<IArticleDetails> {
 
   constructor(private articlesService: ArticlesService) {}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IArticle> {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IArticleDetails> {
     const id: string = route.params['id'];
-    console.log(id);
+    
     return this.articlesService.getDetails(id);
   }
 }

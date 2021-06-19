@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ArticlesService } from 'src/app/core/services/articles/articles.service';
-import IArticle from '../../shared/models/article/IArticle';
+import IArticleDetails from '../../shared/models/article/IArticleDetails';
 
 @Component({
   selector: 'app-article-details',
@@ -9,7 +9,7 @@ import IArticle from '../../shared/models/article/IArticle';
   styleUrls: ['./article-details.component.css'],
 })
 export class ArticleDetailsComponent implements OnInit {
-  article: IArticle;
+  article: IArticleDetails;
 
   constructor(
     private articleService: ArticlesService,
@@ -17,8 +17,22 @@ export class ArticleDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log("in comp 1");
     this.article = this.route.snapshot.data['singleArticle'];
-    console.log("in comp 2");
+  }
+
+  addToFav(): void {
+    this.articleService.like(this.article.id).subscribe((_) => {
+      this.articleService.getDetails(this.article.id).subscribe((data) => {
+        this.article = data;
+      });
+    });
+  }
+
+  removeFromFav(): void {
+    this.articleService.dislike(this.article.id).subscribe((_) => {
+      this.articleService.getDetails(this.article.id).subscribe((data) => {
+        this.article = data;
+      });
+    });
   }
 }
