@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import IComment from '../../shared/models/comment/IComment';
 
@@ -7,10 +7,8 @@ import IComment from '../../shared/models/comment/IComment';
   templateUrl: './single-comment.component.html',
   styleUrls: ['./single-comment.component.css'],
 })
-export class SingleCommentComponent implements OnInit {
+export class SingleCommentComponent {
   @Input() comment: IComment;
 
   constructor() {}
-
-  ngOnInit(): void {}
 }

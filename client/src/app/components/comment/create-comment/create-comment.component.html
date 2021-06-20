@@ -1,0 +1,21 @@
+<div class="create-comment-wrapper">
+  <h2 class="custom-font">Comments</h2>
+  <div class="post post-content">
+    <h5 class="comments-title-second-title custom-font">Leave comment</h5>
+    <form class="comment-form" [formGroup]="createCommentForm" (submit)="create()">
+      <div class="form-group">
+        <textarea type="text" cols="10" rows="7" class="form-control" id="content" formControlName="content" placeholder="Write your comment..."></textarea>
+      </div>
+      <div class="alert alert-warning alert-custom-margin" *ngIf="f.content?.errors?.required && f.content?.touched">
+        This field is required
+      </div>
+      <div class="alert alert-warning alert-custom-margin" *ngIf="f.content?.errors?.minlength">
+        The content should be at least {{f.content.errors?.minlength.requiredLength}} symbols
+      </div>
+      <div class="alert alert-warning alert-custom-margin" *ngIf="f.content?.errors?.maxlength">
+        The content should be maximal {{f.content.errors?.maxlength.requiredLength}} symbols
+      </div>
+      <button class="btn mt-4" type="submit" [disabled]="createCommentForm.invalid"> Add Comment</button>
+    </form>
+  </div>
+</div>

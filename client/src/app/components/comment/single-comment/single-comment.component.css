@@ -6,3 +6,15 @@
 .comment-content {
   font-size: 20px;
 }
+
+.post {
+  overflow: auto;
+  background-color: #E8E0CD;
+  margin: 15px;
+  position: relative;
+}
+
+.post-content {
+  display: block;
+  padding: 10px;
+}

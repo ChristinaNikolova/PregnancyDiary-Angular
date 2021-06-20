@@ -6,22 +6,27 @@ import { LoginRegisterPictureComponent } from './login-register-picture/login-re
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CommentsCurrentArticleComponent } from '../comment/comments-current-article/comments-current-article.component';
 import { SingleCommentComponent } from '../comment/single-comment/single-comment.component';
+import { CreateCommentComponent } from '../comment/create-comment/create-comment.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
   LoginRegisterPictureComponent,
   NotFoundComponent,
   CommentsCurrentArticleComponent,
-  SingleCommentComponent
+  SingleCommentComponent,
+  CreateCommentComponent
 ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports:[
     LoginRegisterPictureComponent,
     CommentsCurrentArticleComponent,
-    SingleCommentComponent
+    SingleCommentComponent,
+    CreateCommentComponent
   ]
 })
 export class SharedModule { }

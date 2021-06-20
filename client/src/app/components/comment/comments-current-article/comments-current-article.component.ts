@@ -16,6 +16,10 @@ export class CommentsCurrentArticleComponent implements OnInit {
   constructor(private commentsService: CommentsService) {}
 
   ngOnInit(): void {
+    this.reload();
+  }
+
+  reload(): void {
     this.comments$ = this.commentsService.getForCurrentArticle(this.articleId);
   }
 }

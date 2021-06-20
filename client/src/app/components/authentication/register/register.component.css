@@ -18,9 +18,9 @@
 }
 
 .btn-dark:disabled {
-    cursor: not-allowed;
-    pointer-events: all !important;
-  }
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
 
 .register-form {
   justify-content: center;
