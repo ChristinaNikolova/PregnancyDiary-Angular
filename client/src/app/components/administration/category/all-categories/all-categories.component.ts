@@ -7,15 +7,18 @@ import { CategoriesService } from 'src/app/core/services/categories/categories.s
 @Component({
   selector: 'app-all-categories',
   templateUrl: './all-categories.component.html',
-  styleUrls: ['./all-categories.component.css']
+  styleUrls: ['./all-categories.component.css'],
 })
 export class AllCategoriesComponent implements OnInit {
-categories$: Observable<IAdminCategory[]>;
+  categories$: Observable<IAdminCategory[]>;
 
-  constructor(private categoriesService: CategoriesService) { }
+  constructor(private categoriesService: CategoriesService) {}
 
   ngOnInit(): void {
-    this.categories$ = this.categoriesService.getAllForAdministration();
+    this.reload();
   }
 
+  reload(): void {
+    this.categories$ = this.categoriesService.getAllForAdministration();
+  }
 }

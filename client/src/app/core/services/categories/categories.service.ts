@@ -11,7 +11,8 @@ const articlesCountByCategoriesUrl = 'getArticlesCountByCategories';
 const categoryNameByIdUrl = 'getNameById';
 
 const categoriesAdminBaseUrl = environment.apiBaseAdminUrl + 'categories/';
-const allCategoriesUrl = 'all'
+const allCategoriesUrl = 'all';
+const deleteCategoryUrl = 'delete';
 
 @Injectable({
   providedIn: 'root',
@@ -31,7 +32,11 @@ export class CategoriesService {
     );
   }
 
-  getAllForAdministration():Observable<IAdminCategory[]>{
+  getAllForAdministration(): Observable<IAdminCategory[]> {
     return this.http.get<IAdminCategory[]>(categoriesAdminBaseUrl + allCategoriesUrl);
   }
+
+  remove(id: string){
+    return this.http.delete(categoriesAdminBaseUrl + deleteCategoryUrl + `/${id}`);
+  };
 }
