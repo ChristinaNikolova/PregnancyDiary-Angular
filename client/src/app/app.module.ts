@@ -7,16 +7,19 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ResponseHandlerInterceptor } from './core/interceptors/response-handler.interceptor';
+import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from './components/shared/shared.module';
+import { ArticleModule } from './components/article/article.module';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { LoginComponent } from './components/authentication/login/login.component';
 import { RegisterComponent } from './components/authentication/register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from './components/shared/shared.module';
-import { ArticleModule } from './components/article/article.module';
-import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { AdministrationModule } from './components/administration/administration.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
     ToastrModule.forRoot({
       positionClass: 'toast-top-right'
     }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AdministrationModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ResponseHandlerInterceptor, multi: true },

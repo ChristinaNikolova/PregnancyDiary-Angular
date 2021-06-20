@@ -4,6 +4,7 @@ import { LoginComponent } from './components/authentication/login/login.componen
 import { RegisterComponent } from './components/authentication/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/shared/not-found/not-found.component';
+import { AdminGuard } from './core/guards/admin.guard';
 import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'articles', loadChildren: './components/article/article.module#ArticleModule', canActivate:[AuthGuard] },
+  { path: 'articles', loadChildren: './components/article/article.module#ArticleModule', canActivate: [AuthGuard] },
+  { path: 'administration', loadChildren: './components/administration/administration.module#AdministrationModule', canActivate: [AdminGuard] },
   { path: '**', component: NotFoundComponent }
 ];
 

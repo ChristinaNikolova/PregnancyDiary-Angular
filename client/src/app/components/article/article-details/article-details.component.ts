@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { ArticlesService } from 'src/app/core/services/articles/articles.service';
 import IArticleDetails from '../../shared/models/article/IArticleDetails';
 
