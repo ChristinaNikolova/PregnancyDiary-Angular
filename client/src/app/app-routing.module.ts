@@ -4,13 +4,14 @@ import { LoginComponent } from './components/authentication/login/login.componen
 import { RegisterComponent } from './components/authentication/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/shared/not-found/not-found.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'articles', loadChildren: './components/article/article.module#ArticleModule' },
+  { path: 'articles', loadChildren: './components/article/article.module#ArticleModule', canActivate:[AuthGuard] },
   { path: '**', component: NotFoundComponent }
 ];
 
