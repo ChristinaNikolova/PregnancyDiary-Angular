@@ -1,1 +1,31 @@
-<p>dashboard works!</p>
+<div class="admin-home-wrapper">
+  <h1 class="text-center custom-font p-1">Welcome to Administration</h1>
+  <hr class="hr-admin-dashboard" />
+  <div>
+    <ul class="custom-font-li">
+      <li class="m-1">
+        Categories
+        <div class="mt-2 mb-2">
+          <a [routerLink]="['/admin/categories']">
+            <button class="btn all-admin-area">All Categories</button>
+          </a>
+          <a [routerLink]="['/admin/categories/create']">
+            <button class="btn create-admin-area">Create Category</button>
+          </a>
+        </div>
+      </li>
+      <li class="m-1">
+        Articles
+        <div class="mt-2 mb-2">
+          <a [routerLink]="['/admin/articles']">
+            <button class="btn all-admin-area">All Articles</button>
+          </a>
+          <a [routerLink]="['/admin/articles/create']">
+            <button class="btn create-admin-area">Create Article</button>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="fill pt-1 pb-1"></div>
+</div>
