@@ -4,7 +4,7 @@
 }
 
 .comment-content {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .post {
@@ -17,4 +17,8 @@
 .post-content {
   display: block;
   padding: 10px;
+}
+
+i {
+  margin-right: 5px;
 }
