@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import IAdminArticle from 'src/app/components/shared/models/article/IAdminArticle';
+import { ArticlesService } from 'src/app/core/services/articles/articles.service';
 
 @Component({
   selector: '[app-article-single-row]',
@@ -9,12 +10,17 @@ import IAdminArticle from 'src/app/components/shared/models/article/IAdminArticl
 })
 export class ArticleSingleRowComponent implements OnInit {
   @Input() article: IAdminArticle;
+  @Output() removeArticleEventEmitter = new EventEmitter();
 
-  constructor() {}
+  constructor(private articlesService: ArticlesService) {}
 
   ngOnInit(): void {}
 
   remove(): void {
-    console.log('in remove');
+    this.articlesService
+    .remove(this.article.id)
+    .subscribe((_) => {
+      this.removeArticleEventEmitter.emit();
+    });
   }
 }

@@ -59,4 +59,21 @@ export class ArticlesService {
   getAllForAdministration(): Observable<IAdminArticle[]> {
     return this.http.get<IAdminArticle[]>(articlesAdminBaseUrl + allAdminArticlesUrl);
   }
+
+  remove(id: string){
+    return this.http.delete(articlesAdminBaseUrl + deleteArticleUrl + `/${id}`);
+  };
+
+  // getDetailsForUpdate(id: string) : Observable<IAdminCategory>{
+  //   return this.http.get<IAdminCategory>(categoriesAdminBaseUrl + updateCategoryUrl + `/${id}`);
+  // }
+
+  // update(category: IAdminCategory, id: string) {
+  //   category.id = id;
+  //   return this.http.put(categoriesAdminBaseUrl + updateCategoryUrl, category);
+  // }
+
+  // create(category: IAdminCategory) {
+  //   return this.http.post(categoriesAdminBaseUrl + createCategoryUrl, category);
+  // }
 }

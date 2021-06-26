@@ -16,7 +16,9 @@ export class CategorySingleRowComponent implements OnInit {
   ngOnInit(): void {}
 
   remove(): void {
-    this.categoriesService.remove(this.category.id).subscribe((_) => {
+    this.categoriesService
+    .remove(this.category.id)
+    .subscribe((_) => {
        this.deleteCategoryEventEmitter.emit();
     });
   }
