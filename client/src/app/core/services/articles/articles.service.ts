@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import IArticle from 'src/app/components/shared/models/article/IArticle';
 import IArticleDetails from 'src/app/components/shared/models/article/IArticleDetails';
+import IAdminArticle from 'src/app/components/shared/models/article/IAdminArticle';
 
 const articlesBaseUrl = environment.apiBaseUrl + 'articles/';
 const allUrl = 'all';
@@ -14,6 +15,12 @@ const byCategoryUrl = 'byCategory';
 const detailsArticleUrl = 'details';
 const likeUrl = 'like';
 const dislikeUrl = 'dislike';
+
+const articlesAdminBaseUrl = environment.apiBaseAdminUrl + 'articles/';
+const allAdminArticlesUrl = 'all';
+const deleteArticleUrl = 'delete';
+const updateCategoryUrl = 'update';
+const createCategoryUrl = 'create';
 
 @Injectable({
   providedIn: 'root',
@@ -47,5 +54,9 @@ export class ArticlesService {
 
   dislike(id: string) {
     return this.http.post(articlesBaseUrl + dislikeUrl + `/${id}`, {});
+  }
+
+  getAllForAdministration(): Observable<IAdminArticle[]> {
+    return this.http.get<IAdminArticle[]>(articlesAdminBaseUrl + allAdminArticlesUrl);
   }
 }

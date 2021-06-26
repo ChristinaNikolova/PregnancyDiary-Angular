@@ -1,0 +1,23 @@
+<td class="color-link">
+  <a [routerLink]="['/articles/current-article/', article.id]">{{article.title}} </a>
+</td>
+<td>
+  <img class="img-article-admin" src="{{article.picture}}" alt="{{article.title}}" />
+</td>
+<td class="color-link">
+  <a [routerLink]="['/articles/by-category/', article.categoryId]">{{article.categoryName}}</a>
+</td>
+<td>
+  {{article.likesCount}}
+</td>
+<td>
+  {{article.commentsCount}}
+</td>
+<td>
+  <a [routerLink]="['/admin/articles/update/', article.id]">
+    <button class="btn btn-warning">Update</button>
+  </a>
+</td>
+<td>
+  <button class="btn btn-danger" (click)="remove()">Delete</button>
+</td>

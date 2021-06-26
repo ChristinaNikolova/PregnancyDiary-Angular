@@ -28,3 +28,8 @@
   border-style: solid;
   border-color: white;
 }
+
+hr {
+  margin-left: 40px;
+  margin-right: 40px;
+}

@@ -1,11 +1,7 @@
-export default interface IArticle {
-  id: string;
-  title: string;
+import IAdminArticle from './IAdminArticle';
+
+export default interface IArticle extends IAdminArticle {
   content: string;
   shortContent: string;
-  picture: string;
-  categoryName: string;
-  likesCount: number;
-  commentsCount: number;
   createdOnAsString: string;
 }
