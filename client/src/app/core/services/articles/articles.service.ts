@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import IArticle from 'src/app/components/shared/models/article/IArticle';
 import IArticleDetails from 'src/app/components/shared/models/article/IArticleDetails';
 import IAdminArticle from 'src/app/components/shared/models/article/IAdminArticle';
+import IUpdateArticle from 'src/app/components/shared/models/article/IUpdateArticle';
 
 const articlesBaseUrl = environment.apiBaseUrl + 'articles/';
 const allUrl = 'all';
@@ -64,9 +65,9 @@ export class ArticlesService {
     return this.http.delete(articlesAdminBaseUrl + deleteArticleUrl + `/${id}`);
   };
 
-  // getDetailsForUpdate(id: string) : Observable<IAdminCategory>{
-  //   return this.http.get<IAdminCategory>(categoriesAdminBaseUrl + updateCategoryUrl + `/${id}`);
-  // }
+  getDetailsForUpdate(id: string) : Observable<IUpdateArticle>{
+    return this.http.get<IUpdateArticle>(articlesAdminBaseUrl + updateCategoryUrl + `/${id}`);
+  }
 
   // update(category: IAdminCategory, id: string) {
   //   category.id = id;

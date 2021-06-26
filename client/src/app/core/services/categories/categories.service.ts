@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import IAdminCategory from 'src/app/components/shared/models/category/IAdminCategory';
+import IBaseCategory from 'src/app/components/shared/models/category/IBaseCategory';
 import ICategory from 'src/app/components/shared/models/category/ICategory';
 import { environment } from 'src/environments/environment';
 
@@ -15,6 +16,7 @@ const allCategoriesUrl = 'all';
 const deleteCategoryUrl = 'delete';
 const updateCategoryUrl = 'update';
 const createCategoryUrl = 'create';
+const allNamesUrl = 'allNames'
 
 @Injectable({
   providedIn: 'root',
@@ -53,5 +55,9 @@ export class CategoriesService {
 
   create(category: IAdminCategory) {
     return this.http.post(categoriesAdminBaseUrl + createCategoryUrl, category);
+  }
+
+  getAllNames(): Observable<IBaseCategory[]> {
+    return this.http.get<IBaseCategory[]>(categoriesBaseUrl + allNamesUrl);
   }
 }

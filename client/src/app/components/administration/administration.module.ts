@@ -11,6 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CreateCategoryComponent } from './category/create-category/create-category.component';
 import { AllArticlesComponent } from './article/all-articles/all-articles.component';
 import { ArticleSingleRowComponent } from './article/article-single-row/article-single-row.component';
+import { UpdateArticleComponent } from './article/update-article/update-article.component';
+import { UpdateArticleResolver } from 'src/app/core/resolvers/update-article.resolver';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { ArticleSingleRowComponent } from './article/article-single-row/article-
     UpdateCategoryComponent,
     CreateCategoryComponent,
     AllArticlesComponent,
-    ArticleSingleRowComponent
+    ArticleSingleRowComponent,
+    UpdateArticleComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +34,8 @@ import { ArticleSingleRowComponent } from './article/article-single-row/article-
       { path: 'categories', component: AllCategoriesComponent },
       { path: 'categories/update/:id', component: UpdateCategoryComponent, resolve: { updateCategory: UpdateCategoryResolver} },
       { path: 'categories/create', component: CreateCategoryComponent },
-      { path: 'articles', component: AllArticlesComponent }
+      { path: 'articles', component: AllArticlesComponent },
+      { path: 'articles/update/:id', component: UpdateArticleComponent, resolve: {updateArticle: UpdateArticleResolver} }
     ])
   ]
 })

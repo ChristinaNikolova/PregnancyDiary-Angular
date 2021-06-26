@@ -1,5 +1,5 @@
-export default interface ICategory{
-    id: string;
-    name: string;
-    articlesCount: number;
+import IBaseCategory from './IBaseCategory';
+
+export default interface ICategory extends IBaseCategory {
+  articlesCount: number;
 }
