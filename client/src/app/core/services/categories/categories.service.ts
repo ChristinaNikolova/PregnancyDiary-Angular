@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import IAdminCategory from 'src/app/components/shared/models/category/IAdminCategory';
@@ -13,6 +13,7 @@ const categoryNameByIdUrl = 'getNameById';
 const categoriesAdminBaseUrl = environment.apiBaseAdminUrl + 'categories/';
 const allCategoriesUrl = 'all';
 const deleteCategoryUrl = 'delete';
+const updateCategoryUrl = 'update';
 
 @Injectable({
   providedIn: 'root',
@@ -39,4 +40,13 @@ export class CategoriesService {
   remove(id: string){
     return this.http.delete(categoriesAdminBaseUrl + deleteCategoryUrl + `/${id}`);
   };
+
+  getDetailsForUpdate(id: string) : Observable<IAdminCategory>{
+    return this.http.get<IAdminCategory>(categoriesAdminBaseUrl + updateCategoryUrl + `/${id}`);
+  }
+
+  update(category: IAdminCategory, id: string) {
+    category.id = id;
+    return this.http.put(categoriesAdminBaseUrl + updateCategoryUrl, category);
+  }
 }

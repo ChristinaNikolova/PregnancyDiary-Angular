@@ -1,0 +1,37 @@
+<div class="create-category-wrapper">
+  <div class="row space-top">
+    <div class="col-md-12">
+      <h1 class="custom-font p-2 text-center">Update Category</h1>
+      <hr />
+    </div>
+  </div>
+  <form [formGroup]="updateForm" (submit)="update()">
+    <div class="row create-category-form">
+      <div class="col-lg-8">
+        <div class="form-group">
+          <label class="form-control-label" for="name">Name</label>
+          <input class="form-control" type="text" name="name" id="name" formControlName="name">
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.name?.errors?.required && f.name?.touched">
+          This field is required
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.name?.errors?.minlength">
+          The name should be at least {{f.name?.errors?.minlength.requiredLength}} symbols
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.name?.errors?.maxlength">
+          The name should be max {{f.name?.errors?.maxlength.requiredLength}} symbols
+        </div>
+        <div class="form-group">
+          <label class="form-control-label" for="picture">Picture</label>
+          <input class="form-control" type="url" name="picture" id="picture" formControlName="picture">
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.picture?.errors?.required && f.picture?.touched">
+          This field is required
+        </div>
+        <div class="text-center">
+          <button class="btn" type="submit" [disabled]="updateForm.invalid">Update</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
