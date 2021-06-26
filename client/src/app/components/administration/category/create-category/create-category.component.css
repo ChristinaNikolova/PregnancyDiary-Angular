@@ -1,0 +1,38 @@
+.create-category-wrapper {
+  background-color: #FFE2E0;
+  height: 650px;
+}
+
+.create-category-wrapper .custom-font {
+  font-weight: 100;
+}
+
+.create-category-form {
+  justify-content: center;
+}
+
+.create-category-wrapper button {
+  background-color: #EF93AE;
+  border-color: #EF93AE;
+  color: white;
+  margin-top: 20px;
+}
+
+.create-category-wrapper button:hover {
+  background-color: #7BA5F7;
+  border-color: #7BA5F7;
+  color: white;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+.control-label {
+  margin-bottom: 5px;
+}

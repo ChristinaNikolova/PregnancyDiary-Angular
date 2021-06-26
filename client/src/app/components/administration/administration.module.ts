@@ -8,13 +8,15 @@ import { AllCategoriesComponent } from './category/all-categories/all-categories
 import { CategorySingleRowComponent } from './category/category-single-row/category-single-row.component';
 import { UpdateCategoryComponent } from './category/update-category/update-category.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CreateCategoryComponent } from './category/create-category/create-category.component';
 
 @NgModule({
   declarations: [
     DashboardComponent, 
     AllCategoriesComponent, 
     CategorySingleRowComponent,
-    UpdateCategoryComponent],
+    UpdateCategoryComponent,
+    CreateCategoryComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -22,7 +24,8 @@ import { ReactiveFormsModule } from '@angular/forms';
       { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'categories', component: AllCategoriesComponent },
-      { path: 'categories/update/:id', component: UpdateCategoryComponent, resolve: { updateCategory: UpdateCategoryResolver} }
+      { path: 'categories/update/:id', component: UpdateCategoryComponent, resolve: { updateCategory: UpdateCategoryResolver} },
+      { path: 'categories/create', component: CreateCategoryComponent }
     ])
   ]
 })
