@@ -3,6 +3,10 @@
   height: 850px;
 }
 
+.update-article-wrapper .custom-font {
+  font-weight: 100;
+}
+
 .update-article-form {
   justify-content: center;
 }
@@ -11,10 +15,29 @@
   background-color: #EF93AE;
   border-color: #EF93AE;
   color: white;
+  margin-top: 20px;
 }
 
 .update-article-wrapper button:hover {
   background-color: #7BA5F7;
   border-color: #7BA5F7;
   color: white;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+.control-label {
+  margin-bottom: 5px;
+}
+
+hr {
+  margin-left: 40px;
+  margin-right: 40px;
 }

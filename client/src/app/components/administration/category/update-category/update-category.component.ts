@@ -44,7 +44,7 @@ export class UpdateCategoryComponent implements OnInit {
     this.categoriesService
       .update(this.updateForm.value, this.category.id)
       .subscribe((_) => {
-        this.router.navigate(["/administration/categories"]);
+        this.router.navigate(['/administration/categories']);
       });
   }
 }

@@ -20,8 +20,8 @@ const dislikeUrl = 'dislike';
 const articlesAdminBaseUrl = environment.apiBaseAdminUrl + 'articles/';
 const allAdminArticlesUrl = 'all';
 const deleteArticleUrl = 'delete';
-const updateCategoryUrl = 'update';
-const createCategoryUrl = 'create';
+const updateArticleUrl = 'update';
+const createArticleUrl = 'create';
 
 @Injectable({
   providedIn: 'root',
@@ -66,15 +66,11 @@ export class ArticlesService {
   };
 
   getDetailsForUpdate(id: string) : Observable<IUpdateArticle>{
-    return this.http.get<IUpdateArticle>(articlesAdminBaseUrl + updateCategoryUrl + `/${id}`);
+    return this.http.get<IUpdateArticle>(articlesAdminBaseUrl + updateArticleUrl + `/${id}`);
   }
 
-  // update(category: IAdminCategory, id: string) {
-  //   category.id = id;
-  //   return this.http.put(categoriesAdminBaseUrl + updateCategoryUrl, category);
-  // }
-
-  // create(category: IAdminCategory) {
-  //   return this.http.post(categoriesAdminBaseUrl + createCategoryUrl, category);
-  // }
+  update(article: IUpdateArticle, id: string) {
+    article.id = id;
+    return this.http.put(articlesAdminBaseUrl + updateArticleUrl, article);
+  }
 }
