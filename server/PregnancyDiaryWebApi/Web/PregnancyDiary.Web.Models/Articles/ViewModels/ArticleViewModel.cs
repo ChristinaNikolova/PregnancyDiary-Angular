@@ -10,7 +10,9 @@
         public string Content { get; set; }
 
         public string ShortContent
-            => this.Content.Substring(0, 250);
+            => this.Content.Length >= 250
+            ? this.Content.Substring(0, 250)
+            : this.Content.Substring(0, this.Content.Length);
 
         public DateTime CreatedOn { get; set; }
 

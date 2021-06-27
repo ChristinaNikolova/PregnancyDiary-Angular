@@ -13,6 +13,7 @@ import { AllArticlesComponent } from './article/all-articles/all-articles.compon
 import { ArticleSingleRowComponent } from './article/article-single-row/article-single-row.component';
 import { UpdateArticleComponent } from './article/update-article/update-article.component';
 import { UpdateArticleResolver } from 'src/app/core/resolvers/update-article.resolver';
+import { CreateArticleComponent } from './article/create-article/create-article.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UpdateArticleResolver } from 'src/app/core/resolvers/update-article.res
     CreateCategoryComponent,
     AllArticlesComponent,
     ArticleSingleRowComponent,
-    UpdateArticleComponent
+    UpdateArticleComponent,
+    CreateArticleComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { UpdateArticleResolver } from 'src/app/core/resolvers/update-article.res
       { path: 'categories/update/:id', component: UpdateCategoryComponent, resolve: { updateCategory: UpdateCategoryResolver} },
       { path: 'categories/create', component: CreateCategoryComponent },
       { path: 'articles', component: AllArticlesComponent },
-      { path: 'articles/update/:id', component: UpdateArticleComponent, resolve: {updateArticle: UpdateArticleResolver} }
+      { path: 'articles/update/:id', component: UpdateArticleComponent, resolve: {updateArticle: UpdateArticleResolver} },
+      { path: 'articles/create', component: CreateArticleComponent }
     ])
   ]
 })

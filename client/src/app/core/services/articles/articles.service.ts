@@ -7,6 +7,7 @@ import IArticle from 'src/app/components/shared/models/article/IArticle';
 import IArticleDetails from 'src/app/components/shared/models/article/IArticleDetails';
 import IAdminArticle from 'src/app/components/shared/models/article/IAdminArticle';
 import IUpdateArticle from 'src/app/components/shared/models/article/IUpdateArticle';
+import ICreateArticle from 'src/app/components/shared/models/article/ICreateArticle';
 
 const articlesBaseUrl = environment.apiBaseUrl + 'articles/';
 const allUrl = 'all';
@@ -72,5 +73,9 @@ export class ArticlesService {
   update(article: IUpdateArticle, id: string) {
     article.id = id;
     return this.http.put(articlesAdminBaseUrl + updateArticleUrl, article);
+  }
+
+  create(article: ICreateArticle){
+    return this.http.post(articlesAdminBaseUrl + createArticleUrl, article);
   }
 }

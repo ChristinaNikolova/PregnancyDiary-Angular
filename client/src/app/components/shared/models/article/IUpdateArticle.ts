@@ -1,7 +1,5 @@
-export default interface IUpdateArticle {
+import ICreateArticle from './ICreateArticle';
+
+export default interface IUpdateArticle extends ICreateArticle {
   id: string;
-  title: string;
-  content: string;
-  categoryName: string;
-  picture: string;
 }
