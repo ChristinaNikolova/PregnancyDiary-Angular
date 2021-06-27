@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import IArticle from '../../shared/models/article/IArticle';
 
@@ -7,10 +7,8 @@ import IArticle from '../../shared/models/article/IArticle';
   templateUrl: './single-article.component.html',
   styleUrls: ['./single-article.component.css'],
 })
-export class SingleArticleComponent implements OnInit {
+export class SingleArticleComponent {
   @Input() article: IArticle;
 
   constructor() {}
-
-  ngOnInit(): void {}
 }

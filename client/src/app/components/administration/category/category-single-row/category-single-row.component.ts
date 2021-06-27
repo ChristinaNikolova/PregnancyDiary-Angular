@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import IAdminCategory from 'src/app/components/shared/models/category/IAdminCategory';
 import { CategoriesService } from 'src/app/core/services/categories/categories.service';
 
@@ -7,13 +7,11 @@ import { CategoriesService } from 'src/app/core/services/categories/categories.s
   templateUrl: './category-single-row.component.html',
   styleUrls: ['./category-single-row.component.css'],
 })
-export class CategorySingleRowComponent implements OnInit {
+export class CategorySingleRowComponent {
   @Input() category: IAdminCategory;
   @Output() deleteCategoryEventEmitter = new EventEmitter<void>();
 
   constructor(private categoriesService: CategoriesService) {}
-
-  ngOnInit(): void {}
 
   remove(): void {
     this.categoriesService

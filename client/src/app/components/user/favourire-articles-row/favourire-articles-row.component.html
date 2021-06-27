@@ -1,0 +1,14 @@
+<td class="color-link">
+  <a [routerLink]="['/articles/current-article/', favArticle.articleId]">
+    <h6>{{favArticle.articleTitle}}</h6>
+  </a>
+</td>
+<td>
+  <img class="pic-fav-articles" src={{favArticle.articlePicture}} alt="article-pic" />
+</td>
+<td class="color-link">
+  <a [routerLink]="['/articles/by-category/', favArticle.articleCategoryId]">{{favArticle.articleCategoryName}}</a>
+</td>
+<td>
+  <button class="btn btn-danger" (click)="remove()">Remove</button>
+</td>

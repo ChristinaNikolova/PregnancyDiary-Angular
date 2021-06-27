@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'articles', loadChildren: './components/article/article.module#ArticleModule', canActivate: [AuthGuard] },
+  { path: 'users', loadChildren: './components/user/user.module#UserModule', canActivate: [AuthGuard] },
   { path: 'administration', loadChildren: './components/administration/administration.module#AdministrationModule', canActivate: [AdminGuard] },
   { path: '**', component: NotFoundComponent }
 ];

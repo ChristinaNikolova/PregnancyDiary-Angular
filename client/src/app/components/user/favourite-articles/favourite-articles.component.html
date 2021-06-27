@@ -1,0 +1,20 @@
+<div class="favourite-articles-wrapper">
+  <h1 class="text-center custom-font p-1">My Favourite Articles</h1>
+  <hr />
+  <div class="container">
+    <table class="table table-bordered table-hover table-background">
+      <thead class="text-center">
+        <tr>
+          <th>Title</th>
+          <th>Picture</th>
+          <th>Category</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let favArticle of favArticles$ | async">
+        <tr app-favourire-articles-row [favArticle]=favArticle (removeFromFavArticlesEventEmitter)="reload()" class="text-center"></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="fill pt-1 pb-1"></div>
+</div>

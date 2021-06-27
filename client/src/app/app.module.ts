@@ -20,6 +20,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { LoginComponent } from './components/authentication/login/login.component';
 import { RegisterComponent } from './components/authentication/register/register.component';
 import { AdministrationModule } from './components/administration/administration.module';
+import { UserModule } from './components/user/user.module';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AdministrationModule } from './components/administration/administration
       positionClass: 'toast-top-right'
     }),
     BrowserAnimationsModule,
-    AdministrationModule
+    AdministrationModule,
+    UserModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ResponseHandlerInterceptor, multi: true },
