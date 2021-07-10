@@ -3,7 +3,7 @@
 </td>
 <td>{{category.articlesCount}}</td>
 <td>
-  <img class="img-category-admin" src={{category.picture}} alt="{{category.name}}" />
+  <img class="img-category-admin" [src]="category.picture" [alt]="category.name" />
 </td>
 <td>
   <a [routerLink]="['/administration/categories/update/', category.id]">

@@ -15,7 +15,7 @@
   <div class="m-3"></div>
   <hr />
   <div *ngFor="let article of articles$ | async">
-    <app-single-article class="media mb-4 single-article" [article]=article></app-single-article>
+    <app-single-article class="media mb-4 single-article" [article]="article"></app-single-article>
   </div>
   <div class="fill pt-1 pb-1"></div>
 </div>

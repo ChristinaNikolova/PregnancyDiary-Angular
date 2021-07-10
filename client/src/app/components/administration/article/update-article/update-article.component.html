@@ -39,7 +39,7 @@
           <label class="control-label" for="categoryName">Category</label>
           <select class="form-control" id="categoryName" formControlName="categoryName">
             <option disabled selected="selected">Please select one of the categories below</option>
-            <option value="{{category.name}}" *ngFor="let category of categories$ | async">{{category.name}}</option>
+            <option [value]="category.name" *ngFor="let category of categories$ | async">{{category.name}}</option>
           </select>
         </div>
         <div class="alert alert-warning alert-custom-margin"

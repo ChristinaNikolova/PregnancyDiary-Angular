@@ -2,7 +2,7 @@
   <a [routerLink]="['/articles/current-article/', article.id]">{{article.title}} </a>
 </td>
 <td>
-  <img class="img-article-admin" src="{{article.picture}}" alt="{{article.title}}" />
+  <img class="img-article-admin" [src]="article.picture" [alt]="article.title" />
 </td>
 <td class="color-link">
   <a [routerLink]="['/articles/by-category/', article.categoryId]">{{article.categoryName}}</a>

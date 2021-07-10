@@ -16,7 +16,7 @@
   </div>
 
   <div *ngFor="let article of articles$  | async">
-    <app-single-article class="media mb-4 single-article" [article]=article></app-single-article>
+    <app-single-article class="media mb-4 single-article" [article]="article"></app-single-article>
   </div>
 
   <div class="text-center" *ngIf="(articles$ | async)?.length==0">
