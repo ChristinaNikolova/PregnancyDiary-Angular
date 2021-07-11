@@ -1,13 +1,8 @@
-import { defer } from 'rxjs';
-
 import IArticle from 'src/app/components/shared/models/article/IArticle';
+import { asyncData } from '../../helpers/asyncDataTesting';
 import { ArticlesService } from './articles.service';
 
- function asyncData<T>(data: T) {
-  return defer(() => Promise.resolve(data));
-}
-
-describe('ArticlesService', () => {
+fdescribe('ArticlesService', () => {
   let httpClientSpy: {get: jasmine.Spy, post: jasmine.Spy}
   let service: ArticlesService;
 
@@ -49,8 +44,8 @@ describe('ArticlesService', () => {
     ];
 
     httpClientSpy.get.and.returnValue(asyncData(expectedArticles));
-    service.all().subscribe((data) =>{
-      expect(data).toEqual(expectedArticles)
+    service.all().subscribe((actualResult) =>{
+      expect(actualResult).toEqual(expectedArticles)
     });
     done();
   });
@@ -84,8 +79,8 @@ describe('ArticlesService', () => {
     ];
 
     httpClientSpy.get.and.returnValue(asyncData(expectedArticles));
-    service.order('likes').subscribe((data) =>{
-      expect(data).toEqual(expectedArticles)
+    service.order('likes').subscribe((actualResult) =>{
+      expect(actualResult).toEqual(expectedArticles);
     });
     done();
   });
