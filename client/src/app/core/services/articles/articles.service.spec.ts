@@ -55,7 +55,7 @@ describe('ArticlesService', () => {
     done();
   });
 
-  it('should return orderedarticles', (done) => {
+  it('should return ordered articles', (done) => {
     let expectedArticles: IArticle[] = [
       {
         id: '2',
