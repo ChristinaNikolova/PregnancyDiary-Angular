@@ -13,13 +13,12 @@ export class OrderArticlesComponent {
     this.isShown = false;
   }
 
-  toogle(criteria: string): void {
+  toogle(): void {
     this.isShown = !this.isShown;
+  }
 
-    if (criteria === 'no search') {
-      return;
-    }
-
+  search(criteria: string): void {
+    this.toogle();
     this.orderEventEmitter.emit(criteria);
   }
 }

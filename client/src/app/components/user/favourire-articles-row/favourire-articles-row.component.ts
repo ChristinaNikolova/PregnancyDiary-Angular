@@ -15,10 +15,8 @@ export class FavourireArticlesRowComponent {
   constructor(private articlesService: ArticlesService) {}
 
   remove(): void {
-    this.articlesService
-      .dislike(this.favArticle.articleId)
-      .subscribe((_) => {
-        this.removeFromFavArticlesEventEmitter.emit();
-      });
+    this.articlesService.dislike(this.favArticle.articleId).subscribe((_) => {
+      this.removeFromFavArticlesEventEmitter.emit();
+    });
   }
 }
