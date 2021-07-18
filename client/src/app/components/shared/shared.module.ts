@@ -8,6 +8,8 @@ import { CommentsCurrentArticleComponent } from '../comment/comments-current-art
 import { SingleCommentComponent } from '../comment/single-comment/single-comment.component';
 import { CreateCommentComponent } from '../comment/create-comment/create-comment.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   NotFoundComponent,
   CommentsCurrentArticleComponent,
   SingleCommentComponent,
-  CreateCommentComponent
+  CreateCommentComponent,
+  HeaderComponent,
+    FooterComponent,
 ],
   imports: [
     CommonModule,
@@ -26,7 +30,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginRegisterPictureComponent,
     CommentsCurrentArticleComponent,
     SingleCommentComponent,
-    CreateCommentComponent
+    CreateCommentComponent,
+    HeaderComponent,
+    FooterComponent,
   ]
 })
 export class SharedModule { }

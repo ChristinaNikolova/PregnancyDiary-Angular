@@ -1,5 +1,5 @@
 <div class="comments-list-wrapper">
-  <app-create-comment [articleId]="articleId" (postCommentEventEmitter)="reload()"></app-create-comment>
+  <app-create-comment [articleId]="articleId" (postCommentEventEmitter)="load()"></app-create-comment>
   <div id="comments" *ngFor="let comment of comments$ | async">
     <app-single-comment [comment]="comment"></app-single-comment>
   </div>

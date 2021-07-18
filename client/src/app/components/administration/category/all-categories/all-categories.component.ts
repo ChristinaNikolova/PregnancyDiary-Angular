@@ -15,10 +15,10 @@ export class AllCategoriesComponent implements OnInit {
   constructor(private categoriesService: CategoriesService) {}
 
   ngOnInit(): void {
-    this.reload();
+    this.load();
   }
 
-  reload(): void {
+  load(): void {
     this.categories$ = this.categoriesService.getAllForAdministration();
   }
 }

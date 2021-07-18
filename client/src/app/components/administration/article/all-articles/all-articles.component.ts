@@ -15,10 +15,10 @@ export class AllArticlesComponent implements OnInit {
   constructor(private articlesService: ArticlesService) {}
 
   ngOnInit(): void {
-    this.reload();
+    this.load();
   }
 
-  reload(): void {
+  load(): void {
     this.articles$ = this.articlesService.getAllForAdministration();
   }
 }

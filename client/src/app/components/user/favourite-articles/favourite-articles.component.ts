@@ -15,10 +15,10 @@ export class FavouriteArticlesComponent implements OnInit {
   constructor(private usersService: UsersService) {}
 
   ngOnInit(): void {
-    this.reload();
+    this.load();
   }
 
-  reload(): void {
+  load(): void {
     this.favArticles$ = this.usersService.getFavouriteArticles();
   }
 }

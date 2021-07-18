@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody *ngFor="let favArticle of favArticles$ | async">
-        <tr app-favourire-articles-row [favArticle]=favArticle (removeFromFavArticlesEventEmitter)="reload()" class="text-center"></tr>
+        <tr app-favourire-articles-row [favArticle]=favArticle (removeFromFavArticlesEventEmitter)="load()" class="text-center"></tr>
       </tbody>
     </table>
   </div>
