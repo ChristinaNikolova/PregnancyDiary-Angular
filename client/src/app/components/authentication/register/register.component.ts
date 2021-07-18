@@ -35,7 +35,8 @@ export class RegisterComponent implements OnInit {
   }
 
   register(): void {
-    if (this.registerForm.invalid) {
+    if (this.registerForm.invalid || 
+        this.registerForm.value.password !== this.registerForm.value.repeatPassword) {
       return;
     }
 

@@ -34,6 +34,7 @@ export class UpdateArticleComponent implements OnInit {
   ngOnInit(): void {
     this.article = this.route.snapshot.data['updateArticle'];
     this.categories$ = this.categoriesService.getAllNames();
+    
     this.updateForm = this.fb.group({
       title: [this.article.title, [Validators.required, Validators.minLength(TITLE_MIN_LEN), Validators.maxLength(TITLE_MAX_LEN)]],
       content: [this.article.content, [Validators.required, Validators.minLength(CONTENT_MIN_LEN), Validators.maxLength(CONTENT_MAX_LEN)]],
