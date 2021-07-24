@@ -1,0 +1,15 @@
+<td>{{diary.positiveTestAsString}}</td>
+<td>{{diary.dueDateAsString}}</td>
+<td>{{diary.genderAsString}}</td>
+<td>{{diary.weeksCount}}</td>
+<td>
+  <a [routerLink]="['/diaries/see/', diary.id]">
+    <button class="btn btn-details">See Diary</button>
+  </a>
+</td>
+<td>
+  <a [routerLink]="['/diaries/update/', diary.id]">
+    <button class="btn btn-warning">Update</button>
+  </a>
+</td>
+<td><button class="btn btn-danger" (click)="remove()">Remove</button></td>

@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'articles', loadChildren: './components/article/article.module#ArticleModule', canActivate: [AuthGuard] },
   { path: 'users', loadChildren: './components/user/user.module#UserModule', canActivate: [AuthGuard] },
-  { path: 'diary', loadChildren: './components/diary/diary.module#DiaryModule'},
+  { path: 'diaries', loadChildren: './components/diary/diary.module#DiaryModule'},
   { path: 'administration', loadChildren: './components/administration/administration.module#AdministrationModule', canActivate: [AdminGuard] },
   { path: '**', component: NotFoundComponent }
 ];

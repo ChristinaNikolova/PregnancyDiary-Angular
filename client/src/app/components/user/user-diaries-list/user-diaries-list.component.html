@@ -1,0 +1,23 @@
+<div class="diaries-list-wrapper">
+  <h1 class="text-center custom-font p-1">My Diaries</h1>
+  <hr />
+  <div class="container">
+    <table class="table table-bordered table-hover table-background">
+      <thead class="text-center">
+        <tr>
+          <th>Positive Test</th>
+          <th>Due Date</th>
+          <th>Gender</th>
+          <th>Weeks</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let diary of diaries$ | async">
+        <tr app-user-diaries-row [diary]="diary" class="text-center" (removeDiaryEventEmitter)="load()"></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="fill pt-1 pb-1"></div>
+</div>

@@ -13,7 +13,7 @@
           <a [routerLink]="['/register']" class="nav-link">Register</a>
         </li>
         <li *ngIf="authService.isAuthenticated()" class="nav-item">
-          <a [routerLink]="['/diary/all']" class="nav-link">My Diaries</a>
+          <a [routerLink]="['/users/diaries']" class="nav-link">My Diaries</a>
         </li>
         <li *ngIf="authService.isAuthenticated()" class="nav-item">
           <a [routerLink]="['/articles']" class="nav-link">Blog</a>
@@ -25,7 +25,7 @@
           <a [routerLink]="['/administration/dashboard']" class="nav-link">Administration</a>
         </li>
         <li *ngIf="authService.isAuthenticated()" class="nav-item">
-          <a [routerLink]="['/diary/create']">
+          <a [routerLink]="['/diaries/create']">
             <button class="btn btn-create-diary" type="button">Create new diary</button>
           </a>
         </li>

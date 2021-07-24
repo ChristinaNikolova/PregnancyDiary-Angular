@@ -8,13 +8,15 @@ import { SeeDiaryComponent } from './see-diary/see-diary.component';
 import { UpdateDiaryComponent } from './update-diary/update-diary.component';
 
 @NgModule({
-  declarations: [CreateDiaryComponent, SeeDiaryComponent, UpdateDiaryComponent],
+  declarations: [
+    CreateDiaryComponent, 
+    SeeDiaryComponent, 
+    UpdateDiaryComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     RouterModule.forChild([
       { path: 'create', component: CreateDiaryComponent },
-      { path: 'all', component: SeeDiaryComponent },
     ]),
   ],
 })

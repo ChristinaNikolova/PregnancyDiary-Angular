@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 
 const diariesBaseUrl = environment.apiBaseUrl + 'diaries/';
 const createUrl = 'create';
+const deleteUrl = 'delete';
 
 @Injectable({
   providedIn: 'root',
@@ -15,5 +16,9 @@ export class DiariesService {
 
   create(body: IDiary) {
     return this.http.post(diariesBaseUrl + createUrl, body);
+  }
+
+  remove(id: string) {
+    return this.http.delete(diariesBaseUrl + deleteUrl + `/${id}`);
   }
 }
