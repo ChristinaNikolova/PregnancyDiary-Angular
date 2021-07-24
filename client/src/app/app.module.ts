@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/authentication/login/login.component';
 import { RegisterComponent } from './components/authentication/register/register.component';
+import { DiaryModule } from './components/diary/diary.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { RegisterComponent } from './components/authentication/register/register
     SharedModule,
     ArticleModule,
     UserModule,
-    AdministrationModule
+    AdministrationModule,
+    DiaryModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ResponseHandlerInterceptor, multi: true },

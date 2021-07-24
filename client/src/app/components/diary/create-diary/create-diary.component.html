@@ -1,0 +1,52 @@
+<div class="create-diary-wrapper">
+  <h1 class="custom-font text-center">Create Diary</h1>
+  <hr />
+  <div class="row create-diary-form">
+    <div class="col-lg-8">
+      <form [formGroup]="createForm" class="mt-2" (submit)="create()">
+        <div class="form-group">
+          <label class="control-label" for="positive-test">Positive Test</label>
+          <input class="form-control" type="date" name="positiveTest" id="positive-test" formControlName="positiveTest">
+        </div>
+        <div class="alert alert-warning alert-custom-margin"
+          *ngIf="f.positiveTest?.errors?.required && f.positiveTest?.touched">
+          This field is required
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="isPositiveTestInvalid()">
+          The positive test date must be before or equal to current date 
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="due-date">Due Date</label>
+          <input class="form-control" type="date" name="dueDate" id="due-date" formControlName="dueDate">
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.dueDate?.errors?.required && f.dueDate?.touched">
+          This field is required
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="isDueDateInvalid()">
+          The due date must be greater than the current date
+        </div>
+        <div class="form-group">
+          <label class="form-control-label" for="gender">Gender</label>
+          <select class="form-control" id="gender" formControlName="gender">
+            <option disabled selected="selected">Please select one of the options below</option>
+            <option [value]="gender" *ngFor="let gender of genders">{{gender}}</option>
+          </select>
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.gender?.errors?.required && f.gender?.touched">
+          This field is required
+        </div>
+        <div class="text-center">
+          <button class="btn" type="submit" [disabled]="createForm.invalid">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 text-center">
+      <img class="img-diary-pic mt-3 mb-3"
+        src="../../../../assets/images/mother-holding-baonesies-cartoon-vector-20378598.jpg" alt="create-diary-page" />
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>

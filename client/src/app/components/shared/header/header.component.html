@@ -13,7 +13,7 @@
           <a [routerLink]="['/register']" class="nav-link">Register</a>
         </li>
         <li *ngIf="authService.isAuthenticated()" class="nav-item">
-          <a [routerLink]="['/user/diaries']" class="nav-link">My Diaries</a>
+          <a [routerLink]="['/diary/all']" class="nav-link">My Diaries</a>
         </li>
         <li *ngIf="authService.isAuthenticated()" class="nav-item">
           <a [routerLink]="['/articles']" class="nav-link">Blog</a>

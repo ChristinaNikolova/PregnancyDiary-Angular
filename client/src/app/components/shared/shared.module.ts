@@ -19,7 +19,7 @@ import { FooterComponent } from './footer/footer.component';
   SingleCommentComponent,
   CreateCommentComponent,
   HeaderComponent,
-    FooterComponent,
+  FooterComponent
 ],
   imports: [
     CommonModule,

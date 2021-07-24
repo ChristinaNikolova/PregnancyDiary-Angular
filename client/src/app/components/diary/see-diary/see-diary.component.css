@@ -1,0 +1,42 @@
+.my-diary-wrapper {
+  background-color: #FFE2E0;
+}
+
+.my-diary-wrapper .girl {
+  color: #EF93AE;
+}
+
+.my-diary-wrapper .boy {
+  color: #7BA5F7;
+}
+
+.my-diary-wrapper .fa-gift,
+.my-diary-wrapper .fa-question,
+.my-diary-wrapper .fa-sun,
+.my-diary-wrapper .fa-calendar-check {
+  color: #19642E;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+.custom-btn .btn {
+  background-color: #EF93AE;
+  border-color: #EF93AE;
+  color: white;
+}
+
+.custom-btn .btn:hover {
+  background-color: #7BA5F7;
+  border-color: #7BA5F7;
+  color: white;
+}
+
+.img-diary-pic {
+  max-width: 100%;
+  border-radius: 20%;
+  border-width: thick;
+  border-style: solid;
+  border-color: white;
+}
