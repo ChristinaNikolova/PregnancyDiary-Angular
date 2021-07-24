@@ -44,7 +44,7 @@ export class CreateDiaryComponent implements OnInit {
 
     this.diariesService.create(this.createForm.value).subscribe(() => {
       // must be change
-      this.router.navigate(['/']);
+      this.router.navigate(['/users/diaries']);
     });
   }
 

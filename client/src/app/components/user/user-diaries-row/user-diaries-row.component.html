@@ -1,6 +1,7 @@
 <td>{{diary.positiveTestAsString}}</td>
 <td>{{diary.dueDateAsString}}</td>
-<td>{{diary.genderAsString}}</td>
+<td *ngIf="diary.genderAsString ==='DontKnow'">I don't know yet</td>
+<td *ngIf="diary.genderAsString !=='DontKnow'">{{diary.genderAsString}}</td>
 <td>{{diary.weeksCount}}</td>
 <td>
   <a [routerLink]="['/diaries/see/', diary.id]">
