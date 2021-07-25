@@ -21,10 +21,11 @@
   </div>
   <div *ngIf="!diary.isBabyBorn">
     <p class="text-center custom-btn">
-      <a [routerLink]="['/baby/create/', diary.id]"> <button class="btn btn-lg mt-4 mr-2" role="button">Baby is
-          Born!</button></a>
-      <a [routerLink]="['/week/add/', diary.id]"> <button class="btn btn-lg mt-4" role="button">Add New
-          Week</button>
+      <a [routerLink]="['/baby/create/', diary.id]">
+        <button class="btn btn-lg mt-4" role="button">Baby is Born!</button>
+      </a>
+      <a [routerLink]="['/week/add/', diary.id]">
+        <button class="btn btn-lg mt-4" role="button">Add New Week</button>
       </a>
     </p>
   </div>

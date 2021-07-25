@@ -3,6 +3,10 @@
   height: 650px;
 }
 
+.diaries-list-wrapper .custom-font {
+  font-weight: 100;
+}
+
 .diaries-list-wrapper .table-bordered th,
 .diaries-list-wrapper .table-bordered td {
   border: 1px solid pink;

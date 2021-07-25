@@ -6,6 +6,10 @@
   border-color: white;
 }
 
+.baby-wrapper .custom-font {
+  font-weight: 100;
+}
+
 .baby-wrapper .female {
   color: #EF93AE;
 }
@@ -20,4 +24,13 @@
 .fa-weight,
 .fa-clipboard-check {
   color: #19642E;
+}
+
+hr {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.btn {
+  margin-left: 10px;
 }

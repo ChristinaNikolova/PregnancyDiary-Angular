@@ -3,10 +3,15 @@
   height: 1400px;
 }
 
+.update-baby-wrapper .custom-font {
+  font-weight: 100;
+}
+
 .update-baby-wrapper button {
   background-color: #EF93AE;
   border-color: #EF93AE;
   color: white;
+  margin-top: 10px;
 }
 
 .update-baby-wrapper button:hover {
@@ -19,3 +24,19 @@
   justify-content: center;
 }
 
+.form-group {
+  margin-top: 20px;
+}
+
+.control-label {
+  margin-bottom: 5px;
+}
+
+hr {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.update-baby-wrapper .span-gender {
+  margin-right: 10px;
+}

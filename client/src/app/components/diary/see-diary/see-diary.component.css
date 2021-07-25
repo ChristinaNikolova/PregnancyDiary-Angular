@@ -2,6 +2,10 @@
   background-color: #FFE2E0;
 }
 
+.my-diary-wrapper .custom-font {
+  font-weight: 100;
+}
+
 .my-diary-wrapper .girl {
   color: #EF93AE;
 }
@@ -25,10 +29,20 @@
   background-color: #EF93AE;
   border-color: #EF93AE;
   color: white;
+  margin-left: 10px;
 }
 
 .custom-btn .btn:hover {
   background-color: #7BA5F7;
   border-color: #7BA5F7;
   color: white;
+}
+
+span {
+  margin: 5px;
+}
+
+hr {
+  margin-left: 20px;
+  margin-right: 20px;
 }

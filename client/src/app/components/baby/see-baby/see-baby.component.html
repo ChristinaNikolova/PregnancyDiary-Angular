@@ -4,7 +4,7 @@
   <h4 class="custom-font text-center">Welcome, {{baby.name}}!</h4>
   <p class="text-center">
     <a [routerLink]="['/baby/update/', baby.id, diaryId]">
-      <button class="btn btn-warning mr-2" role="button">Update</button>
+      <button class="btn btn-warning" role="button">Update</button>
     </a>
     <button class="btn btn-danger" role="button" (click)="remove()">Delete</button>
   </p>
@@ -15,11 +15,11 @@
     </div>
     <div class="col-md-6" *ngIf="baby.genderAsString === 'Girl'">
       <i class="fas fa-heart female"></i>
-      Gender: {{baby.genderAsString}}
+      Gender:<span class="span-gender"> {{baby.genderAsString}}</span>
     </div>
     <div class="col-md-6" *ngIf="baby.genderAsString === 'Boy'">
       <i class="fas fa-heart male"></i>
-      Gender:{{baby.genderAsString}}
+      Gender:<span class="span-gender"> {{baby.genderAsString}}</span>
     </div>
     <div class="col-md-6">
       <i class="fas fa-birthday-cake"></i>
