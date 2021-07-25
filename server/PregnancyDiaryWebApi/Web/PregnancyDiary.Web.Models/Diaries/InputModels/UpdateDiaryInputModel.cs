@@ -17,6 +17,6 @@
            => string.Join("-", this.DueDate.Year, this.DueDate.Month.ToString("d2"), this.DueDate.Day.ToString("d2"));
 
         public string GenderAsString
-            => this.Gender.ToString();
+            => this.Gender.ToString() != "DontKnow" ? this.Gender.ToString() : "I don't know yet";
     }
 }

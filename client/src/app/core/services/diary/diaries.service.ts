@@ -1,12 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import IDiary from 'src/app/components/shared/models/diary/IDiary';
+import { Observable } from 'rxjs';
 
+import IDiary from 'src/app/components/shared/models/diary/IDiary';
+import IUpdateDiary from 'src/app/components/shared/models/diary/IUpdateDiary';
 import { environment } from 'src/environments/environment';
 
 const diariesBaseUrl = environment.apiBaseUrl + 'diaries/';
 const createUrl = 'create';
 const deleteUrl = 'delete';
+const updateUrl = 'update';
 
 @Injectable({
   providedIn: 'root',
@@ -14,11 +17,20 @@ const deleteUrl = 'delete';
 export class DiariesService {
   constructor(private http: HttpClient) {}
 
-  create(body: IDiary) {
-    return this.http.post(diariesBaseUrl + createUrl, body);
+  create(diary: IDiary) {
+    return this.http.post(diariesBaseUrl + createUrl, diary);
   }
 
   remove(id: string) {
     return this.http.delete(diariesBaseUrl + deleteUrl + `/${id}`);
+  }
+
+  getDetailsForUpdate(id: string): Observable<IUpdateDiary> {
+    return this.http.get<IUpdateDiary>(diariesBaseUrl + updateUrl + `/${id}`);
+  }
+
+  update(diary: IUpdateDiary, id: string) {
+    diary.id = id;
+    return this.http.put(diariesBaseUrl + updateUrl, diary);
   }
 }

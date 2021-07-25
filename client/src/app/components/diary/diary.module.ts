@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CreateDiaryComponent } from './create-diary/create-diary.component';
 import { SeeDiaryComponent } from './see-diary/see-diary.component';
 import { UpdateDiaryComponent } from './update-diary/update-diary.component';
+import { UpdateDiaryResolver } from 'src/app/core/resolvers/update-diary.resolver';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { UpdateDiaryComponent } from './update-diary/update-diary.component';
     ReactiveFormsModule,
     RouterModule.forChild([
       { path: 'create', component: CreateDiaryComponent },
+      { path: 'update/:id', component: UpdateDiaryComponent, resolve: {updateDiary: UpdateDiaryResolver} }
     ]),
   ],
 })

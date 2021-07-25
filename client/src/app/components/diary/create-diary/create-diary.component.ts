@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { DiariesService } from 'src/app/core/services/diary/diaries.service';
+import { isPositiveTestInvalid, isDueDateInvalid } from 'src/app/core/validators/dataValidator';
 
 @Component({
   selector: 'app-create-diary',
@@ -33,44 +34,26 @@ export class CreateDiaryComponent implements OnInit {
     return this.createForm.controls;
   }
 
+  get validPositiveTest():boolean{
+    return isPositiveTestInvalid(this.createForm.value.positiveTest);
+  }
+
+  get validDueDate():boolean{
+    return isDueDateInvalid(this.createForm.value.dueDate);
+  }
+
   create(): void {
     if (
       this.createForm.invalid ||
-      this.isPositiveTestInvalid() ||
-      this.isDueDateInvalid()
+      isPositiveTestInvalid(this.createForm.value.positiveTest) ||
+      isDueDateInvalid(this.createForm.value.dueDate)
     ) {
       return;
     }
 
     this.diariesService.create(this.createForm.value).subscribe(() => {
-      // must be change
       this.router.navigate(['/users/diaries']);
     });
   }
-
-  isDueDateInvalid(): boolean {
-    const todaysDate = new Date();
-    const pickedDate = new Date(
-      Date.parse(this.createForm.value.dueDate.replace(/-/g, ' '))
-    );
-
-    if (todaysDate > pickedDate) {
-      return true;
-    }
-
-    return false;
-  }
-
-  isPositiveTestInvalid(): boolean {
-    const todaysDate = new Date();
-    const pickedDate = new Date(
-      Date.parse(this.createForm.value.positiveTest.replace(/-/g, ' '))
-    );
-
-    if (todaysDate < pickedDate) {
-      return true;
-    }
-
-    return false;
-  }
+  
 }

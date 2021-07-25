@@ -12,7 +12,7 @@
           *ngIf="f.positiveTest?.errors?.required && f.positiveTest?.touched">
           This field is required
         </div>
-        <div class="alert alert-warning alert-custom-margin" *ngIf="isPositiveTestInvalid()">
+        <div class="alert alert-warning alert-custom-margin" *ngIf="validPositiveTest">
           The positive test date must be before or equal to current date 
         </div>
         <div class="form-group">
@@ -22,7 +22,7 @@
         <div class="alert alert-warning alert-custom-margin" *ngIf="f.dueDate?.errors?.required && f.dueDate?.touched">
           This field is required
         </div>
-        <div class="alert alert-warning alert-custom-margin" *ngIf="isDueDateInvalid()">
+        <div class="alert alert-warning alert-custom-margin" *ngIf="validDueDate">
           The due date must be greater than the current date
         </div>
         <div class="form-group">
