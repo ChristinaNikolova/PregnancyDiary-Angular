@@ -12,7 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ByCategoryComponent } from './by-category/by-category.component';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import { SingleArticleResolver } from 'src/app/core/resolvers/single-article.resolver';
-import { SharedModule } from '../shared/shared.module';
+import { CommentModule } from '../comment/comment.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    SharedModule,
+    CommentModule,
     RouterModule.forChild([
       { path: '', pathMatch: 'full', redirectTo: 'all' },
       { path: 'all', component: ArticlesListComponent },

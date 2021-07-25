@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/authentication/login/login.component';
 import { RegisterComponent } from './components/authentication/register/register.component';
+import { CoreModule } from './components/core/core.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { RegisterComponent } from './components/authentication/register/register
       positionClass: 'toast-top-right'
     }),
     SharedModule,
+    CoreModule,
     ArticleModule,
     UserModule,
     AdministrationModule,
