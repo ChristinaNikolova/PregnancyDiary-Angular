@@ -53,9 +53,7 @@ export class CreateArticleComponent implements OnInit {
       return;
     }
 
-    this.articlesService
-    .create(this.createForm.value)
-    .subscribe((_) => {
+    this.articlesService.create(this.createForm.value).subscribe((_) => {
       this.router.navigate(['/administration/articles']);
     });
   }
