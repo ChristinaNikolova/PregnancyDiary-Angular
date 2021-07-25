@@ -6,10 +6,8 @@ import {
   HttpInterceptor,
   HttpResponse,
 } from '@angular/common/http';
-
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable()

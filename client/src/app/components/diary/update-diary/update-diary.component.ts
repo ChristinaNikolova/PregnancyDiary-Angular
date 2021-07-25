@@ -56,8 +56,8 @@ export class UpdateDiaryComponent implements OnInit {
     }
 
     this.diariesService.update(this.updateForm.value, this.diary.id).subscribe(() => {
-      // must be change console.log
-      this.router.navigate(['/users/diaries']);
+      const diaryId = this.diary.id;
+      this.router.navigate([`/diaries/see/${diaryId}`]);
     });
   }
 }
