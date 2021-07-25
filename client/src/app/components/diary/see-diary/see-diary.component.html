@@ -1,14 +1,7 @@
 <div class="my-diary-wrapper" *ngIf="diary">
   <h1 class="text-center pt-2 custom-font">My Diary</h1>
   <hr />
-  <div class="row">
-    <div class="col-lg-4"></div>
-    <div class="col-lg-4 text-center">
-      <img class="img-diary-pic mt-3 mb-3"
-        src="../../../../assets/images/mother-holding-baonesies-cartoon-vector-20378598.jpg" alt="create-diary-page" />
-    </div>
-    <div class="col-lg-4"></div>
-  </div>
+  <app-diary-picture></app-diary-picture>
   <div class="row m-2 text-center">
     <div class="col-md-4"><i class="fas fa-sun mr-1"></i><span class="ml-1 mr-1 custom-font bold">Positive
         test:</span><span>{{diary.positiveTestAsString}}</span></div>
