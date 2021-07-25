@@ -3,9 +3,75 @@
   <hr />
   <div class="row update-baby-form">
     <div class="col-lg-8">
-      <form class="mt-2">
+      <form [formGroup]="updateForm" class="mt-2" (submit)="update()">
+        <div class="form-group">
+          <label class="control-label" for="name">Name</label>
+          <input class="form-control" type="text" name="name" id="name" formControlName="name">
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.name?.errors?.required && f.name?.touched">
+          This field is required
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.name?.errors?.minlength">
+          The name should be at least {{f.name?.errors?.minlength.requiredLength}} symbols
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.name?.errors?.maxlength">
+          The name should be max {{f.name?.errors?.maxlength.requiredLength}} symbols
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="birthDate">Birth Date</label>
+          <input class="form-control" type="date" name="birthDate" id="birthDate" formControlName="birthDate">
+        </div>
+        <div class="alert alert-warning alert-custom-margin"
+          *ngIf="f.birthDate?.errors?.required && f.birthDate?.touched">
+          This field is required
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="validBirthDate">
+          The birth date must be before or equal to current date
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="birthTime">Birth Time</label>
+          <input class="form-control" type="text" name="birthTime" id="birthTime" formControlName="birthTime">
+        </div>
+        <div class="alert alert-warning alert-custom-margin"
+          *ngIf="f.birthTime?.errors?.required && f.birthTime?.touched">
+          This field is required
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="gender">Gender</label>
+          <select class="form-control" id="gender" formControlName="gender">
+            <option disabled selected="selected">Please select one of the options below</option>
+            <option [value]="gender" *ngFor="let gender of genders">{{gender}}</option>
+          </select>
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.gender?.errors?.required && f.gender?.touched">
+          This field is required
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="height">Height in mm</label>
+          <input class="form-control" type="number" name="height" id="height" formControlName="height">
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.height?.errors?.required && f.height?.touched">
+          This field is required
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="weight">Weight in gr</label>
+          <input class="form-control" type="number" name="weight" id="weight" formControlName="weight">
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.weight?.errors?.required && f.weight?.touched">
+          This field is required
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="picture">Picture</label>
+          <input class="form-control" type="url" name="picture" id="picture" formControlName="picture">
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.picture?.errors?.required && f.picture?.touched">
+          This field is required
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="validPictureUrl && f.picture?.touched">
+          Invalid URL
+        </div>
         <div class="text-center">
-          <button class="btn" type="submit">Update</button>
+          <button class="btn" type="submit" [disabled]="updateForm.invalid">Update</button>
         </div>
       </form>
     </div>
