@@ -15,7 +15,6 @@ export class UpdateCategoryResolver implements Resolve<IAdminCategory> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IAdminCategory> {
     const id: string = route.params['id'];
-    
     return this.categoriesService.getDetailsForUpdate(id);
   }
 }

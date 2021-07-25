@@ -5,6 +5,7 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable } from 'rxjs';
+
 import IBabyDetails from 'src/app/components/shared/models/baby/IBabyDetails';
 import { BabiesService } from '../services/baby/babies.service';
 
@@ -16,7 +17,6 @@ export class SingleBabyResolver implements Resolve<IBabyDetails> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IBabyDetails> {
     const diaryId: string = route.params['id'];
-    
     return this.babiesService.getDetails(diaryId);
   }
 }

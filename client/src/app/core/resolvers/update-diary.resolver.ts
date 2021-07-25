@@ -17,7 +17,6 @@ export class UpdateDiaryResolver implements Resolve<IUpdateDiary> {
 
   resolve(route: ActivatedRouteSnapshot,state: RouterStateSnapshot): Observable<IUpdateDiary> {
     const id: string = route.params['id'];
-
     return this.diariesService.getDetailsForUpdate(id);
   }
 }

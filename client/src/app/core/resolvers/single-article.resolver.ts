@@ -18,7 +18,6 @@ export class SingleArticleResolver implements Resolve<IArticleDetails> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IArticleDetails> {
     const id: string = route.params['id'];
-    
     return this.articlesService.getDetails(id);
   }
 }
