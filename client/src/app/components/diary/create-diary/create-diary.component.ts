@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { DiariesService } from 'src/app/core/services/diary/diaries.service';
-import { isPositiveTestInvalid, isDueDateInvalid } from 'src/app/core/validators/dataValidator';
+import { isPositiveTestInvalid, isDueDateInvalid } from 'src/app/core/validators/dateValidator';
 
 @Component({
   selector: 'app-create-diary',

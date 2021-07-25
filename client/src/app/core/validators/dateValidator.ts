@@ -19,3 +19,14 @@ export function isPositiveTestInvalid(positiveTest: string): boolean {
 
   return false;
 }
+
+export function isBabysBirthDateInvalid(birthDate: string): boolean {
+  const todaysDate = new Date();
+  const pickedDate = new Date(Date.parse(birthDate.replace(/-/g, ' ')));
+
+  if (todaysDate < pickedDate) {
+    return true;
+  }
+
+  return false;
+}

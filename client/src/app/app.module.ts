@@ -10,6 +10,8 @@ import { SharedModule } from './components/shared/shared.module';
 import { ArticleModule } from './components/article/article.module';
 import { UserModule } from './components/user/user.module';
 import { AdministrationModule } from './components/administration/administration.module';
+import { DiaryModule } from './components/diary/diary.module';
+import { BabyModule } from './components/baby/baby.module';
 
 import { ResponseHandlerInterceptor } from './core/interceptors/response-handler.interceptor';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
@@ -18,7 +20,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/authentication/login/login.component';
 import { RegisterComponent } from './components/authentication/register/register.component';
-import { DiaryModule } from './components/diary/diary.module';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { DiaryModule } from './components/diary/diary.module';
     ArticleModule,
     UserModule,
     AdministrationModule,
-    DiaryModule
+    DiaryModule,
+    BabyModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ResponseHandlerInterceptor, multi: true },

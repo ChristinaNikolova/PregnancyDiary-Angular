@@ -12,21 +12,29 @@
   <div class="row m-2 text-center">
     <div class="col-md-4"><i class="fas fa-sun mr-1"></i><span class="ml-1 mr-1 custom-font bold">Positive
         test:</span><span>{{diary.positiveTestAsString}}</span></div>
-    <div class="col-md-4"><i class="fas fa-calendar-check mr-1"></i><span
-        class="ml-1 mr-1 custom-font bold">Due date:</span><span>{{diary.dueDateAsString}}</span></div>
-        <div class="col-md-4" *ngIf="diary.genderAsString === 'Girl'"><i class="fas fa-heart girl mr-1"></i><span class="ml-1 mr-1 custom-font bold">Gender:</span><span>{{diary.genderAsString}}</span></div>
-        <div class="col-md-4" *ngIf="diary.genderAsString === 'Boy'"><i class="fas fa-heart boy mr-1"></i><span class="ml-1 mr-1 custom-font bold">Gender:</span><span>{{diary.genderAsString}}</span></div>
-        <div class="col-md-4" *ngIf="diary.genderAsString === 'Surprice'"><i class="fas fa-gift mr-1"></i><span class="ml-1 mr-1 custom-font bold">Gender:</span><span>{{diary.genderAsString}}</span></div>
-        <div class="col-md-4" *ngIf="diary.genderAsString === 'DontKnow'"><i class="fas fa-question mr-1"></i><span class="ml-1 mr-1 custom-font bold">Gender:</span><span>I don't know yet</span></div>
+    <div class="col-md-4"><i class="fas fa-calendar-check mr-1"></i><span class="ml-1 mr-1 custom-font bold">Due
+        date:</span><span>{{diary.dueDateAsString}}</span></div>
+    <div class="col-md-4" *ngIf="diary.genderAsString === 'Girl'"><i class="fas fa-heart girl mr-1"></i><span
+        class="ml-1 mr-1 custom-font bold">Gender:</span><span>{{diary.genderAsString}}</span></div>
+    <div class="col-md-4" *ngIf="diary.genderAsString === 'Boy'"><i class="fas fa-heart boy mr-1"></i><span
+        class="ml-1 mr-1 custom-font bold">Gender:</span><span>{{diary.genderAsString}}</span></div>
+    <div class="col-md-4" *ngIf="diary.genderAsString === 'Surprice'"><i class="fas fa-gift mr-1"></i><span
+        class="ml-1 mr-1 custom-font bold">Gender:</span><span>{{diary.genderAsString}}</span></div>
+    <div class="col-md-4" *ngIf="diary.genderAsString === 'DontKnow'"><i class="fas fa-question mr-1"></i><span
+        class="ml-1 mr-1 custom-font bold">Gender:</span><span>I don't know yet</span></div>
   </div>
-  <!-- {diary.isBabyBorn
-  ?
-  <SeeBaby diaryId={diaryId} clickHandler={reload} />
-  : <p class="text-center custom-btn">
-    <Link to={`/diary/baby/create/${diaryId}`}> <button class="btn btn-lg mt-4 mr-2" role="button">Baby is
-    Born!</button></Link>
-    <Link to={`/diary/week/add/${diaryId}`}> <button class="btn btn-lg mt-4" role="button">Add New Week</button>
-    </Link>
-  </p>} -->
-  <!-- <WeeksList diaryId={diaryId} /> -->
+  <div *ngIf="diary.isBabyBorn">
+
+  </div>
+  <div *ngIf="!diary.isBabyBorn">
+    <p class="text-center custom-btn">
+      <a [routerLink]="['/baby/create/', diary.id]"> <button class="btn btn-lg mt-4 mr-2" role="button">Baby is
+          Born!</button></a>
+      <a [routerLink]="['/week/add/', diary.id]"> <button class="btn btn-lg mt-4" role="button">Add New
+          Week</button>
+      </a>
+    </p>
+  </div>
+  <!-- <SeeBaby diaryId={diaryId} clickHandler={reload} />
+  <WeeksList diaryId={diaryId} />  -->
 </div>

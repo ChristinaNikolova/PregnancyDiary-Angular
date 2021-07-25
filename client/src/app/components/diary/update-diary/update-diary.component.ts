@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DiariesService } from 'src/app/core/services/diary/diaries.service';
 
-import { isPositiveTestInvalid, isDueDateInvalid } from 'src/app/core/validators/dataValidator';
+import { DiariesService } from 'src/app/core/services/diary/diaries.service';
+import { isPositiveTestInvalid, isDueDateInvalid } from 'src/app/core/validators/dateValidator';
 import IUpdateDiary from '../../shared/models/diary/IUpdateDiary';
 
 @Component({
