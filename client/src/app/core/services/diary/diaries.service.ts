@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import IDiary from 'src/app/components/shared/models/diary/IDiary';
+import IDiaryDetails from 'src/app/components/shared/models/diary/IDiaryDetails';
 import IUpdateDiary from 'src/app/components/shared/models/diary/IUpdateDiary';
 import { environment } from 'src/environments/environment';
 
@@ -10,6 +11,7 @@ const diariesBaseUrl = environment.apiBaseUrl + 'diaries/';
 const createUrl = 'create';
 const deleteUrl = 'delete';
 const updateUrl = 'update';
+const detailsUrl = 'details';
 
 @Injectable({
   providedIn: 'root',
@@ -32,5 +34,9 @@ export class DiariesService {
   update(diary: IUpdateDiary, id: string) {
     diary.id = id;
     return this.http.put(diariesBaseUrl + updateUrl, diary);
+  }
+
+  getDetails(id: string):Observable<IDiaryDetails>{
+    return this.http.get<IDiaryDetails>(diariesBaseUrl + detailsUrl + `/${id}`);
   }
 }

@@ -8,6 +8,8 @@
 
     public class DiaryBaseViewModel : IMapFrom<Diary>
     {
+        public string Id { get; set; }
+
         public DateTime PositiveTest { get; set; }
 
         public string PositiveTestAsString
