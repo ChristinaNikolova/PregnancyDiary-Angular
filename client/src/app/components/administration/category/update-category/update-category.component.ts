@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import IAdminCategory from 'src/app/components/shared/models/category/IAdminCategory';
 import { CategoriesService } from 'src/app/core/services/categories/categories.service';
+import { isUrlsPictureInvalid } from 'src/app/core/validators/imageValidator';
 
 const NAME_MIN_LEN = 3;
 const NAME_MAX_LEN = 50;
@@ -37,8 +38,14 @@ export class UpdateCategoryComponent implements OnInit {
     return this.updateForm.controls;
   }
 
+  get validPictureUrl(): boolean {
+    return isUrlsPictureInvalid(this.updateForm.value.picture);
+  }
+
+
   update(): void {
-    if (this.updateForm.invalid) {
+    if (this.updateForm.invalid ||
+      isUrlsPictureInvalid(this.updateForm.value.picture)) {
       return;
     }
 

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { CategoriesService } from 'src/app/core/services/categories/categories.service';
+import { isUrlsPictureInvalid } from 'src/app/core/validators/imageValidator';
 
 const NAME_MIN_LEN = 3;
 const NAME_MAX_LEN = 50;
@@ -32,14 +33,17 @@ export class CreateCategoryComponent implements OnInit {
     return this.createForm.controls;
   }
 
+  get validPictureUrl(): boolean {
+    return isUrlsPictureInvalid(this.createForm.value.picture);
+  }
+
   create(): void {
-    if (this.createForm.invalid) {
+    if (this.createForm.invalid ||
+      isUrlsPictureInvalid(this.createForm.value.picture)) {
       return;
     }
 
-    this.categoriesService
-    .create(this.createForm.value)
-    .subscribe((_) => {
+    this.categoriesService.create(this.createForm.value).subscribe((_) => {
       this.router.navigate(['/administration/categories']);
     });
   }
