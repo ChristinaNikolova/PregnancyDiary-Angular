@@ -1,0 +1,44 @@
+<div class="baby-wrapper">
+  <hr />
+  <h3 class="custom-font text-center">Baby is Born!</h3>
+  <h4 class="custom-font text-center">Welcome, {{baby.name}}!</h4>
+  <p class="text-center">
+    <a [routerLink]="['/diary/baby/update/', baby.id, diaryId]">
+      <button class="btn btn-warning mr-2" role="button">Update</button>
+    </a>
+    <button class="btn btn-danger" role="button" (click)="remove()">Delete</button>
+  </p>
+  <div class="row text-center">
+    <div class="col-md-6">
+      <i class="fas fa-child"></i>
+      Name: {{baby.name}}
+    </div>
+    <div class="col-md-6" *ngIf="baby.genderAsString === 'Girl'">
+      <i class="fas fa-heart female"></i>
+      Gender: {{baby.genderAsString}}
+    </div>
+    <div class="col-md-6" *ngIf="baby.genderAsString === 'Boy'">
+      <i class="fas fa-heart male"></i>
+      Gender:{{baby.genderAsString}}
+    </div>
+    <div class="col-md-6">
+      <i class="fas fa-birthday-cake"></i>
+      Birth Date: {{baby.formattedBirthDate}}
+    </div>
+    <div class="col-md-6">
+      <i class="fas fa-clock"></i>
+      Birth Time: {{baby.birthTime}}
+    </div>
+    <div class="col-md-6">
+      <i class="fas fa-weight"></i>
+      Weight: {{baby.weight}} gr
+    </div>
+    <div class="col-md-6">
+      <i class="fas fa-clipboard-check"></i>
+      Height: {{baby.height}} mm
+    </div>
+    <div class="col-md-12 m-3">
+      <img class="baby-born-pic" [src]="baby.picture" alt="baby-pic" />
+    </div>
+  </div>
+</div>

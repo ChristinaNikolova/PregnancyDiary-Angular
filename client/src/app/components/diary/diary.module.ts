@@ -7,21 +7,24 @@ import { CreateDiaryComponent } from './create-diary/create-diary.component';
 import { SeeDiaryComponent } from './see-diary/see-diary.component';
 import { UpdateDiaryComponent } from './update-diary/update-diary.component';
 import { UpdateDiaryResolver } from 'src/app/core/resolvers/update-diary.resolver';
-import { SingleDiaryResolver } from 'src/app/core/resolvers/single-diary.resolver';
+import { BabyModule } from '../baby/baby.module';
+import { SingleBabyResolver } from 'src/app/core/resolvers/single-baby.resolver';
 
 @NgModule({
   declarations: [
     CreateDiaryComponent, 
     SeeDiaryComponent, 
-    UpdateDiaryComponent],
+    UpdateDiaryComponent
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     RouterModule.forChild([
       { path: 'create', component: CreateDiaryComponent },
       { path: 'update/:id', component: UpdateDiaryComponent, resolve: { updateDiary: UpdateDiaryResolver } },
-      { path: 'see/:id', component: SeeDiaryComponent, resolve: { singleDiary: SingleDiaryResolver } }
+      { path: 'see/:id', component: SeeDiaryComponent, resolve: { singleBaby: SingleBabyResolver } }
     ]),
+    BabyModule
   ],
 })
 export class DiaryModule {}

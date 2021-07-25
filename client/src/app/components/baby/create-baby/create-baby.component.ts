@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BabiesService } from 'src/app/core/services/baby/babies.service';
 
+import { BabiesService } from 'src/app/core/services/baby/babies.service';
 import { isBabysBirthDateInvalid } from 'src/app/core/validators/dateValidator';
 import { isUrlsPictureInvalid } from 'src/app/core/validators/imageValidator';
 
@@ -22,7 +22,8 @@ export class CreateBabyComponent implements OnInit {
     private fb: FormBuilder,
     private babiesService: BabiesService,
     private router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute
+  ) {
     this.genders = ['Girl', 'Boy'];
   }
 
@@ -62,9 +63,7 @@ export class CreateBabyComponent implements OnInit {
     const diaryId = this.route.snapshot.params['id'];
 
     this.babiesService.create(this.createForm.value, diaryId).subscribe(() => {
-      //console.log must change path
       this.router.navigate([`/diaries/see/${diaryId}`]);
     });
   }
-
 }

@@ -1,4 +1,4 @@
-<div class="my-diary-wrapper">
+<div class="my-diary-wrapper" *ngIf="diary">
   <h1 class="text-center pt-2 custom-font">My Diary</h1>
   <hr />
   <div class="row">
@@ -35,6 +35,8 @@
       </a>
     </p>
   </div>
-  <!-- <SeeBaby diaryId={diaryId} clickHandler={reload} />
-  <WeeksList diaryId={diaryId} />  -->
+  <div *ngIf="diary.isBabyBorn">
+    <app-see-baby [diaryId]="diary.id" (removeBabyEventEmitter)="load()"></app-see-baby>
+  </div>
+  <!-- <WeeksList diaryId={diaryId} /> -->
 </div>
