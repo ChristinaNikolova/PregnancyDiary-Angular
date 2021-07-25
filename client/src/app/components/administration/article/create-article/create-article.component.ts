@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import IBaseCategory from 'src/app/components/shared/models/category/IBaseCategory';
 import { ArticlesService } from 'src/app/core/services/articles/articles.service';
 import { CategoriesService } from 'src/app/core/services/categories/categories.service';
+import { isUrlsPictureInvalid } from 'src/app/core/validators/imageValidator';
 
 const TITLE_MIN_LEN = 5;
 const TITLE_MAX_LEN = 100;
@@ -42,8 +43,13 @@ export class CreateArticleComponent implements OnInit {
     return this.createForm.controls;
   }
 
+  get validPictureUrl(): boolean {
+    return isUrlsPictureInvalid(this.createForm.value.picture);
+  }
+
   create(): void {
-    if (this.createForm.invalid) {
+    if (this.createForm.invalid ||
+      isUrlsPictureInvalid(this.createForm.value.picture)) {
       return;
     }
 

@@ -3,7 +3,7 @@
   <h3 class="custom-font text-center">Baby is Born!</h3>
   <h4 class="custom-font text-center">Welcome, {{baby.name}}!</h4>
   <p class="text-center">
-    <a [routerLink]="['/diary/baby/update/', baby.id, diaryId]">
+    <a [routerLink]="['/baby/update/', baby.id, diaryId]">
       <button class="btn btn-warning mr-2" role="button">Update</button>
     </a>
     <button class="btn btn-danger" role="button" (click)="remove()">Delete</button>

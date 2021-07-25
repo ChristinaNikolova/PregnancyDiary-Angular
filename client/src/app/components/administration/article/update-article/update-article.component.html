@@ -53,6 +53,9 @@
         <div class="alert alert-warning alert-custom-margin" *ngIf="f.picture?.errors?.required && f.picture?.touched">
           This field is required
         </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="validPictureUrl && f.picture?.touched">
+          Invalid URL
+        </div>
         <div class="text-center">
           <button class="btn" type="submit" [disabled]="updateForm.invalid">Update</button>
         </div>

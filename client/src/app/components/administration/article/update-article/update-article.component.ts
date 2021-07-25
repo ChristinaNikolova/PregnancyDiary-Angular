@@ -7,6 +7,7 @@ import IUpdateArticle from 'src/app/components/shared/models/article/IUpdateArti
 import IBaseCategory from 'src/app/components/shared/models/category/IBaseCategory';
 import { ArticlesService } from 'src/app/core/services/articles/articles.service';
 import { CategoriesService } from 'src/app/core/services/categories/categories.service';
+import { isUrlsPictureInvalid } from 'src/app/core/validators/imageValidator';
 
 const TITLE_MIN_LEN = 5;
 const TITLE_MAX_LEN = 100;
@@ -47,8 +48,13 @@ export class UpdateArticleComponent implements OnInit {
     return this.updateForm.controls;
   }
 
+  get validPictureUrl(): boolean {
+    return isUrlsPictureInvalid(this.updateForm.value.picture);
+  }
+
   update(): void {
-    if (this.updateForm.invalid) {
+    if (this.updateForm.invalid ||
+      isUrlsPictureInvalid(this.updateForm.value.picture)) {
       return;
     }
 
