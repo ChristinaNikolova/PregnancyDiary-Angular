@@ -1,9 +1,9 @@
-<div class="add-week-wrapper">
-  <h1 class="custom-font text-center">Add Week</h1>
+<div class="update-week-wrapper">
+  <h1 class="custom-font text-center">Update Week</h1>
   <hr />
-  <div class="row add-week-form">
+  <div class="row update-week-form">
     <div class="col-lg-8">
-      <form [formGroup]="createForm" class="mt-2" (submit)="create()">
+      <form [formGroup]="updateForm" class="mt-2" (submit)="update()">
         <div class="form-group">
           <label class="control-label" for="number">Week Number</label>
           <input class="form-control" type="number" name="number" id="number" formControlName="number">
@@ -12,12 +12,10 @@
           *ngIf="f.number?.errors?.required && f.number?.touched">
           This field is required
         </div>
-        <div class="alert alert-warning alert-custom-margin" 
-          *ngIf="f.number?.errors?.min">
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.number?.errors?.min">
           The week number should be at least {{f.number?.errors?.min.min}}
         </div>
-        <div class="alert alert-warning alert-custom-margin" 
-          *ngIf="f.number?.errors?.max">
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.number?.errors?.max">
           The week number should be maximal {{f.number?.errors?.max.max}}
         </div>
         <div class="form-group">
@@ -43,8 +41,7 @@
             <option [value]="mood" *ngFor="let mood of moods">{{mood}}</option>
           </select>
         </div>
-        <div class="alert alert-warning alert-custom-margin" 
-          *ngIf="f.mood?.errors?.required && f.mood?.touched">
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.mood?.errors?.required && f.mood?.touched">
           This field is required
         </div>
         <div class="form-group">
@@ -64,7 +61,7 @@
           This field is required
         </div>
         <div class="text-center">
-          <button class="btn" type="submit" [disabled]="createForm.invalid">Add Week</button>
+          <button class="btn" type="submit" [disabled]="updateForm.invalid">Update Week</button>
         </div>
       </form>
     </div>

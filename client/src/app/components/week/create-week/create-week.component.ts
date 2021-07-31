@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WeeksService } from 'src/app/core/services/week/weeks.service';
+import IWeek from '../../shared/models/week/IWeek';
 
 const WEEK_MIN = 1;
 const WEEK_MAX = 44;
@@ -14,6 +15,7 @@ const WEEK_MAX = 44;
 export class CreateWeekComponent implements OnInit {
   createForm: FormGroup;
   moods: string[];
+  week: IWeek;
 
   constructor(
     private fb: FormBuilder,

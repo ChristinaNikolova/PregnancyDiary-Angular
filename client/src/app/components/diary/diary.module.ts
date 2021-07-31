@@ -23,7 +23,7 @@ import { WeekModule } from '../week/week.module';
     ReactiveFormsModule,
     RouterModule.forChild([
       { path: 'create', component: CreateDiaryComponent },
-      { path: 'update/:id', component: UpdateDiaryComponent, resolve: { updateDiary: UpdateDiaryResolver } },
+      { path: 'update/:id',  component: UpdateDiaryComponent, resolve: { updateDiary: UpdateDiaryResolver } },
       { path: 'see/:id', component: SeeDiaryComponent, resolve: { singleBaby: SingleBabyResolver } }
     ]),
     BabyModule,

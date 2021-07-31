@@ -7,12 +7,15 @@ import { CreateWeekComponent } from './create-week/create-week.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WeeksListComponent } from './weeks-list/weeks-list.component';
 import { WeeksRowComponent } from './weeks-row/weeks-row.component';
+import { UpdateWeekComponent } from './update-week/update-week.component';
+import { UpdateWeekResolver } from 'src/app/core/resolvers/update-week.resolver';
 
 @NgModule({
   declarations: [
     CreateWeekComponent,
     WeeksListComponent,
-    WeeksRowComponent
+    WeeksRowComponent,
+    UpdateWeekComponent
   ],
   imports: [
     CommonModule,
@@ -20,6 +23,7 @@ import { WeeksRowComponent } from './weeks-row/weeks-row.component';
     RouterModule.forChild(
       [
         { path: 'create/:id', component: CreateWeekComponent },
+        { path: 'update-week/:id', component: UpdateWeekComponent, resolve: { updateWeek: UpdateWeekResolver } }
       ]
     ),
     SharedModule

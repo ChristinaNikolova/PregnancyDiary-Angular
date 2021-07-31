@@ -14,9 +14,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'articles', loadChildren: './components/article/article.module#ArticleModule', canActivate: [AuthGuard] },
   { path: 'users', loadChildren: './components/user/user.module#UserModule', canActivate: [AuthGuard] },
+  { path: 'weeks', loadChildren: './components/week/week.module#WeekModule', canActivate: [AuthGuard] },
   { path: 'diaries', loadChildren: './components/diary/diary.module#DiaryModule', canActivate: [AuthGuard] },
   { path: 'baby', loadChildren: './components/baby/baby.module#BabyModule', canActivate: [AuthGuard] },
-  { path: 'week', loadChildren: './components/week/week.module#WeekModule', canActivate: [AuthGuard] },
   { path: 'administration', loadChildren: './components/administration/administration.module#AdministrationModule', canActivate: [AdminGuard] },
   { path: '**', component: NotFoundComponent }
 ];
