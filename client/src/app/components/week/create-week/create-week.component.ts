@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WeeksService } from 'src/app/core/services/week/weeks.service';
-import IWeek from '../../shared/models/week/IWeek';
 
 const WEEK_MIN = 1;
 const WEEK_MAX = 44;
@@ -15,7 +14,7 @@ const WEEK_MAX = 44;
 export class CreateWeekComponent implements OnInit {
   createForm: FormGroup;
   moods: string[];
-  week: IWeek;
+  diaryId: string;
 
   constructor(
     private fb: FormBuilder,
@@ -27,6 +26,8 @@ export class CreateWeekComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.diaryId = this.route.snapshot.params['id'];
+
     this.createForm = this.fb.group({
       number: ['', [Validators.required, Validators.min(WEEK_MIN), Validators.max(WEEK_MAX)]],
       myWeight: ['', [Validators.required]],

@@ -37,6 +37,9 @@
         </div>
         <div class="text-center">
           <button class="btn" type="submit" [disabled]="updateForm.invalid">Update</button>
+          <a [routerLink]="['/users/diaries']">
+            <button class="btn back">Back</button>
+          </a>
         </div>
       </form>
     </div>

@@ -16,6 +16,7 @@ const CONTENT_MAX_LEN = 1000;
 })
 export class CreateMemoryComponent implements OnInit {
   createForm: FormGroup;
+  weekId: string;
 
   constructor(
     private fb: FormBuilder,
@@ -33,6 +34,8 @@ export class CreateMemoryComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.weekId = this.route.snapshot.params['id'];
+    
     this.createForm = this.fb.group({
       date: ['', [Validators.required]],
       title: ['', [Validators.required, Validators.minLength(TITLE_MIN_LEN), Validators.maxLength(TITLE_MAX_LEN)]],
@@ -47,12 +50,10 @@ export class CreateMemoryComponent implements OnInit {
       return;
     }
 
-    const weekId = this.route.snapshot.params['id'];
-
     this.memoriesService
-      .create(this.createForm.value, weekId)
+      .create(this.createForm.value, this.weekId)
       .subscribe((_) => {
-        this.router.navigate([`/weeks/see-week/${weekId}`]);
+        this.router.navigate([`/weeks/see-week/${this.weekId}`]);
       });
   }
 }

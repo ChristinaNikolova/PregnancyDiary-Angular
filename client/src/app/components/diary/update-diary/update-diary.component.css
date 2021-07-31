@@ -25,6 +25,13 @@
   pointer-events: all !important;
 }
 
+.update-diary-wrapper .back {
+  background-color: #7BA5F7;
+  border-color: #7BA5F7;
+  color: white;
+  margin-left: 10px;
+}
+
 .update-diary-form {
   justify-content: center;
 }

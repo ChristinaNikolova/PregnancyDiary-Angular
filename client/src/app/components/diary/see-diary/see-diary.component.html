@@ -1,5 +1,10 @@
 <div class="my-diary-wrapper" *ngIf="diary">
   <h1 class="text-center pt-2 custom-font">My Diary</h1>
+  <div class="link-back-btn">
+    <a [routerLink]="['/users/diaries']">
+      <button class="btn back">Back</button>
+    </a>
+  </div>
   <hr />
   <app-diary-picture></app-diary-picture>
   <div class="row m-2 text-center">

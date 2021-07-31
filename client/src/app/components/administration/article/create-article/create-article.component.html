@@ -58,6 +58,9 @@
         </div>
         <div class="text-center">
           <button class="btn" type="submit" [disabled]="createForm.invalid">Create</button>
+          <a [routerLink]="['/administration/dashboard']">
+            <button class="btn back">Back</button>
+          </a>
         </div>
       </div>
     </div>

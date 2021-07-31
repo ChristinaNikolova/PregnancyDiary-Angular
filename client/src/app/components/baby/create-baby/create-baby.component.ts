@@ -17,6 +17,7 @@ const NAME_MAX_LEN = 50;
 export class CreateBabyComponent implements OnInit {
   createForm: FormGroup;
   genders: string[];
+  diaryId: string;
 
   constructor(
     private fb: FormBuilder,
@@ -28,6 +29,8 @@ export class CreateBabyComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.diaryId = this.route.snapshot.params['id'];
+    
     this.createForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(NAME_MIN_LEN), Validators.maxLength(NAME_MAX_LEN)]],
       birthDate: ['', [Validators.required]],

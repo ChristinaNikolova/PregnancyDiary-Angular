@@ -46,3 +46,14 @@ hr {
   margin-left: 20px;
   margin-right: 20px;
 }
+
+.link-back-btn {
+  text-align: center;
+}
+
+.my-diary-wrapper .back {
+  background-color: #7BA5F7;
+  border-color: #7BA5F7;
+  color: white;
+  margin-left: 10px;
+}

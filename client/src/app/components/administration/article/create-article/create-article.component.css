@@ -41,3 +41,10 @@ hr {
   margin-left: 40px;
   margin-right: 40px;
 }
+
+.create-article-wrapper .back {
+  background-color: #7BA5F7;
+  border-color: #7BA5F7;
+  color: white;
+  margin-left: 10px;
+}

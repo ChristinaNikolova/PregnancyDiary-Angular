@@ -36,3 +36,11 @@ hr {
   margin-left: 20px;
   margin-right: 20px;
 }
+
+.update-memory-wrapper .back {
+  background-color: #7BA5F7;
+  border-color: #7BA5F7;
+  color: white;
+  margin-left: 10px;
+}
+

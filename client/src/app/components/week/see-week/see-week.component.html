@@ -1,5 +1,10 @@
 <div class="see-week-wrapper">
   <h1 class="text-center pt-2 custom-font">Week <span class="week-number-color">{{week.number}}</span></h1>
+  <div class="link-back-btn">
+    <a [routerLink]="['/diaries/see/', week.diaryId]">
+      <button class="btn back">Back</button>
+    </a>
+  </div>
   <hr />
   <div class="row m-2 text-center">
     <div class="col-md-3 bold-font">
@@ -31,7 +36,7 @@
   </div>
   <hr />
   <p class="text-center see-week-btn-wrapper">
-    <a [routerLink]="['/memories/create/', week.id]">
+    <a [routerLink]="['/memories/create-my-memory/', week.id]">
       <button class="btn btn-lg" role="button">Add Memory</button>
     </a>
   </p>

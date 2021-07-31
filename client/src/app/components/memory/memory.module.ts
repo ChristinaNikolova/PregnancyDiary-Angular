@@ -21,8 +21,8 @@ import { UpdateMemoryResolver } from 'src/app/core/resolvers/update-memory.resol
     CommonModule,
     ReactiveFormsModule,
     RouterModule.forChild([
-      { path: 'create/:id', component: CreateMemoryComponent },
-      { path: 'update/:id', component: UpdateMemoryComponent, resolve: { updateMemory: UpdateMemoryResolver } },
+      { path: 'create-my-memory/:id', component: CreateMemoryComponent },
+      { path: 'update-my-memory/:id', component: UpdateMemoryComponent, resolve: { updateMemory: UpdateMemoryResolver } },
     ]),
     SharedModule
   ],

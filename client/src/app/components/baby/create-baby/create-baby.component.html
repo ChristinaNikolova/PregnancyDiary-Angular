@@ -70,6 +70,9 @@
         </div>
         <div class="text-center">
           <button class="btn" type="submit" [disabled]="createForm.invalid">Baby</button>
+          <a [routerLink]="['/diaries/see/', diaryId]">
+            <button class="btn back">Back</button>
+          </a>
         </div>
       </form>
     </div>
