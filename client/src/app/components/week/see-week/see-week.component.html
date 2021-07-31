@@ -1,0 +1,40 @@
+<div class="see-week-wrapper">
+  <h1 class="text-center pt-2 custom-font">Week <span class="week-number-color">{{week.number}}</span></h1>
+  <hr />
+  <div class="row m-2 text-center">
+    <div class="col-md-3 bold-font">
+      <span class="custom-font">Me</span>
+      <div>
+        <i class="fas fa-weight"></i> Weight: {{week.myWeight}} kg
+      </div>
+      <div>
+        <i class="fas fa-hand-point-right"></i> Belly Size: {{week.myBellySize}} cm
+      </div>
+      <div>
+        <i class="fas fa-female"></i> Mood: {{week.mood}}
+      </div>
+    </div>
+    <div class="col-md-6">
+      <img class="img-see-week"
+        src="../../../../assets/images/74724521-baby-shower-greeting-card-with-babies-boy-and-girl.jpg"
+        alt="pic-current-week" />
+    </div>
+    <div class="col-md-3 bold-font">
+      <span class="custom-font">Baby</span>
+      <div>
+        <i class="fas fa-weight"></i> Weight: {{week.babyWeight}} gr
+      </div>
+      <div>
+        <i class="fas fa-hand-point-right"></i> Height: {{week.babyHeight}} mm
+      </div>
+    </div>
+  </div>
+  <hr />
+  <p class="text-center see-week-btn-wrapper">
+    <a [routerLink]="['/week/memory/create/', week.id]">
+      <button class="btn btn-lg" role="button">Add Memory</button>
+    </a>
+  </p>
+  <!-- <MemoriesList weekId={weekId} /> -->
+  <div class="fill pt-1 pb-1"></div>
+</div>

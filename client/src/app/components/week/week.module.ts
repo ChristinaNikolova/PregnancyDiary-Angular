@@ -9,13 +9,15 @@ import { WeeksListComponent } from './weeks-list/weeks-list.component';
 import { WeeksRowComponent } from './weeks-row/weeks-row.component';
 import { UpdateWeekComponent } from './update-week/update-week.component';
 import { UpdateWeekResolver } from 'src/app/core/resolvers/update-week.resolver';
+import { SeeWeekComponent } from './see-week/see-week.component';
 
 @NgModule({
   declarations: [
     CreateWeekComponent,
     WeeksListComponent,
     WeeksRowComponent,
-    UpdateWeekComponent
+    UpdateWeekComponent,
+    SeeWeekComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { UpdateWeekResolver } from 'src/app/core/resolvers/update-week.resolver'
     RouterModule.forChild(
       [
         { path: 'create/:id', component: CreateWeekComponent },
-        { path: 'update-week/:id', component: UpdateWeekComponent, resolve: { updateWeek: UpdateWeekResolver } }
+        { path: 'update-week/:id', component: UpdateWeekComponent, resolve: { updateWeek: UpdateWeekResolver } },
+        { path: 'see-week/:id', component: SeeWeekComponent, resolve: { singleWeek: UpdateWeekResolver } }
       ]
     ),
     SharedModule
