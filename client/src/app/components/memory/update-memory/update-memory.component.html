@@ -1,0 +1,47 @@
+<div class="update-memory-wrapper">
+  <h1 class="custom-font text-center">Update Memory</h1>
+  <hr />
+  <div class="row update-memory-form">
+    <div class="col-lg-8">
+      <form [formGroup]="updateForm" class="mt-2" (ngSubmit)="update()">
+        <div class="form-group">
+          <label class="control-label" for="date">Date</label>
+          <input class="form-control" type="date" name="date" id="date" formControlName="date">
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.date?.errors?.required && f.date?.touched">
+          This field is required
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="validMemoryDate">
+          The date must be before or equal to current date
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="title">Title</label>
+          <input class="form-control" type="text" name="title" id="title" formControlName="title">
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.title?.errors?.required && f.title?.touched">
+          This field is required
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.title?.errors?.minlength">
+          The title should be at least {{f.title?.errors?.minlength.requiredLength}} symbols
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.title?.errors?.maxlength">
+          The title should be max {{f.title?.errors?.maxlength.requiredLength}} symbols
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="content">Memory</label>
+          <textarea class="form-control" type="text" name="content" id="content" formControlName="content"></textarea>
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.content?.errors?.required && f.content?.touched">
+          This field is required
+        </div>
+        <div class="alert alert-warning alert-custom-margin" *ngIf="f.content?.errors?.maxlength">
+          The content should be max {{f.content?.errors?.maxlength.requiredLength}} symbols
+        </div>
+        <div class="text-center">
+          <button class="btn" type="submit" [disabled]="updateForm.invalid">Update Memory</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <app-diary-picture></app-diary-picture>
+</div>
