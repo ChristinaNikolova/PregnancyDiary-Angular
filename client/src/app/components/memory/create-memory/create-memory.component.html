@@ -1,0 +1,41 @@
+<div class="create-memory-wrapper">
+  <h1 class="custom-font text-center">Create Memories</h1>
+  <hr />
+  <div class="row create-memory-form">
+    <div class="col-lg-8">
+      <form [formGroup]="createForm" class="mt-2" (submit)="create()">
+        <div formArrayName="memories">
+          <label class="control-label">My Memories...</label>
+          <div *ngFor="let memory of memories.controls; let i=index" [formGroupName]="i">
+            <label class="control-label">Memory: </label>
+            <div class="form-group">
+              <label class="control-label" for="date">Date</label>
+              <input class="form-control" type="date" id="date" formControlName="date">
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="title">Title</label>
+              <input class="form-control" type="text" id="title" formControlName="title">
+            </div>
+            <div class="alert alert-warning alert-custom-margin"
+              *ngIf="f.memories?.controls[i]?.controls.title?.errors?.required && f.memories?.controls[i].controls.title?.touched">
+              The field is required
+            </div>
+            <!-- <div class="alert alert-warning alert-custom-margin" *ngIf="f.ingredients?.controls[i].controls.name?.errors?.minlength">Ingredient name should be at least {{f.ingredients.controls[i].controls.name.errors.minlength.requiredLength}} characters</div>
+              <div class="alert alert-warning alert-custom-margin" *ngIf="f.ingredients?.controls[i].controls.name?.errors?.maxlength">Ingredient name should be maximal {{f.ingredients.controls[i].controls.name.errors.maxlength.requiredLength}} characters</div> -->
+            <div class="form-group">
+              <label class="control-label" for="content">Content</label>
+              <textarea class="form-control" type="text" id="content" formControlName="content"></textarea>
+            </div>
+            <hr />
+          </div>
+          <button class="btn" (click)="addMemory()">Add memory</button>
+          <hr />
+          <div class="text-center">
+            <button class="btn" type="submit" [disabled]="createForm.invalid">Create Memories</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <app-diary-picture></app-diary-picture>
+</div>

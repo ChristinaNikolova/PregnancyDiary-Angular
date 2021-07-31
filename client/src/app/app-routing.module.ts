@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'weeks', loadChildren: './components/week/week.module#WeekModule', canActivate: [AuthGuard] },
   { path: 'diaries', loadChildren: './components/diary/diary.module#DiaryModule', canActivate: [AuthGuard] },
   { path: 'baby', loadChildren: './components/baby/baby.module#BabyModule', canActivate: [AuthGuard] },
+  { path: 'memories', loadChildren: './components/memory/memory.module#MemoryModule', canActivate: [AuthGuard] },
   { path: 'administration', loadChildren: './components/administration/administration.module#AdministrationModule', canActivate: [AdminGuard] },
   { path: '**', component: NotFoundComponent }
 ];

@@ -7,13 +7,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 
 import { SharedModule } from './components/shared/shared.module';
+import { CoreModule } from './components/core/core.module';
 import { ArticleModule } from './components/article/article.module';
 import { UserModule } from './components/user/user.module';
 import { AdministrationModule } from './components/administration/administration.module';
 import { DiaryModule } from './components/diary/diary.module';
 import { BabyModule } from './components/baby/baby.module';
 import { WeekModule } from './components/week/week.module';
-import { CoreModule } from './components/core/core.module';
+import { MemoryModule } from './components/memory/memory.module';
 
 import { ResponseHandlerInterceptor } from './core/interceptors/response-handler.interceptor';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
@@ -46,7 +47,8 @@ import { RegisterComponent } from './components/authentication/register/register
     AdministrationModule,
     DiaryModule,
     BabyModule,
-    WeekModule
+    WeekModule,
+    MemoryModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ResponseHandlerInterceptor, multi: true },

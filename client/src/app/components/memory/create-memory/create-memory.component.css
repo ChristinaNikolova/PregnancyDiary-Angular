@@ -1,0 +1,42 @@
+.create-memory-wrapper {
+  background-color: #FFE2E0;
+}
+
+.create-memory-wrapper .custom-font {
+  font-weight: 100;
+}
+
+.create-memory-wrapper button {
+  background-color: #EF93AE;
+  border-color: #EF93AE;
+  color: white;
+  margin-top: 10px;
+}
+
+.create-memory-wrapper button:hover {
+  background-color: #7BA5F7;
+  border-color: #7BA5F7;
+  color: white;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+.create-memory-form {
+  justify-content: center;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+.control-label {
+  margin-bottom: 5px;
+}
+
+hr {
+  margin-left: 20px;
+  margin-right: 20px;
+}
