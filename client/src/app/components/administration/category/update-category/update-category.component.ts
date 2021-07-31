@@ -27,14 +27,14 @@ export class UpdateCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.category = this.route.snapshot.data['updateCategory'];
-    
+
     this.updateForm = this.fb.group({
       name: [this.category.name, [Validators.required, Validators.minLength(NAME_MIN_LEN), Validators.maxLength(NAME_MAX_LEN)]],
       picture: [this.category.picture, [Validators.required]],
     });
   }
 
-  public get f() {
+  get f() {
     return this.updateForm.controls;
   }
 
@@ -42,10 +42,11 @@ export class UpdateCategoryComponent implements OnInit {
     return isUrlsPictureInvalid(this.updateForm.value.picture);
   }
 
-
   update(): void {
-    if (this.updateForm.invalid ||
-      isUrlsPictureInvalid(this.updateForm.value.picture)) {
+    if (
+      this.updateForm.invalid ||
+      isUrlsPictureInvalid(this.updateForm.value.picture)
+    ) {
       return;
     }
 

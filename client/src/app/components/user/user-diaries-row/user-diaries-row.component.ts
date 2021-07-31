@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { DiariesService } from 'src/app/core/services/diary/diaries.service';
 import IDiaryRow from '../../shared/models/diary/IDiaryRow';
@@ -8,13 +8,11 @@ import IDiaryRow from '../../shared/models/diary/IDiaryRow';
   templateUrl: './user-diaries-row.component.html',
   styleUrls: ['./user-diaries-row.component.css'],
 })
-export class UserDiariesRowComponent implements OnInit {
+export class UserDiariesRowComponent {
   @Input() diary: IDiaryRow;
   @Output() removeDiaryEventEmitter = new EventEmitter();
 
   constructor(private diariesService: DiariesService) {}
-
-  ngOnInit(): void {}
 
   remove(): void {
     this.diariesService.remove(this.diary.id).subscribe((_) => {

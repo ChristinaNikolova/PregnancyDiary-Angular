@@ -3,7 +3,7 @@
   <hr />
   <div class="row login-form">
     <div class="col-lg-8">
-      <form [formGroup]="loginForm" (submit)="logIn()" class="mt-2">
+      <form [formGroup]="loginForm" (ngSubmit)="logIn()" class="mt-2">
         <div class="form-group">
           <label class="control-label" for="email">Email</label>
           <input type="text" class="form-control" id="email" formControlName="email">

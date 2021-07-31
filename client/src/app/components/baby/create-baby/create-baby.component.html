@@ -3,7 +3,7 @@
   <hr />
   <div class="row create-baby-form">
     <div class="col-lg-8">
-      <form [formGroup]="createForm" class="mt-2" (submit)="create()">
+      <form [formGroup]="createForm" class="mt-2" (ngSubmit)="create()">
         <div class="form-group">
           <label class="control-label" for="name">Name</label>
           <input class="form-control" type="text" name="name" id="name" formControlName="name">

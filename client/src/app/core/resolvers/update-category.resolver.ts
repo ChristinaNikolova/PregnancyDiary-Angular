@@ -9,7 +9,6 @@ import { CategoriesService } from '../services/category/categories.service';
   providedIn: 'root'
 })
 export class UpdateCategoryResolver implements Resolve<IAdminCategory> {
-
   constructor(private categoriesService: CategoriesService) {
   }
 

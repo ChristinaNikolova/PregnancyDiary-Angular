@@ -44,7 +44,7 @@ export class UpdateArticleComponent implements OnInit {
     });
   }
 
-  public get f() {
+  get f() {
     return this.updateForm.controls;
   }
 

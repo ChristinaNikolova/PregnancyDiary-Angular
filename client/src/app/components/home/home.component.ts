@@ -8,8 +8,8 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  public isLoggedIn: boolean;
-  public username: string;
+  isLoggedIn: boolean;
+  username: string;
 
   constructor(private authService: AuthService) {}
 

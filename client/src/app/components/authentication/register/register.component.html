@@ -3,7 +3,7 @@
   <hr />
   <div class="row register-form">
     <div class="col-lg-8">
-      <form [formGroup]="registerForm" (submit)="register()" class="mt-2">
+      <form [formGroup]="registerForm" (ngSubmit)="register()" class="mt-2">
         <div class="form-group">
           <label class="control-label" for="username">Username</label>
           <input type="text" class="form-control" id="username" formControlName="username">

@@ -15,7 +15,7 @@ const CONTENT_MAX_LEN = 1000;
   styleUrls: ['./create-memory.component.css'],
 })
 export class CreateMemoryComponent implements OnInit {
-  public createForm: FormGroup;
+  createForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,

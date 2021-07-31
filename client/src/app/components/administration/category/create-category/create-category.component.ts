@@ -29,7 +29,7 @@ export class CreateCategoryComponent implements OnInit {
     });
   }
 
-  public get f() {
+  get f() {
     return this.createForm.controls;
   }
 

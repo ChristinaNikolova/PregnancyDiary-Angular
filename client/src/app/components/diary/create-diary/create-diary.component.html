@@ -3,7 +3,7 @@
   <hr />
   <div class="row create-diary-form">
     <div class="col-lg-8">
-      <form [formGroup]="createForm" class="mt-2" (submit)="create()">
+      <form [formGroup]="createForm" class="mt-2" (ngSubmit)="create()">
         <div class="form-group">
           <label class="control-label" for="positive-test">Positive Test</label>
           <input class="form-control" type="date" name="positiveTest" id="positive-test" formControlName="positiveTest">
@@ -26,7 +26,7 @@
           The due date must be greater than the current date
         </div>
         <div class="form-group">
-          <label class="form-control-label" for="gender">Gender</label>
+          <label class="control-label" for="gender">Gender</label>
           <select class="form-control" id="gender" formControlName="gender">
             <option disabled selected="selected">Please select one of the options below</option>
             <option [value]="gender" *ngFor="let gender of genders">{{gender}}</option>

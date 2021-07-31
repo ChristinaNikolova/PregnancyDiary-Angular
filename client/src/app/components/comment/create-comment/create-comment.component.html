@@ -2,7 +2,7 @@
   <h2 class="custom-font">Comments</h2>
   <div class="post post-content">
     <h5 class="comments-title-second-title custom-font">Leave comment</h5>
-    <form class="comment-form" [formGroup]="createCommentForm" (submit)="create()">
+    <form class="comment-form" [formGroup]="createCommentForm" (ngSubmit)="create()">
       <div class="form-group">
         <textarea type="text" cols="10" rows="7" class="form-control" id="content" formControlName="content" placeholder="Write your comment..."></textarea>
       </div>

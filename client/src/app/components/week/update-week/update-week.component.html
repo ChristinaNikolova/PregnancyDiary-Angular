@@ -3,7 +3,7 @@
   <hr />
   <div class="row update-week-form">
     <div class="col-lg-8">
-      <form [formGroup]="updateForm" class="mt-2" (submit)="update()">
+      <form [formGroup]="updateForm" class="mt-2" (ngSubmit)="update()">
         <div class="form-group">
           <label class="control-label" for="number">Week Number</label>
           <input class="form-control" type="number" name="number" id="number" formControlName="number">
