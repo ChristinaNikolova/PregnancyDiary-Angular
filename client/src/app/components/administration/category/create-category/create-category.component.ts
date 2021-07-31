@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { CategoriesService } from 'src/app/core/services/categories/categories.service';
+import { CategoriesService } from 'src/app/core/services/category/categories.service';
 import { isUrlsPictureInvalid } from 'src/app/core/validators/imageValidator';
 
 const NAME_MIN_LEN = 3;

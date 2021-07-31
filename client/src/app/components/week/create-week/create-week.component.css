@@ -1,0 +1,43 @@
+.add-week-wrapper {
+  background-color: #FFE2E0;
+  height: 1000px;
+}
+
+.add-week-wrapper .custom-font {
+  font-weight: 100;
+}
+
+.add-week-wrapper button {
+  background-color: #EF93AE;
+  border-color: #EF93AE;
+  color: white;
+  margin-top: 10px;
+}
+
+.add-week-wrapper button:hover {
+  background-color: #7BA5F7;
+  border-color: #7BA5F7;
+  color: white;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+.add-week-form {
+  justify-content: center;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+.control-label {
+  margin-bottom: 5px;
+}
+
+hr {
+  margin-left: 20px;
+  margin-right: 20px;
+}

@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import IAdminCategory from 'src/app/components/shared/models/category/IAdminCategory';
-import { CategoriesService } from 'src/app/core/services/categories/categories.service';
+import { CategoriesService } from 'src/app/core/services/category/categories.service';
 import { isUrlsPictureInvalid } from 'src/app/core/validators/imageValidator';
 
 const NAME_MIN_LEN = 3;

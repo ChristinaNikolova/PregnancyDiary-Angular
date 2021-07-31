@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 
 import IUpdateArticle from 'src/app/components/shared/models/article/IUpdateArticle';
 import IBaseCategory from 'src/app/components/shared/models/category/IBaseCategory';
-import { ArticlesService } from 'src/app/core/services/articles/articles.service';
-import { CategoriesService } from 'src/app/core/services/categories/categories.service';
+import { ArticlesService } from 'src/app/core/services/article/articles.service';
+import { CategoriesService } from 'src/app/core/services/category/categories.service';
 import { isUrlsPictureInvalid } from 'src/app/core/validators/imageValidator';
 
 const TITLE_MIN_LEN = 5;

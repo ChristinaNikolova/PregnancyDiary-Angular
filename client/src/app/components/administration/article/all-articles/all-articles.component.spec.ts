@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import IAdminArticle from 'src/app/components/shared/models/article/IAdminArticle';
 import { asyncData } from 'src/app/core/helpers/asyncDataTesting';
-import { ArticlesService } from 'src/app/core/services/articles/articles.service';
+import { ArticlesService } from 'src/app/core/services/article/articles.service';
 import { AllArticlesComponent } from './all-articles.component';
 
 fdescribe('AllArticlesComponent', () => {

@@ -56,7 +56,7 @@
         {
             public const string MinNumber = "1";
 
-            public const string MaxNumber = "42";
+            public const string MaxNumber = "44";
         }
     }
 }

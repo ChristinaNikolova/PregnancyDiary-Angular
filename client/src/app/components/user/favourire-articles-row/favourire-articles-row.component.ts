@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { ArticlesService } from 'src/app/core/services/articles/articles.service';
+import { ArticlesService } from 'src/app/core/services/article/articles.service';
 import IFavArticle from '../../shared/models/article/IFavArticle';
 
 @Component({

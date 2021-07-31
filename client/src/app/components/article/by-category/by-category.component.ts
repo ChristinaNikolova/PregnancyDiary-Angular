@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import { ArticlesService } from 'src/app/core/services/articles/articles.service';
-import { CategoriesService } from 'src/app/core/services/categories/categories.service';
+import { ArticlesService } from 'src/app/core/services/article/articles.service';
+import { CategoriesService } from 'src/app/core/services/category/categories.service';
 import IArticle from '../../shared/models/article/IArticle';
 
 @Component({

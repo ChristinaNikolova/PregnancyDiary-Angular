@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { UsersService } from 'src/app/core/services/users/users.service';
+import { UsersService } from 'src/app/core/services/user/users.service';
 import IFavArticle from '../../shared/models/article/IFavArticle';
 
 @Component({

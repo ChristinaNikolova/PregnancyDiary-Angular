@@ -1,0 +1,73 @@
+<div class="add-week-wrapper">
+  <h1 class="custom-font text-center">Add Week</h1>
+  <hr />
+  <div class="row add-week-form">
+    <div class="col-lg-8">
+      <form [formGroup]="createForm" class="mt-2" (submit)="create()">
+        <div class="form-group">
+          <label class="control-label" for="number">Week Number</label>
+          <input class="form-control" type="number" name="number" id="number" formControlName="number">
+        </div>
+        <div class="alert alert-warning alert-custom-margin"
+          *ngIf="f.weekNumber?.errors?.required && f.weekNumber?.touched">
+          This field is required
+        </div>
+        <div class="alert alert-warning alert-custom-margin" 
+          *ngIf="f.weekNumber?.errors?.min">
+          The week number should be at least {{f.weekNumber?.errors?.min.min}}
+        </div>
+        <div class="alert alert-warning alert-custom-margin" 
+          *ngIf="f.weekNumber?.errors?.max">
+          The week number should be maximal {{f.weekNumber?.errors?.max.max}}
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="my-weight">My Weight in kg</label>
+          <input class="form-control" type="number" name="myWeight" id="my-weight" formControlName="myWeight">
+        </div>
+        <div class="alert alert-warning alert-custom-margin"
+          *ngIf="f.myWeight?.errors?.required && f.myWeight?.touched">
+          This field is required
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="my-belly-size">My Belly Size in cm</label>
+          <input class="form-control" type="number" name="myBellySize" id="my-belly-size" formControlName="myBellySize">
+        </div>
+        <div class="alert alert-warning alert-custom-margin"
+          *ngIf="f.myBellySize?.errors?.required && f.myBellySize?.touched">
+          This field is required
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="mood">My Mood</label>
+          <select class="form-control" id="mood" formControlName="mood">
+            <option disabled selected="selected">Please select one of the options below</option>
+            <option [value]="mood" *ngFor="let mood of moods">{{mood}}</option>
+          </select>
+        </div>
+        <div class="alert alert-warning alert-custom-margin" 
+          *ngIf="f.mood?.errors?.required && f.mood?.touched">
+          This field is required
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="baby-weight">Baby Weight in gr</label>
+          <input class="form-control" type="number" name="babyWeight" id="baby-weight" formControlName="babyWeight">
+        </div>
+        <div class="alert alert-warning alert-custom-margin"
+          *ngIf="f.babyWeight?.errors?.required && f.babyWeight?.touched">
+          This field is required
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="baby-height">Baby Height in mm</label>
+          <input class="form-control" type="number" name="babyHeight" id="baby-height" formControlName="babyHeight">
+        </div>
+        <div class="alert alert-warning alert-custom-margin"
+          *ngIf="f.babyHeight?.errors?.required && f.babyHeight?.touched">
+          This field is required
+        </div>
+        <div class="text-center">
+          <button class="btn" type="submit" [disabled]="createForm.invalid">Add Week</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <app-diary-picture></app-diary-picture>
+</div>

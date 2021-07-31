@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import IAdminArticle from 'src/app/components/shared/models/article/IAdminArticle';
-import { ArticlesService } from 'src/app/core/services/articles/articles.service';
+import { ArticlesService } from 'src/app/core/services/article/articles.service';
 
 @Component({
   selector: 'app-all-articles',

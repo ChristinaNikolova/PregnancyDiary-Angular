@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { CommentsService } from 'src/app/core/services/comments/comments.service';
+import { CommentsService } from 'src/app/core/services/comment/comments.service';
 import IComment from '../../shared/models/comment/IComment';
 
 @Component({

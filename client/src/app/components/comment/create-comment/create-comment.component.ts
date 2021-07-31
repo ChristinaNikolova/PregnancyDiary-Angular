@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { CommentsService } from 'src/app/core/services/comments/comments.service';
+import { CommentsService } from 'src/app/core/services/comment/comments.service';
 
 const CONTENT_MIN_LEN = 3;
 const CONTENT_MAX_LEN = 1000;

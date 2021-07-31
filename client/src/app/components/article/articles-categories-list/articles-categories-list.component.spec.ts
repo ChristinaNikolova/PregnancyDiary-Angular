@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { asyncData } from 'src/app/core/helpers/asyncDataTesting';
-import { CategoriesService } from 'src/app/core/services/categories/categories.service';
+import { CategoriesService } from 'src/app/core/services/category/categories.service';
 import ICategory from '../../shared/models/category/ICategory';
 import { ArticlesCategoriesListComponent } from './articles-categories-list.component';
 

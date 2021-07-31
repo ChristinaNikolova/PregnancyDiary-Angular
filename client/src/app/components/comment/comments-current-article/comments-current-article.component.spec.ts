@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { asyncData } from 'src/app/core/helpers/asyncDataTesting';
-import { CommentsService } from 'src/app/core/services/comments/comments.service';
+import { CommentsService } from 'src/app/core/services/comment/comments.service';
 import IComment from '../../shared/models/comment/IComment';
 import { CommentsCurrentArticleComponent } from './comments-current-article.component';
 

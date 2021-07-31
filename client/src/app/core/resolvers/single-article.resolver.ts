@@ -7,7 +7,7 @@ import {
 import { Observable } from 'rxjs';
 
 import IArticleDetails from 'src/app/components/shared/models/article/IArticleDetails';
-import { ArticlesService } from '../services/articles/articles.service';
+import { ArticlesService } from '../services/article/articles.service';
 
 @Injectable({
   providedIn: 'root',

@@ -3,7 +3,7 @@ import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/r
 import { Observable } from 'rxjs';
 
 import IAdminCategory from 'src/app/components/shared/models/category/IAdminCategory';
-import { CategoriesService } from '../services/categories/categories.service';
+import { CategoriesService } from '../services/category/categories.service';
 
 @Injectable({
   providedIn: 'root'
