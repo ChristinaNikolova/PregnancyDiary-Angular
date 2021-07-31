@@ -1,32 +1,51 @@
 <div class="create-memory-wrapper">
-  <h1 class="custom-font text-center">Create Memories</h1>
+  <h1 class="custom-font text-center">Create Memory</h1>
   <hr />
   <div class="row create-memory-form">
     <div class="col-lg-8">
-      <form [formGroup]="createForm" class="mt-2" (submit)="create()">
-        <div formArrayName="memories">
-          <label class="control-label">My Memories...</label>
-          <div *ngFor="let memory of memories.controls; let i=index" [formGroupName]="i">
-            <label class="control-label">Memory: </label>
-            <div class="form-group">
-              <label class="control-label" for="date">Date</label>
-              <input class="form-control" type="date" id="date" formControlName="date">
-            </div>
-            <div class="form-group">
-              <label class="control-label" for="title">Title</label>
-              <input class="form-control" type="text" id="title" formControlName="title">
-            </div>
-            <div class="form-group">
-              <label class="control-label" for="content">Content</label>
-              <textarea class="form-control" type="text" id="content" formControlName="content"></textarea>
-            </div>
-            <hr />
-          </div>
-          <button class="btn" (click)="addMemory()">Add memory</button>
-          <hr />
-          <div class="text-center">
-            <button class="btn" type="submit" [disabled]="createForm.invalid">Create Memories</button>
-          </div>
+      <form [formGroup]="createForm" class="mt-2" (ngSubmit)="create()">
+        <div class="form-group">
+          <label class="control-label" for="date">Date</label>
+          <input class="form-control" type="date" name="date" id="date" formControlName="date">
+        </div>
+        <div class="alert alert-warning alert-custom-margin" 
+          *ngIf="f.date?.errors?.required && f.date?.touched">
+          This field is required
+        </div>
+        <div class="alert alert-warning alert-custom-margin" 
+          *ngIf="validMemoryDate">
+          The date must be before or equal to current date
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="title">Title</label>
+          <input class="form-control" type="text" name="title" id="title" formControlName="title">
+        </div>
+        <div class="alert alert-warning alert-custom-margin" 
+          *ngIf="f.title?.errors?.required && f.title?.touched">
+          This field is required
+        </div>
+        <div class="alert alert-warning alert-custom-margin" 
+          *ngIf="f.title?.errors?.minlength">
+          The title should be at least {{f.title?.errors?.minlength.requiredLength}} symbols
+        </div>
+        <div class="alert alert-warning alert-custom-margin" 
+          *ngIf="f.title?.errors?.maxlength">
+          The title should be max {{f.title?.errors?.maxlength.requiredLength}} symbols
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="content">Memory</label>
+          <textarea class="form-control" type="text" name="content" id="content" formControlName="content"></textarea>
+        </div>
+        <div class="alert alert-warning alert-custom-margin" 
+          *ngIf="f.content?.errors?.required && f.content?.touched">
+          This field is required
+        </div>
+        <div class="alert alert-warning alert-custom-margin" 
+          *ngIf="f.content?.errors?.maxlength">
+          The content should be max {{f.content?.errors?.maxlength.requiredLength}} symbols
+        </div>
+        <div class="text-center">
+          <button class="btn" type="submit" [disabled]="createForm.invalid">Create Memory</button>
         </div>
       </form>
     </div>

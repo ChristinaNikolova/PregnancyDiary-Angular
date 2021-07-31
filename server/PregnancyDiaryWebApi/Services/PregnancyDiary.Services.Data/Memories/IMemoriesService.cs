@@ -4,11 +4,9 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    using PregnancyDiary.Services.Data.Dtos;
-
     public interface IMemoriesService
     {
-        Task CreateAsync(IEnumerable<CreateMemoryDto> memories, string weekId);
+        Task CreateAsync(DateTime date, string title, string cntent, string weekId);
 
         Task<IEnumerable<T>> GetAllCurrentWeekAsync<T>(string weekId);
 

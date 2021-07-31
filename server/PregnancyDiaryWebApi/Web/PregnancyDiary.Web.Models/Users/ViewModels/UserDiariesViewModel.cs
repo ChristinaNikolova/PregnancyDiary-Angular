@@ -6,8 +6,6 @@
 
     public class UserDiariesViewModel : DiaryBaseViewModel, IMapFrom<Diary>
     {
-        public string Id { get; set; }
-
         public int WeeksCount { get; set; }
     }
 }

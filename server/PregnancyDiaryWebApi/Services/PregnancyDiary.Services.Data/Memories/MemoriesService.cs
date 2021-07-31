@@ -20,21 +20,17 @@
             this.momentsRepository = momentsRepository;
         }
 
-        public async Task CreateAsync(IEnumerable<CreateMemoryDto> memories, string weekId)
+        public async Task CreateAsync(DateTime date, string title, string content, string weekId)
         {
-            foreach (var current in memories)
+            var moment = new Moment()
             {
-                var moment = new Moment()
-                {
-                    Date = current.Date,
-                    Title = current.Title,
-                    Content = current.Content,
-                    WeekId = weekId,
-                };
+                Date = date,
+                Title = title,
+                Content = content,
+                WeekId = weekId,
+            };
 
-                await this.momentsRepository.AddAsync(moment);
-            }
-
+            await this.momentsRepository.AddAsync(moment);
             await this.momentsRepository.SaveChangesAsync();
         }
 

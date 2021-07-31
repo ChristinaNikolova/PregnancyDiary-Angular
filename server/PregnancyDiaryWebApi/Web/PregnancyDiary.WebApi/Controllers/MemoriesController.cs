@@ -29,19 +29,11 @@
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult> Create([FromBody] AllMemoriesInputModel input)
+        public async Task<ActionResult> Create([FromBody] CreateMemoryInputModel input)
         {
             try
             {
-                var memories = input.Memories
-                    .Select(m => new CreateMemoryDto()
-                    {
-                        Date = m.Date,
-                        Title = m.Title,
-                        Content = m.Content,
-                    });
-
-                await this.memoriesService.CreateAsync(memories, input.WeekId);
+                await this.memoriesService.CreateAsync(input.Date, input.Title, input.Content, input.WeekId);
 
                 return this.Ok(new
                 {

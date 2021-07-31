@@ -13,7 +13,6 @@ import { CreateMemoryComponent } from './create-memory/create-memory.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsModule,
     RouterModule.forChild([
       { path: 'create/:id', component: CreateMemoryComponent },
     ]),

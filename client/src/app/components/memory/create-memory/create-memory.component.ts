@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { MemoriesService } from 'src/app/core/services/memory/memories.service';
+import { isMemoryDateInvalid } from 'src/app/core/validators/dateValidator';
 
 const TITLE_MIN_LEN = 5;
 const TITLE_MAX_LEN = 100;
@@ -12,53 +16,43 @@ const CONTENT_MAX_LEN = 1000;
 })
 export class CreateMemoryComponent implements OnInit {
   public createForm: FormGroup;
-  public memoriesCount = 1;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private memoriesService: MemoriesService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
-  ngOnInit() {
-    this.buildForm();
-  }
-
-  public create(): void {
-    // validate date
-    if (this.createForm.invalid) {
-      return;
-    }
-
-    // this.recipesService.create(this.createForm.value).subscribe((_) => {
-    //   this.router.navigate(['/recipe/all']);
-    // });
-  }
-
-  public get f() {
+  get f() {
     return this.createForm.controls;
   }
 
-  public get memories(): FormArray {
-    return this.createForm.get('memories') as FormArray;
+  get validMemoryDate(): boolean {
+    return isMemoryDateInvalid(this.createForm.value.date);
   }
 
-  public addMemory() {
-    const currentFormValue = this.createForm.value;
-    this.memoriesCount++;
-    this.buildForm();
-    this.createForm.patchValue(currentFormValue);
-  }
-
-  // remove
-
-  private buildForm(): void {
+  ngOnInit() {
     this.createForm = this.fb.group({
-      memories: this.fb.array(
-        new Array(this.memoriesCount).fill(null).map((_, index) =>
-          this.fb.group({
-            date: ['', [Validators.required]],
-            title: ['', Validators.required, Validators.minLength(TITLE_MIN_LEN), Validators.maxLength(TITLE_MAX_LEN)],
-            content: ['', Validators.required, Validators.maxLength(CONTENT_MAX_LEN)],
-          })
-        )
-      ),
+      date: ['', [Validators.required]],
+      title: ['', [Validators.required, Validators.minLength(TITLE_MIN_LEN), Validators.maxLength(TITLE_MAX_LEN)]],
+      content: ['', [Validators.required, Validators.maxLength(CONTENT_MAX_LEN)]],
     });
+  }
+
+  create(): void {
+    if (this.createForm.invalid ||
+      isMemoryDateInvalid(this.createForm.value.date)
+    ) {
+      return;
+    }
+
+    const weekId = this.route.snapshot.params['id'];
+
+    this.memoriesService
+      .create(this.createForm.value, weekId)
+      .subscribe((_) => {
+        this.router.navigate([`/weeks/see-week/${weekId}`]);
+      });
   }
 }

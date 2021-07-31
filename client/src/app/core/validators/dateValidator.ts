@@ -30,3 +30,14 @@ export function isBabysBirthDateInvalid(birthDate: string): boolean {
 
   return false;
 }
+
+export function isMemoryDateInvalid(date: string): boolean {
+  const todaysDate = new Date();
+  const pickedDate = new Date(Date.parse(date.replace(/-/g, ' ')));
+
+  if (todaysDate < pickedDate) {
+    return true;
+  }
+
+  return false;
+}

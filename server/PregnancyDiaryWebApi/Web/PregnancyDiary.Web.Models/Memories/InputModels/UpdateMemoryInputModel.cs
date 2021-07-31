@@ -10,9 +10,6 @@
         [Required]
         public string Id { get; set; }
 
-        [Required]
-        public string WeekId { get; set; }
-
         public string FormattedDate
             => string.Join("-", this.Date.Year, this.Date.Month.ToString("d2"), this.Date.Day.ToString("d2"));
     }
