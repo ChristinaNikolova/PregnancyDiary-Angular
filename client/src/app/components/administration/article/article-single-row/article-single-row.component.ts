@@ -15,9 +15,7 @@ export class ArticleSingleRowComponent {
   constructor(private articlesService: ArticlesService) {}
 
   remove(): void {
-    this.articlesService
-    .remove(this.article.id)
-    .subscribe((_) => {
+    this.articlesService.remove(this.article.id).subscribe((_) => {
       this.removeArticleEventEmitter.emit();
     });
   }

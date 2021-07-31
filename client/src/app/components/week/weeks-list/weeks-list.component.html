@@ -1,0 +1,22 @@
+<div class="weeks-list-wrapper">
+  <h1 class="text-center custom-font p-1">Weeks</h1>
+  <hr />
+  <div class="container">
+    <table class="table table-bordered table-hover table-background">
+      <thead class="text-center">
+        <tr>
+          <th>Week's Number</th>
+          <th>Mood</th>
+          <th>Moments</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let week of weeks$ | async">
+        <tr app-weeks-row [week]=week class="text-center" (removeWeekEventEmitter)="load()"></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="fill pt-1 pb-1"></div>
+</div>

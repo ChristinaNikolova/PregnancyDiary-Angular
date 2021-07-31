@@ -10,6 +10,7 @@ import { UpdateDiaryResolver } from 'src/app/core/resolvers/update-diary.resolve
 import { BabyModule } from '../baby/baby.module';
 import { SingleBabyResolver } from 'src/app/core/resolvers/single-baby.resolver';
 import { SharedModule } from '../shared/shared.module';
+import { WeekModule } from '../week/week.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SharedModule } from '../shared/shared.module';
       { path: 'see/:id', component: SeeDiaryComponent, resolve: { singleBaby: SingleBabyResolver } }
     ]),
     BabyModule,
+    WeekModule,
     SharedModule
   ],
 })

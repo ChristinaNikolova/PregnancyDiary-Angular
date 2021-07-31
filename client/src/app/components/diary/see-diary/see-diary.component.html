@@ -32,5 +32,5 @@
   <div *ngIf="diary.isBabyBorn">
     <app-see-baby [diaryId]="diary.id" (removeBabyEventEmitter)="load()"></app-see-baby>
   </div>
-  <!-- <WeeksList diaryId={diaryId} /> -->
+  <app-weeks-list [diaryId]="diary.id"></app-weeks-list>
 </div>

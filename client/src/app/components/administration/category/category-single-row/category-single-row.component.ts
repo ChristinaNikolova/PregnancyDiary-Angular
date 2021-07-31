@@ -14,10 +14,8 @@ export class CategorySingleRowComponent {
   constructor(private categoriesService: CategoriesService) {}
 
   remove(): void {
-    this.categoriesService
-    .remove(this.category.id)
-    .subscribe((_) => {
-       this.deleteCategoryEventEmitter.emit();
+    this.categoriesService.remove(this.category.id).subscribe((_) => {
+      this.deleteCategoryEventEmitter.emit();
     });
   }
 }

@@ -5,10 +5,14 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { CreateWeekComponent } from './create-week/create-week.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { WeeksListComponent } from './weeks-list/weeks-list.component';
+import { WeeksRowComponent } from './weeks-row/weeks-row.component';
 
 @NgModule({
   declarations: [
-    CreateWeekComponent
+    CreateWeekComponent,
+    WeeksListComponent,
+    WeeksRowComponent
   ],
   imports: [
     CommonModule,
@@ -19,6 +23,9 @@ import { ReactiveFormsModule } from '@angular/forms';
       ]
     ),
     SharedModule
+  ],
+  exports:[
+    WeeksListComponent
   ]
 })
 export class WeekModule { }

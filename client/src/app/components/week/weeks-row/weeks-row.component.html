@@ -1,0 +1,20 @@
+<td>
+  {{week.number}}
+</td>
+<td>
+  {{week.moodAsString}}
+</td>
+<td>
+  {{week.momentsCount}}
+</td>
+<td>
+  <a [routerLink]="['/diary/week/see/', week.id]">
+    <button class="btn btn-details">See Week</button>
+  </a>
+</td>
+<td>
+  <a [routerLink]="['/diary/week/update/', week.id]">
+    <button class="btn btn-warning">Update</button>
+  </a>
+</td>
+<td><button class="btn btn-danger" (click)="remove()">Remove</button></td>
