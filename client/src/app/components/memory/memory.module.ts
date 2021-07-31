@@ -5,10 +5,14 @@ import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../shared/shared.module';
 import { CreateMemoryComponent } from './create-memory/create-memory.component';
+import { MemoriesListComponent } from './memories-list/memories-list.component';
+import { MemoryRowComponent } from './memory-row/memory-row.component';
 
 @NgModule({
   declarations: [
-    CreateMemoryComponent
+    CreateMemoryComponent,
+    MemoriesListComponent,
+    MemoryRowComponent
   ],
   imports: [
     CommonModule,
@@ -17,6 +21,9 @@ import { CreateMemoryComponent } from './create-memory/create-memory.component';
       { path: 'create/:id', component: CreateMemoryComponent },
     ]),
     SharedModule
+  ],
+  exports:[
+    MemoriesListComponent
   ]
 })
 export class MemoryModule { }

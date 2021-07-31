@@ -1,0 +1,17 @@
+<td>
+  {{memory.dateAsString}}
+</td>
+<td>
+  {{memory.title}}
+</td>
+<td>
+  {{memory.content}}
+</td>
+<td>
+  <a [routerLink]="['/week/memory/update/', memory.id]">
+    <button class="btn btn-warning">Update</button>
+  </a>
+</td>
+<td>
+  <button class="btn btn-danger" (click)="remove()">Remove</button>
+</td>

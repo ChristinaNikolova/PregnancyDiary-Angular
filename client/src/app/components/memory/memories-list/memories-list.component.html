@@ -1,0 +1,21 @@
+<div class="memory-list-wrapper">
+  <h1 class="text-center custom-font p-1">Memories...</h1>
+  <hr />
+  <div class="container">
+    <table class="table table-bordered table-hover table-background">
+      <thead class="text-center">
+        <tr>
+          <th>Date</th>
+          <th>Title</th>
+          <th>Content</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let memory of memories$ | async">
+        <tr app-memory-row [memory]="memory" (removeMemoryEventEmitter) = "load()" class="text-center"></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="fill pt-1 pb-1"></div>
+</div>

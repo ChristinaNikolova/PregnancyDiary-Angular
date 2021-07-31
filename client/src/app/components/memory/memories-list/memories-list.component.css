@@ -1,0 +1,13 @@
+.memory-list-wrapper .table-bordered th,
+.memory-list-wrapper .table-bordered td {
+  border: 1px solid pink;
+}
+
+.memory-list-wrapper .custom-font {
+  font-weight: 100;
+}
+
+hr {
+  margin-left: 20px;
+  margin-right: 20px;
+}
