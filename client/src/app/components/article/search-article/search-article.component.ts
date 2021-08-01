@@ -17,14 +17,14 @@ export class SearchArticleComponent implements OnInit {
     this.isSearched = false;
   }
 
+  get f() {
+    return this.searchForm.controls;
+  }
+
   ngOnInit(): void {
     this.searchForm = this.fb.group({
       query: ['', [Validators.required, Validators.minLength(QUERY_MIN_LEN)]],
     });
-  }
-
-  get f() {
-    return this.searchForm.controls;
   }
 
   search(): void {

@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import IUpdateWeek from 'src/app/components/shared/models/week/IUpdateWeek';
 
+import IUpdateWeek from 'src/app/components/shared/models/week/IUpdateWeek';
 import IWeek from 'src/app/components/shared/models/week/IWeek';
 import IWeekRow from 'src/app/components/shared/models/week/IWeekRow';
 import { environment } from 'src/environments/environment';

@@ -32,18 +32,6 @@ export class UpdateArticleComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    this.article = this.route.snapshot.data['updateArticle'];
-    this.categories$ = this.categoriesService.getAllNames();
-    
-    this.updateForm = this.fb.group({
-      title: [this.article.title, [Validators.required, Validators.minLength(TITLE_MIN_LEN), Validators.maxLength(TITLE_MAX_LEN)]],
-      content: [this.article.content, [Validators.required, Validators.minLength(CONTENT_MIN_LEN), Validators.maxLength(CONTENT_MAX_LEN)]],
-      categoryName: [this.article.categoryName, [Validators.required]],
-      picture: [this.article.picture, [Validators.required]],
-    });
-  }
-
   get f() {
     return this.updateForm.controls;
   }
@@ -52,9 +40,23 @@ export class UpdateArticleComponent implements OnInit {
     return isUrlsPictureInvalid(this.updateForm.value.picture);
   }
 
+  ngOnInit(): void {
+    this.article = this.route.snapshot.data['updateArticle'];
+    this.categories$ = this.categoriesService.getAllNames();
+
+    this.updateForm = this.fb.group({
+      title: [this.article.title, [Validators.required, Validators.minLength(TITLE_MIN_LEN), Validators.maxLength(TITLE_MAX_LEN)]],
+      content: [this.article.content, [Validators.required, Validators.minLength(CONTENT_MIN_LEN), Validators.maxLength(CONTENT_MAX_LEN)]],
+      categoryName: [this.article.categoryName, [Validators.required]],
+      picture: [this.article.picture, [Validators.required]],
+    });
+  }
+
   update(): void {
-    if (this.updateForm.invalid ||
-      isUrlsPictureInvalid(this.updateForm.value.picture)) {
+    if (
+      this.updateForm.invalid ||
+      isUrlsPictureInvalid(this.updateForm.value.picture)
+    ) {
       return;
     }
 

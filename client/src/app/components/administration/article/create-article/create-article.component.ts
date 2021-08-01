@@ -29,6 +29,14 @@ export class CreateArticleComponent implements OnInit {
     private router: Router
   ) {}
 
+  get f() {
+    return this.createForm.controls;
+  }
+
+  get validPictureUrl(): boolean {
+    return isUrlsPictureInvalid(this.createForm.value.picture);
+  }
+
   ngOnInit(): void {
     this.categories$ = this.categoriesService.getAllNames();
     this.createForm = this.fb.group({
@@ -39,17 +47,11 @@ export class CreateArticleComponent implements OnInit {
     });
   }
 
-  get f() {
-    return this.createForm.controls;
-  }
-
-  get validPictureUrl(): boolean {
-    return isUrlsPictureInvalid(this.createForm.value.picture);
-  }
-
   create(): void {
-    if (this.createForm.invalid ||
-      isUrlsPictureInvalid(this.createForm.value.picture)) {
+    if (
+      this.createForm.invalid ||
+      isUrlsPictureInvalid(this.createForm.value.picture)
+    ) {
       return;
     }
 

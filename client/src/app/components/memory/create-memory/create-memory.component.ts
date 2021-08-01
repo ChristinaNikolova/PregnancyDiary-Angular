@@ -33,7 +33,7 @@ export class CreateMemoryComponent implements OnInit {
     return isMemoryDateInvalid(this.createForm.value.date);
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.weekId = this.route.snapshot.params['id'];
     
     this.createForm = this.fb.group({

@@ -21,6 +21,10 @@ export class RegisterComponent implements OnInit {
     private router: Router
   ) {}
 
+  get f() {
+    return this.registerForm.controls;
+  }
+
   ngOnInit(): void {
     this.registerForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(USERNAME_MIN_LEN)]],
@@ -28,10 +32,6 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(PASS_MIN_LEN)]],
       repeatPassword: ['', [Validators.required]],
     });
-  }
-
-  get f() {
-    return this.registerForm.controls;
   }
 
   register(): void {

@@ -17,11 +17,24 @@ export class UpdateDiaryComponent implements OnInit {
   genders: string[];
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private route: ActivatedRoute,
     private diariesService: DiariesService,
-    private router: Router) {
+    private router: Router
+  ) {
     this.genders = ['Girl', 'Boy', "I don't know yet", 'Surprice'];
+  }
+
+  get f() {
+    return this.updateForm.controls;
+  }
+
+  get validPositiveTest(): boolean {
+    return isPositiveTestInvalid(this.updateForm.value.positiveTest);
+  }
+
+  get validDueDate(): boolean {
+    return isDueDateInvalid(this.updateForm.value.dueDate);
   }
 
   ngOnInit(): void {
@@ -34,18 +47,6 @@ export class UpdateDiaryComponent implements OnInit {
     });
   }
 
-  get f() {
-    return this.updateForm.controls;
-  }
-
-  get validPositiveTest():boolean{
-    return isPositiveTestInvalid(this.updateForm.value.positiveTest);
-  }
-
-  get validDueDate():boolean{
-    return isDueDateInvalid(this.updateForm.value.dueDate);
-  }
-
   update(): void {
     if (
       this.updateForm.invalid ||
@@ -55,9 +56,11 @@ export class UpdateDiaryComponent implements OnInit {
       return;
     }
 
-    this.diariesService.update(this.updateForm.value, this.diary.id).subscribe(() => {
-      const diaryId = this.diary.id;
-      this.router.navigate([`/diaries/see/${diaryId}`]);
-    });
+    this.diariesService
+      .update(this.updateForm.value, this.diary.id)
+      .subscribe(() => {
+        const diaryId = this.diary.id;
+        this.router.navigate([`/diaries/see/${diaryId}`]);
+      });
   }
 }

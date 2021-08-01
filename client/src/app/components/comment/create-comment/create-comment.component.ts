@@ -20,6 +20,10 @@ export class CreateCommentComponent implements OnInit {
     private fb: FormBuilder,
     private commentsService: CommentsService
   ) {}
+  
+  get f() {
+    return this.createCommentForm.controls;
+  }
 
   ngOnInit(): void {
     this.createCommentForm = this.fb.group({
@@ -27,16 +31,14 @@ export class CreateCommentComponent implements OnInit {
     });
   }
 
-  get f() {
-    return this.createCommentForm.controls;
-  }
-
   create(): void {
     if (this.createCommentForm.invalid) {
       return;
     }
 
-    this.commentsService.create(this.createCommentForm.value.content, this.articleId).subscribe((_) => {
+    this.commentsService
+      .create(this.createCommentForm.value.content, this.articleId)
+      .subscribe((_) => {
         this.createCommentForm.reset();
         this.postCommentEventEmitter.emit();
       });

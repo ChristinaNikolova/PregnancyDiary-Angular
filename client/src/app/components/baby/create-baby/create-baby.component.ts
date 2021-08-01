@@ -28,20 +28,6 @@ export class CreateBabyComponent implements OnInit {
     this.genders = ['Girl', 'Boy'];
   }
 
-  ngOnInit(): void {
-    this.diaryId = this.route.snapshot.params['id'];
-    
-    this.createForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(NAME_MIN_LEN), Validators.maxLength(NAME_MAX_LEN)]],
-      birthDate: ['', [Validators.required]],
-      birthTime: ['', [Validators.required]],
-      gender: ['', [Validators.required]],
-      height: ['', [Validators.required]],
-      weight: ['', [Validators.required]],
-      picture: ['', [Validators.required]],
-    });
-  }
-
   get f() {
     return this.createForm.controls;
   }
@@ -52,6 +38,20 @@ export class CreateBabyComponent implements OnInit {
 
   get validPictureUrl(): boolean {
     return isUrlsPictureInvalid(this.createForm.value.picture);
+  }
+
+  ngOnInit(): void {
+    this.diaryId = this.route.snapshot.params['id'];
+
+    this.createForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(NAME_MIN_LEN), Validators.maxLength(NAME_MAX_LEN)]],
+      birthDate: ['', [Validators.required]],
+      birthTime: ['', [Validators.required]],
+      gender: ['', [Validators.required]],
+      height: ['', [Validators.required]],
+      weight: ['', [Validators.required]],
+      picture: ['', [Validators.required]],
+    });
   }
 
   create(): void {

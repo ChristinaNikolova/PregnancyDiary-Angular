@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { environment } from 'src/environments/environment';
 import IRegister from 'src/app/components/shared/models/authentication/IRegister';
 import ILogin from 'src/app/components/shared/models/authentication/ILogin';
+import { environment } from 'src/environments/environment';
 
 const loginUrl = environment.apiBaseUrl + 'account/login';
 const registerUrl = environment.apiBaseUrl + 'account/register';

@@ -22,24 +22,24 @@ export class CreateDiaryComponent implements OnInit {
     this.genders = ['Girl', 'Boy', "I don't know yet", 'Surprice'];
   }
 
+  get f() {
+    return this.createForm.controls;
+  }
+
+  get validPositiveTest(): boolean {
+    return isPositiveTestInvalid(this.createForm.value.positiveTest);
+  }
+
+  get validDueDate(): boolean {
+    return isDueDateInvalid(this.createForm.value.dueDate);
+  }
+
   ngOnInit(): void {
     this.createForm = this.fb.group({
       positiveTest: ['', [Validators.required]],
       dueDate: ['', [Validators.required]],
       gender: ['', [Validators.required]],
     });
-  }
-
-  get f() {
-    return this.createForm.controls;
-  }
-
-  get validPositiveTest():boolean{
-    return isPositiveTestInvalid(this.createForm.value.positiveTest);
-  }
-
-  get validDueDate():boolean{
-    return isDueDateInvalid(this.createForm.value.dueDate);
   }
 
   create(): void {
@@ -55,5 +55,4 @@ export class CreateDiaryComponent implements OnInit {
       this.router.navigate(['/users/diaries']);
     });
   }
-  
 }

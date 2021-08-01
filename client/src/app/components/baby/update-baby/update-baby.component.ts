@@ -25,8 +25,20 @@ export class UpdateBabyComponent implements OnInit {
     private route: ActivatedRoute,
     private babiesService: BabiesService,
     private router: Router
-    ) {
+  ) {
     this.genders = ['Girl', 'Boy'];
+  }
+
+  get f() {
+    return this.updateForm.controls;
+  }
+
+  get validBirthDate(): boolean {
+    return isBabysBirthDateInvalid(this.updateForm.value.birthDate);
+  }
+
+  get validPictureUrl(): boolean {
+    return isUrlsPictureInvalid(this.updateForm.value.picture);
   }
 
   ngOnInit(): void {
@@ -43,18 +55,6 @@ export class UpdateBabyComponent implements OnInit {
     });
   }
 
-  get f() {
-    return this.updateForm.controls;
-  }
-
-  get validBirthDate(): boolean {
-    return isBabysBirthDateInvalid(this.updateForm.value.birthDate);
-  }
-
-  get validPictureUrl(): boolean {
-    return isUrlsPictureInvalid(this.updateForm.value.picture);
-  }
-  
   update(): void {
     if (
       this.updateForm.invalid ||
@@ -67,8 +67,10 @@ export class UpdateBabyComponent implements OnInit {
     const babyId = this.baby.id;
     const diaryId = this.baby.diaryId;
 
-    this.babiesService.update(this.updateForm.value, diaryId, babyId).subscribe(() => {
-      this.router.navigate([`/diaries/see/${diaryId}`]);
-    });
+    this.babiesService
+      .update(this.updateForm.value, diaryId, babyId)
+      .subscribe(() => {
+        this.router.navigate([`/diaries/see/${diaryId}`]);
+      });
   }
 }

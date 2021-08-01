@@ -25,6 +25,14 @@ export class UpdateCategoryComponent implements OnInit {
     private router: Router
   ) {}
 
+  get f() {
+    return this.updateForm.controls;
+  }
+
+  get validPictureUrl(): boolean {
+    return isUrlsPictureInvalid(this.updateForm.value.picture);
+  }
+
   ngOnInit(): void {
     this.category = this.route.snapshot.data['updateCategory'];
 
@@ -32,14 +40,6 @@ export class UpdateCategoryComponent implements OnInit {
       name: [this.category.name, [Validators.required, Validators.minLength(NAME_MIN_LEN), Validators.maxLength(NAME_MAX_LEN)]],
       picture: [this.category.picture, [Validators.required]],
     });
-  }
-
-  get f() {
-    return this.updateForm.controls;
-  }
-
-  get validPictureUrl(): boolean {
-    return isUrlsPictureInvalid(this.updateForm.value.picture);
   }
 
   update(): void {

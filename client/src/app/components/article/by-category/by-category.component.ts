@@ -23,11 +23,12 @@ export class ByCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     let categoryId = '';
-    
+
     this.route.params.subscribe((res) => {
       categoryId = res['id'];
       this.articles$ = this.articlesService.allCurrentCategory(categoryId);
-      this.categoryName$ = this.categoriesService.getCategoryNameById(categoryId);
+      this.categoryName$ =
+        this.categoriesService.getCategoryNameById(categoryId);
     });
   }
 }

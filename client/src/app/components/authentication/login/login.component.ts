@@ -18,15 +18,15 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {}
 
+  get f() {
+    return this.loginForm.controls;
+  }
+
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
     });
-  }
-
-  get f() {
-    return this.loginForm.controls;
   }
 
   logIn(): void {

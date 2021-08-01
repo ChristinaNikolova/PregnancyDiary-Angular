@@ -20,8 +20,12 @@ export class UpdateWeekComponent implements OnInit {
     private weeksService: WeeksService,
     private route: ActivatedRoute,
     private router: Router
-    ) {
+  ) {
     this.moods = ['Happy', 'Sad', 'Surprised', 'Melancholic', 'Angry'];
+  }
+
+  get f() {
+    return this.updateForm.controls;
   }
 
   ngOnInit(): void {
@@ -37,17 +41,15 @@ export class UpdateWeekComponent implements OnInit {
     });
   }
 
-  get f() {
-    return this.updateForm.controls;
-  }
-
   update(): void {
-    if(this.updateForm.invalid){
+    if (this.updateForm.invalid) {
       return;
     }
 
-    this.weeksService.update(this.updateForm.value, this.week.id, this.week.diaryId, ).subscribe((_) => {
-      this.router.navigate([`/weeks/see-week/${this.week.id}`]);
-    });
+    this.weeksService
+      .update(this.updateForm.value, this.week.id, this.week.diaryId)
+      .subscribe((_) => {
+        this.router.navigate([`/weeks/see-week/${this.week.id}`]);
+      });
   }
 }

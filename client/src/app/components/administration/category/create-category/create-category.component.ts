@@ -22,13 +22,6 @@ export class CreateCategoryComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    this.createForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(NAME_MIN_LEN), Validators.maxLength(NAME_MAX_LEN)]],
-      picture: ['', Validators.required],
-    });
-  }
-
   get f() {
     return this.createForm.controls;
   }
@@ -37,9 +30,18 @@ export class CreateCategoryComponent implements OnInit {
     return isUrlsPictureInvalid(this.createForm.value.picture);
   }
 
+  ngOnInit(): void {
+    this.createForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(NAME_MIN_LEN), Validators.maxLength(NAME_MAX_LEN)]],
+      picture: ['', Validators.required],
+    });
+  }
+
   create(): void {
-    if (this.createForm.invalid ||
-      isUrlsPictureInvalid(this.createForm.value.picture)) {
+    if (
+      this.createForm.invalid ||
+      isUrlsPictureInvalid(this.createForm.value.picture)
+    ) {
       return;
     }
 

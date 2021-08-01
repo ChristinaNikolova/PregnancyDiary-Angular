@@ -45,7 +45,8 @@ export class UpdateMemoryComponent implements OnInit {
   }
 
   update(): void {
-    if (this.updateForm.invalid ||
+    if (
+      this.updateForm.invalid ||
       isMemoryDateInvalid(this.updateForm.value.date)
     ) {
       return;

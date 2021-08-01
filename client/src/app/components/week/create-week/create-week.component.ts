@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { WeeksService } from 'src/app/core/services/week/weeks.service';
 
 const WEEK_MIN = 1;
@@ -25,6 +26,10 @@ export class CreateWeekComponent implements OnInit {
     this.moods = ['Happy', 'Sad', 'Surprised', 'Melancholic', 'Angry'];
   }
 
+  get f() {
+    return this.createForm.controls;
+  }
+
   ngOnInit(): void {
     this.diaryId = this.route.snapshot.params['id'];
 
@@ -36,10 +41,6 @@ export class CreateWeekComponent implements OnInit {
       babyWeight: ['', [Validators.required]],
       babyHeight: ['', [Validators.required]],
     });
-  }
-
-  get f() {
-    return this.createForm.controls;
   }
 
   create(): void {

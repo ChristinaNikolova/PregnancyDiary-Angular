@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { WeeksService } from 'src/app/core/services/week/weeks.service';
 
+import { WeeksService } from 'src/app/core/services/week/weeks.service';
 import IWeekRow from '../../shared/models/week/IWeekRow';
 
 @Component({
