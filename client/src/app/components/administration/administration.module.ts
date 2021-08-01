@@ -14,6 +14,7 @@ import { ArticleSingleRowComponent } from './article/article-single-row/article-
 import { UpdateArticleComponent } from './article/update-article/update-article.component';
 import { UpdateArticleResolver } from 'src/app/core/resolvers/update-article.resolver';
 import { CreateArticleComponent } from './article/create-article/create-article.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CreateArticleComponent } from './article/create-article/create-article.
       { path: 'articles', component: AllArticlesComponent },
       { path: 'articles/update/:id', component: UpdateArticleComponent, resolve: {updateArticle: UpdateArticleResolver} },
       { path: 'articles/create', component: CreateArticleComponent }
-    ])
+    ]),
+    SharedModule
   ]
 })
 export class AdministrationModule { }
