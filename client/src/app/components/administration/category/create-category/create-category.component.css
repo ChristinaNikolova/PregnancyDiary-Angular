@@ -1,6 +1,5 @@
 .create-category-wrapper {
   background-color: #FFE2E0;
-  height: 650px;
 }
 
 .create-category-wrapper .custom-font {
@@ -16,6 +15,7 @@
   border-color: #EF93AE;
   color: white;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .create-category-wrapper button:hover {

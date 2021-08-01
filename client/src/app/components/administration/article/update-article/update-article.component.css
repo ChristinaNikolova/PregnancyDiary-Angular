@@ -1,6 +1,5 @@
 .update-article-wrapper {
   background-color: #FFE2E0;
-  height: 850px;
 }
 
 .update-article-wrapper .custom-font {
@@ -16,6 +15,7 @@
   border-color: #EF93AE;
   color: white;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .update-article-wrapper button:hover {

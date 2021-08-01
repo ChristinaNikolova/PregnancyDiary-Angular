@@ -25,8 +25,8 @@ export class ResponseHandlerInterceptor implements HttpInterceptor {
             if (
               success.url?.includes('login') ||
               success.url?.includes('register') ||
-              success.url?.includes('like') ||
               success.url?.includes('dislike') || 
+              (success.url?.includes('like') && success.body.message !== undefined) ||
               (success.url?.includes('create') && success.body.message !== undefined) ||
               (success.url?.includes('update') && success.body.message !== undefined)||
               success.url?.includes('delete')
