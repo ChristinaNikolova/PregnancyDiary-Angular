@@ -22,7 +22,17 @@ export class ResponseHandlerInterceptor implements HttpInterceptor {
       tap((success) => {
         if (success instanceof HttpResponse) {
           if (success.status === 200) {
-            this.toastr.success(success.body.message, 'Success');
+            if (
+              success.url?.includes('login') ||
+              success.url?.includes('register') ||
+              success.url?.includes('like') ||
+              success.url?.includes('dislike') || 
+              (success.url?.includes('create') && success.body.message !== undefined) ||
+              (success.url?.includes('update') && success.body.message !== undefined)||
+              success.url?.includes('delete')
+            ) {
+              this.toastr.success(success.body.message, 'Success');
+            }
           }
         }
       }),
