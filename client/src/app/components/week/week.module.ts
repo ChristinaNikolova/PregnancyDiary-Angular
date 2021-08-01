@@ -25,7 +25,7 @@ import { UpdateWeekResolver } from 'src/app/core/resolvers/update-week.resolver'
     ReactiveFormsModule,
     RouterModule.forChild(
       [
-        { path: 'create/:id', component: CreateWeekComponent },
+        { path: 'create-week/:id', component: CreateWeekComponent },
         { path: 'update-week/:id', component: UpdateWeekComponent, resolve: { updateWeek: UpdateWeekResolver } },
         { path: 'see-week/:id', component: SeeWeekComponent, resolve: { singleWeek: UpdateWeekResolver } }
       ]
