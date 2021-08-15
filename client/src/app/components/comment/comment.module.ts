@@ -17,7 +17,9 @@ import { SingleCommentComponent } from './single-comment/single-comment.componen
     ReactiveFormsModule
   ],
   exports: [
-    CommentsCurrentArticleComponent
+    CommentsCurrentArticleComponent,
+    SingleCommentComponent,
+    CreateCommentComponent,
   ],
 })
 export class CommentModule {}
