@@ -19,6 +19,7 @@ import { SingleCommentComponent } from './single-comment/single-comment.componen
   exports: [
     CommentsCurrentArticleComponent,
     SingleCommentComponent,
+    CreateCommentComponent,
   ],
 })
 export class CommentModule {}
