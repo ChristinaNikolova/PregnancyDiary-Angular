@@ -43,7 +43,8 @@
             <option [value]="gender" *ngFor="let gender of genders">{{gender}}</option>
           </select>
         </div>
-        <div class="alert alert-warning alert-custom-margin" *ngIf="f.gender?.errors?.required && f.gender?.touched">
+        <div class="alert alert-warning alert-custom-margin" 
+        *ngIf="f.gender?.errors?.required && f.gender?.touched">
           This field is required
         </div>
         <div class="form-group">
