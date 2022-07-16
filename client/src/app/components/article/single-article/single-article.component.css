@@ -12,8 +12,9 @@
 }
 
 .article-pic {
-  max-width: 15%;
-  height: 5%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
   border: 2px;
   border-color: white;
   border-radius: 20%;
@@ -23,7 +24,7 @@
   margin-right: 30px;
 }
 
-.span-icon{
+.span-icon {
   margin-left: 20px;
 }
 
