@@ -35,11 +35,9 @@ PregnancyDiary can be used to present particular diary during your pregnancy.
 
 ## :hammer_and_pick: Build with
 
+ - CSharp
+ 
  - .NET Core 5.0
-
- - MSSQL Server 
-
- - Entity Framework Core 5.0
  
  - Dependency Injection
 
@@ -47,13 +45,19 @@ PregnancyDiary can be used to present particular diary during your pregnancy.
 
  - WebApi
  
- - Angular
-
  - AutoMapper
 
  - Newtonsoft.Json
 
+ - MSSQL Server 
+
+ - Entity Framework Core 5.0
+
  - TypeScript
+  
+ - Angular
+
+ - toastr
 
  - Bootstrap
 
@@ -62,10 +66,8 @@ PregnancyDiary can be used to present particular diary during your pregnancy.
  - CSS
 
  - HTML5
-
- - toastr
  
-## Application Configurations
+## :gear: Application Configurations
  #### To start server: 
  
  1. Create appsettings.json file in Data.PregnancyDiary.Data. 
